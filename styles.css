@@ -213,3 +213,9 @@ input,textarea{width:100%;margin-top:6px;padding:12px;border:1px solid var(--lin
 .product-card.sold-out .product-img img{opacity:.55;filter:grayscale(.25)}
 .add.disabled{background:#eee8ef;color:#8b818e;cursor:not-allowed}
 .load-error{grid-column:1/-1;padding:28px;text-align:center;border:1px solid var(--line);border-radius:20px;background:#fff;color:var(--muted)}
+
+select{width:100%;margin-top:6px;padding:12px;border:1px solid var(--line);border-radius:12px;background:#fffdfd;color:var(--text)}
+.checkout-status{min-height:22px;margin:0;font-size:13px;color:var(--muted)}
+.checkout-status.error{color:#a33f55}
+.success-box{text-align:center}
+.success-heart{font-size:46px;color:var(--pink)}

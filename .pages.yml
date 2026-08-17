@@ -1,11 +1,6 @@
 media:
-  - name: images
-    label: Bilder
-    input: media
-    output: /media
-    categories: [image]
-    extensions: [jpg, jpeg, png, webp]
-    rename: safe
+  input: media
+  output: /media
 
 content:
   - name: homepage
@@ -36,11 +31,6 @@ content:
           - name: image
             label: Startbild
             type: image
-            options:
-              media: images
-              categories: [image]
-              extensions: [jpg, jpeg, png, webp]
-              rename: safe
 
       - name: shop
         label: Shop
@@ -78,11 +68,6 @@ content:
           - name: image
             label: Bild
             type: image
-            options:
-              media: images
-              categories: [image]
-              extensions: [jpg, jpeg, png, webp]
-              rename: safe
 
       - name: contact
         label: Kontakt
@@ -114,11 +99,6 @@ content:
           - name: logo
             label: Logo
             type: image
-            options:
-              media: images
-              categories: [image]
-              extensions: [jpg, jpeg, png, webp]
-              rename: safe
           - name: copyright_name
             label: Name
             type: string
@@ -146,11 +126,6 @@ content:
         label: Produktfoto
         type: image
         required: true
-        options:
-          media: images
-          categories: [image]
-          extensions: [jpg, jpeg, png, webp]
-          rename: safe
       - name: description
         label: Beschreibung
         type: text

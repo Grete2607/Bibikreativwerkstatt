@@ -13,7 +13,7 @@ Im Bereich "Homepage" bearbeitbar:
 Im Bereich "Produkte":
 - Produktfoto
 - Produktname
-- Preise
+- Preis
 - Beschreibung
 - Kennzeichnung
 - verfügbar / ausverkauft

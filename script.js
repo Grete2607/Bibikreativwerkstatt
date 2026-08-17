@@ -54,6 +54,7 @@ function applySiteContent(){
 }
 
 const SHOP_EMAIL = "bibikreativwerkstatt@gmail.com";
+const ORDER_FORM_ENDPOINT = "https://formspree.io/f/xkjwqedp";
 
 let products = [];
 let cart = JSON.parse(localStorage.getItem("bibiCart") || "[]");
@@ -152,29 +153,85 @@ document.getElementById("checkoutButton").onclick=()=>{
 };
 document.getElementById("closeCheckout").onclick=()=>checkoutDialog.close();
 
-document.getElementById("checkoutForm").onsubmit=e=>{
+document.getElementById("checkoutForm").onsubmit = async e => {
   e.preventDefault();
-  const d=Object.fromEntries(new FormData(e.target).entries());
-  const lines=cart.map(i=>{
-    const p=products.find(p=>p.id===i.id);
-    return p ? `- ${i.qty} × ${p.name} – ${money((Number(p.price)||0)*i.qty)}` : "";
+
+  const status = document.getElementById("checkoutStatus");
+  const submitButton = document.getElementById("submitOrderButton");
+  status.className = "checkout-status";
+
+  if(!ORDER_FORM_ENDPOINT || ORDER_FORM_ENDPOINT === "FORM_ENDPOINT_HIER_EINTRAGEN"){
+    status.textContent = "Die automatische Bestellübermittlung ist noch nicht eingerichtet.";
+    status.classList.add("error");
+    return;
+  }
+
+  const d = Object.fromEntries(new FormData(e.target).entries());
+  const orderNumber = createOrderNumber();
+
+  const lines = cart.map(i => {
+    const p = products.find(p => p.id === i.id);
+    return p ? `${i.qty} × ${p.name} – ${money((Number(p.price)||0)*i.qty)}` : "";
   }).filter(Boolean);
-  const total=cart.reduce((s,i)=>{
-    const p=products.find(p=>p.id===i.id);
-    return p ? s+(Number(p.price)||0)*i.qty : s;
-  },0);
-  const body=[
-    "Hallo Bibi Kreativwerkstatt","","ich möchte gerne folgende Ohrringe bestellen:",
-    ...lines,"",`Gesamt: ${money(total)}`,"","Meine Daten:",
-    `${d.firstName} ${d.lastName}`,d.street,`${d.zip} ${d.city}`,`E-Mail: ${d.email}`,"",
-    d.note?`Anmerkung: ${d.note}`:"","","Bitte bestätigt mir die Verfügbarkeit und sendet mir die Zahlungsinformationen.","","Liebe Grüße"
-  ].filter(Boolean).join("\n");
-  location.href=`mailto:${SHOP_EMAIL}?subject=${encodeURIComponent("Bestellung – Bibi Kreativwerkstatt")}&body=${encodeURIComponent(body)}`;
+
+  const total = cart.reduce((s,i) => {
+    const p = products.find(p => p.id === i.id);
+    return p ? s + (Number(p.price)||0) * i.qty : s;
+  }, 0);
+
+  const payload = new FormData();
+  payload.append("Bestellnummer", orderNumber);
+  payload.append("Vorname", d.firstName);
+  payload.append("Nachname", d.lastName);
+  payload.append("E-Mail", d.email);
+  payload.append("Straße", d.street);
+  payload.append("PLZ", d.zip);
+  payload.append("Ort", d.city);
+  payload.append("Land", d.country);
+  payload.append("Anmerkung", d.note || "");
+  payload.append("Produkte", lines.join("\n"));
+  payload.append("Gesamt", money(total));
+  payload.append("_subject", `Neue Bestellung ${orderNumber} – Bibi Kreativwerkstatt`);
+
+  submitButton.disabled = true;
+  submitButton.textContent = "Wird übermittelt …";
+  status.textContent = "Bestellung wird gesendet …";
+
+  try{
+    const response = await fetch(ORDER_FORM_ENDPOINT, {
+      method: "POST",
+      body: payload,
+      headers: {"Accept":"application/json"}
+    });
+    if(!response.ok) throw new Error("Übermittlung fehlgeschlagen");
+
+    cart = [];
+    save();
+    renderCart();
+    e.target.reset();
+    checkoutDialog.close();
+
+    document.getElementById("successOrderNumber").textContent = orderNumber;
+    document.getElementById("successDialog").showModal();
+  }catch(error){
+    console.error(error);
+    status.textContent = "Die Bestellung konnte nicht gesendet werden. Bitte versuche es erneut.";
+    status.classList.add("error");
+  }finally{
+    submitButton.disabled = false;
+    submitButton.textContent = "Bestellung absenden";
+  }
 };
 
-function escapeHtml(v=""){
-  return String(v).replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;").replaceAll("'","&#039;");
+function createOrderNumber(){
+  const now = new Date();
+  const date = `${now.getFullYear()}${String(now.getMonth()+1).padStart(2,"0")}${String(now.getDate()).padStart(2,"0")}`;
+  const random = Math.floor(1000 + Math.random()*9000);
+  return `BIBI-${date}-${random}`;
 }
+
+document.getElementById("closeSuccess").onclick = () => document.getElementById("successDialog").close();
+
 document.getElementById("year").textContent=new Date().getFullYear();
 loadProducts();
 loadSiteContent();
