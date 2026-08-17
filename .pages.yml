@@ -1,0 +1,142 @@
+media:
+  input: media
+  output: /media
+
+content:
+  - name: homepage
+    label: Homepage
+    type: file
+    path: site.json
+    format: json
+    fields:
+      - name: hero
+        label: Startbereich
+        type: object
+        fields:
+          - name: script
+            label: Kleine Überschrift
+            type: string
+          - name: title
+            label: Große Überschrift
+            type: text
+          - name: lead
+            label: Unterüberschrift
+            type: string
+          - name: intro
+            label: Beschreibung
+            type: text
+          - name: button_text
+            label: Button-Text
+            type: string
+          - name: image
+            label: Startbild
+            type: image
+
+      - name: shop
+        label: Shop
+        type: object
+        fields:
+          - name: script
+            label: Kleine Überschrift
+            type: string
+          - name: title
+            label: Überschrift
+            type: string
+          - name: subtitle
+            label: Untertext
+            type: string
+
+      - name: about
+        label: Über mich
+        type: object
+        fields:
+          - name: script
+            label: Kleine Überschrift
+            type: string
+          - name: title
+            label: Überschrift
+            type: string
+          - name: paragraph_1
+            label: Text 1
+            type: text
+          - name: paragraph_2
+            label: Text 2
+            type: text
+          - name: highlight
+            label: Schlusssatz
+            type: text
+          - name: image
+            label: Bild
+            type: image
+
+      - name: contact
+        label: Kontakt
+        type: object
+        fields:
+          - name: script
+            label: Kleine Überschrift
+            type: string
+          - name: title
+            label: Überschrift
+            type: string
+          - name: text
+            label: Text
+            type: text
+          - name: instagram_label
+            label: Instagram-Anzeige
+            type: string
+          - name: instagram_url
+            label: Instagram-Link
+            type: string
+          - name: email
+            label: E-Mail
+            type: string
+
+      - name: footer
+        label: Fußbereich
+        type: object
+        fields:
+          - name: logo
+            label: Logo
+            type: image
+          - name: copyright_name
+            label: Name
+            type: string
+
+  - name: products
+    label: Produkte
+    type: file
+    path: products.json
+    format: json
+    list: true
+    fields:
+      - name: id
+        label: Interne ID
+        type: string
+        required: true
+      - name: name
+        label: Produktname
+        type: string
+        required: true
+      - name: price
+        label: Preis in Euro
+        type: number
+        required: true
+      - name: image
+        label: Produktfoto
+        type: image
+        required: true
+      - name: description
+        label: Beschreibung
+        type: text
+      - name: badge
+        label: Kennzeichnung
+        type: string
+      - name: available
+        label: Verfügbar
+        type: boolean
+        default: true
+      - name: visible
+        label: Im Shop anzeigen
+        type: boolean
+        default: true
