@@ -1,0 +1,44 @@
+media:
+  input: media
+  output: /media
+
+content:
+  - name: products
+    label: Produkte
+    type: file
+    path: products.json
+    format: json
+    list: true
+    fields:
+      - name: id
+        label: Interne ID
+        type: string
+        required: true
+        description: Eindeutig, z. B. lavendel-traum. Am besten später nicht ändern.
+      - name: name
+        label: Produktname
+        type: string
+        required: true
+      - name: price
+        label: Preis in Euro
+        type: number
+        required: true
+      - name: image
+        label: Produktfoto
+        type: image
+        required: true
+      - name: description
+        label: Beschreibung
+        type: text
+      - name: badge
+        label: Kennzeichnung
+        type: string
+        description: Zum Beispiel Neu, Handmade oder Unikat.
+      - name: available
+        label: Verfügbar
+        type: boolean
+        default: true
+      - name: visible
+        label: Im Shop anzeigen
+        type: boolean
+        default: true
