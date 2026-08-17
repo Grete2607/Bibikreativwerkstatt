@@ -5,7 +5,7 @@
     "lead": "Leicht. Einzigartig. Mit Liebe gemacht.",
     "intro": "Jedes Paar wird liebevoll von Hand gestaltet und ist ein kleines Unikat.",
     "button_text": "Ohrringe entdecken ♡",
-    "image": "/media/zitronenliebe.webp"
+    "image": "/media/il_1000x1000.8127986074_4xo0.webp"
   },
   "shop": {
     "script": "Meine Lieblinge",
@@ -20,28 +20,6 @@
     "highlight": "Danke, dass du meine kleine Kreativwelt unterstützt!",
     "image": "/media/goldene-bluete.webp"
   },
-  "benefits": [
-    {
-      "icon": "♡",
-      "title": "Handgemacht",
-      "text": "mit viel Liebe"
-    },
-    {
-      "icon": "♢",
-      "title": "Leicht & angenehm",
-      "text": "für den Alltag"
-    },
-    {
-      "icon": "✿",
-      "title": "Einzigartig",
-      "text": "jedes Paar besonders"
-    },
-    {
-      "icon": "🎁",
-      "title": "Ideales Geschenk",
-      "text": "für Lieblingsmenschen"
-    }
-  ],
   "contact": {
     "script": "Kontakt",
     "title": "Du hast eine Frage?",
