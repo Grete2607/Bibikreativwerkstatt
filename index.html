@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bibi Kreativwerkstatt</title>
+  <meta name="description" content="Handgemachte Polymer Clay Ohrringe von Bibi Kreativwerkstatt.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Great+Vibes&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="header">
+  <a href="#start" class="logo-link"><img src="logo.png" alt="Bibi Kreativwerkstatt Logo"></a>
+  <nav>
+    <a href="#shop">Shop</a>
+    <a href="#ueber">Über mich</a>
+    <a href="#kontakt">Kontakt</a>
+  </nav>
+  <button id="openCart" class="cart-btn">♡ Warenkorb <span id="cartCount">0</span></button>
+</header>
+
+<main>
+  <section class="hero" id="start">
+    <div class="hero-text">
+      <p class="script">Handgemachte</p>
+      <h1>Polymer Clay<br>Ohrringe</h1>
+      <p class="lead">Leicht. Einzigartig. Mit Liebe gemacht.</p>
+      <p class="intro">Jedes Paar wird liebevoll von Hand gestaltet und ist ein kleines Unikat.</p>
+      <a class="button" href="#shop">Ohrringe entdecken ♡</a>
+    </div>
+    <div class="hero-image">
+      <img src="zitronenliebe.webp" alt="Zitronen Ohrringe">
+    </div>
+  </section>
+
+  <section class="shop" id="shop">
+    <div class="section-title">
+      <p class="script">Meine Lieblinge</p>
+      <h2>Handgemachte Ohrringe</h2>
+      <p>Jedes Paar ein Unikat – so besonders wie du.</p>
+    </div>
+    <div id="productGrid" class="product-grid"></div>
+  </section>
+
+  <section class="about" id="ueber">
+    <div class="about-image">
+      <img src="goldene-bluete.webp" alt="Florale Polymer Clay Ohrringe">
+    </div>
+    <div class="about-text">
+      <p class="script">Über mich</p>
+      <h2>Hallo, ich bin Bibi ♡</h2>
+      <p>Ich gestalte in meiner Kreativwerkstatt mit viel Liebe handgemachte Ohrringe aus Polymer Clay.</p>
+      <p>Jedes Design entsteht mit Herz, Sorgfalt und Freude am Detail. Kleine Unterschiede machen jedes Paar zu einem echten Einzelstück.</p>
+      <p class="highlight">Danke, dass du meine kleine Kreativwelt unterstützt!</p>
+    </div>
+  </section>
+
+  <section class="benefits">
+    <div><span>♡</span><strong>Handgemacht</strong><small>mit viel Liebe</small></div>
+    <div><span>♢</span><strong>Leicht & angenehm</strong><small>für den Alltag</small></div>
+    <div><span>✿</span><strong>Einzigartig</strong><small>jedes Paar besonders</small></div>
+    <div><span>🎁</span><strong>Ideales Geschenk</strong><small>für Lieblingsmenschen</small></div>
+  </section>
+
+  <section class="contact" id="kontakt">
+    <div class="contact-box">
+      <p class="script">Kontakt</p>
+      <h2>Du hast eine Frage?</h2>
+      <p>Schreib Bibi gerne über Instagram oder per E-Mail.</p>
+      <div class="contact-links">
+        <a href="https://www.instagram.com/bibikreativwerkstatt/" target="_blank">@bibikreativwerkstatt</a>
+        <a href="mailto:bibikreativwerkstatt@gmail.com">bibikreativwerkstatt@gmail.com</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <img src="logo.png" alt="Bibi Kreativwerkstatt">
+  <div class="footer-links">
+    <a href="#">Impressum</a>
+    <a href="#">Datenschutz</a>
+    <a href="#">Widerruf</a>
+    <a href="#">AGB</a>
+  </div>
+  <small>© <span id="year"></span> Bibi Kreativwerkstatt</small>
+</footer>
+
+<div id="overlay" class="overlay"></div>
+
+<aside id="cartDrawer" class="cart">
+  <div class="cart-header">
+    <div>
+      <p class="script small-script">Deine Auswahl</p>
+      <h2>Warenkorb</h2>
+    </div>
+    <button id="closeCart" class="close-btn">×</button>
+  </div>
+  <div id="cartItems" class="cart-items"></div>
+  <div class="cart-footer">
+    <div class="total"><span>Gesamt</span><strong id="cartTotal">€ 0,00</strong></div>
+    <button id="checkoutButton" class="button full">Bestellung vorbereiten</button>
+    <small>Die kostenlose Version öffnet eine vorbereitete Bestell-E-Mail.</small>
+  </div>
+</aside>
+
+<dialog id="checkoutDialog">
+  <button id="closeCheckout" class="close-btn dialog-close">×</button>
+  <p class="script small-script">Fast geschafft</p>
+  <h2>Bestellung vorbereiten</h2>
+  <form id="checkoutForm">
+    <div class="form-row">
+      <label>Vorname<input required name="firstName"></label>
+      <label>Nachname<input required name="lastName"></label>
+    </div>
+    <label>E-Mail<input required type="email" name="email"></label>
+    <label>Straße & Hausnummer<input required name="street"></label>
+    <div class="form-row">
+      <label>PLZ<input required name="zip"></label>
+      <label>Ort<input required name="city"></label>
+    </div>
+    <label>Anmerkung<textarea name="note" rows="3"></textarea></label>
+    <button class="button full" type="submit">Bestell-E-Mail öffnen</button>
+  </form>
+</dialog>
+
+<script src="script.js"></script>
+</body>
+</html>
