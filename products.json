@@ -26,8 +26,8 @@
     "image": "/media/blaues-bluemchen.webp",
     "description": "Zarte Blütenoptik in Creme und Blau.",
     "badge": "Unikat",
-    "available": true,
-    "visible": false
+    "available": false,
+    "visible": true
   },
   {
     "id": "golden-garden",
