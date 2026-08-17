@@ -38,5 +38,15 @@
     "badge": "Elegant",
     "available": true,
     "visible": true
+  },
+  {
+    "id": "Test Produkt",
+    "name": "Test",
+    "price": 99.99,
+    "image": "/media/image.png",
+    "description": "Ich teste ein neues Produkt",
+    "badge": "Neu",
+    "available": false,
+    "visible": true
   }
 ]
