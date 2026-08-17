@@ -27,7 +27,7 @@
     "description": "Zarte Blütenoptik in Creme und Blau.",
     "badge": "Unikat",
     "available": true,
-    "visible": true
+    "visible": false
   },
   {
     "id": "golden-garden",
@@ -36,6 +36,16 @@
     "image": "/media/goldene-bluete.webp",
     "description": "Florale Details mit goldfarbenem Stecker.",
     "badge": "Elegant",
+    "available": true,
+    "visible": true
+  },
+  {
+    "id": "Test Test",
+    "name": "Test1",
+    "price": 99.46,
+    "image": "/media/isla_100x100.78049238_ryqgjci4-1.webp",
+    "description": "Test der Ohrrringe",
+    "badge": "selten",
     "available": true,
     "visible": true
   }
