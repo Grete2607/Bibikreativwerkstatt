@@ -24,40 +24,40 @@
 <main>
   <section class="hero" id="start">
     <div class="hero-text">
-      <p class="script">Handgemachte</p>
-      <h1>Polymer Clay<br>Ohrringe</h1>
-      <p class="lead">Leicht. Einzigartig. Mit Liebe gemacht.</p>
-      <p class="intro">Jedes Paar wird liebevoll von Hand gestaltet und ist ein kleines Unikat.</p>
-      <a class="button" href="#shop">Ohrringe entdecken ♡</a>
+      <p class="script" data-site="hero.script">Handgemachte</p>
+      <h1 data-site-html="hero.title">Polymer Clay<br>Ohrringe</h1>
+      <p class="lead" data-site="hero.lead">Leicht. Einzigartig. Mit Liebe gemacht.</p>
+      <p class="intro" data-site="hero.intro">Jedes Paar wird liebevoll von Hand gestaltet und ist ein kleines Unikat.</p>
+      <a class="button" href="#shop" data-site="hero.button_text">Ohrringe entdecken ♡</a>
     </div>
     <div class="hero-image">
-      <img src="zitronenliebe.webp" alt="Zitronen Ohrringe">
+      <img src="/media/zitronenliebe.webp" alt="Zitronen Ohrringe" data-site-img="hero.image">
     </div>
   </section>
 
   <section class="shop" id="shop">
     <div class="section-title">
-      <p class="script">Meine Lieblinge</p>
-      <h2>Handgemachte Ohrringe</h2>
-      <p>Jedes Paar ein Unikat – so besonders wie du.</p>
+      <p class="script" data-site="shop.script">Meine Lieblinge</p>
+      <h2 data-site="shop.title">Handgemachte Ohrringe</h2>
+      <p data-site="shop.subtitle">Jedes Paar ein Unikat – so besonders wie du.</p>
     </div>
     <div id="productGrid" class="product-grid"></div>
   </section>
 
   <section class="about" id="ueber">
     <div class="about-image">
-      <img src="goldene-bluete.webp" alt="Florale Polymer Clay Ohrringe">
+      <img src="/media/goldene-bluete.webp" alt="Florale Polymer Clay Ohrringe" data-site-img="about.image">
     </div>
     <div class="about-text">
-      <p class="script">Über mich</p>
-      <h2>Hallo, ich bin Bibi ♡</h2>
-      <p>Ich gestalte in meiner Kreativwerkstatt mit viel Liebe handgemachte Ohrringe aus Polymer Clay.</p>
-      <p>Jedes Design entsteht mit Herz, Sorgfalt und Freude am Detail. Kleine Unterschiede machen jedes Paar zu einem echten Einzelstück.</p>
-      <p class="highlight">Danke, dass du meine kleine Kreativwelt unterstützt!</p>
+      <p class="script" data-site="about.script">Über mich</p>
+      <h2 data-site="about.title">Hallo, ich bin Bibi ♡</h2>
+      <p data-site="about.paragraph_1">Ich gestalte in meiner Kreativwerkstatt mit viel Liebe handgemachte Ohrringe aus Polymer Clay.</p>
+      <p data-site="about.paragraph_2">Jedes Design entsteht mit Herz, Sorgfalt und Freude am Detail. Kleine Unterschiede machen jedes Paar zu einem echten Einzelstück.</p>
+      <p class="highlight" data-site="about.highlight">Danke, dass du meine kleine Kreativwelt unterstützt!</p>
     </div>
   </section>
 
-  <section class="benefits">
+  <section class="benefits" id="benefitsGrid">
     <div><span>♡</span><strong>Handgemacht</strong><small>mit viel Liebe</small></div>
     <div><span>♢</span><strong>Leicht & angenehm</strong><small>für den Alltag</small></div>
     <div><span>✿</span><strong>Einzigartig</strong><small>jedes Paar besonders</small></div>
@@ -66,26 +66,26 @@
 
   <section class="contact" id="kontakt">
     <div class="contact-box">
-      <p class="script">Kontakt</p>
-      <h2>Du hast eine Frage?</h2>
-      <p>Schreib Bibi gerne über Instagram oder per E-Mail.</p>
+      <p class="script" data-site="contact.script">Kontakt</p>
+      <h2 data-site="contact.title">Du hast eine Frage?</h2>
+      <p data-site="contact.text">Schreib Bibi gerne über Instagram oder per E-Mail.</p>
       <div class="contact-links">
-        <a href="https://www.instagram.com/bibikreativwerkstatt/" target="_blank">@bibikreativwerkstatt</a>
-        <a href="mailto:bibikreativwerkstatt@gmail.com">bibikreativwerkstatt@gmail.com</a>
+        <a href="https://www.instagram.com/bibikreativwerkstatt/" target="_blank" data-site-link="contact.instagram_url" data-site="contact.instagram_label">@bibikreativwerkstatt</a>
+        <a href="mailto:bibikreativwerkstatt@gmail.com" data-site-mail="contact.email" data-site="contact.email">bibikreativwerkstatt@gmail.com</a>
       </div>
     </div>
   </section>
 </main>
 
 <footer>
-  <img src="logo.png" alt="Bibi Kreativwerkstatt">
+  <img src="logo.png" alt="Bibi Kreativwerkstatt" data-site-img="footer.logo">
   <div class="footer-links">
     <a href="#">Impressum</a>
     <a href="#">Datenschutz</a>
     <a href="#">Widerruf</a>
     <a href="#">AGB</a>
   </div>
-  <small>© <span id="year"></span> Bibi Kreativwerkstatt</small>
+  <small>© <span id="year"></span> <span data-site="footer.copyright_name">Bibi Kreativwerkstatt</span></small>
 </footer>
 
 <div id="overlay" class="overlay"></div>

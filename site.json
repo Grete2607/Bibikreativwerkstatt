@@ -1,0 +1,57 @@
+{
+  "hero": {
+    "script": "Handgemachte",
+    "title": "Polymer Clay\nOhrringe",
+    "lead": "Leicht. Einzigartig. Mit Liebe gemacht.",
+    "intro": "Jedes Paar wird liebevoll von Hand gestaltet und ist ein kleines Unikat.",
+    "button_text": "Ohrringe entdecken ♡",
+    "image": "/media/zitronenliebe.webp"
+  },
+  "shop": {
+    "script": "Meine Lieblinge",
+    "title": "Handgemachte Ohrringe",
+    "subtitle": "Jedes Paar ein Unikat – so besonders wie du."
+  },
+  "about": {
+    "script": "Über mich",
+    "title": "Hallo, ich bin Bibi ♡",
+    "paragraph_1": "Ich gestalte in meiner Kreativwerkstatt mit viel Liebe handgemachte Ohrringe aus Polymer Clay.",
+    "paragraph_2": "Jedes Design entsteht mit Herz, Sorgfalt und Freude am Detail. Kleine Unterschiede machen jedes Paar zu einem echten Einzelstück.",
+    "highlight": "Danke, dass du meine kleine Kreativwelt unterstützt!",
+    "image": "/media/goldene-bluete.webp"
+  },
+  "benefits": [
+    {
+      "icon": "♡",
+      "title": "Handgemacht",
+      "text": "mit viel Liebe"
+    },
+    {
+      "icon": "♢",
+      "title": "Leicht & angenehm",
+      "text": "für den Alltag"
+    },
+    {
+      "icon": "✿",
+      "title": "Einzigartig",
+      "text": "jedes Paar besonders"
+    },
+    {
+      "icon": "🎁",
+      "title": "Ideales Geschenk",
+      "text": "für Lieblingsmenschen"
+    }
+  ],
+  "contact": {
+    "script": "Kontakt",
+    "title": "Du hast eine Frage?",
+    "text": "Schreib Bibi gerne über Instagram oder per E-Mail.",
+    "instagram_label": "@bibikreativwerkstatt",
+    "instagram_url": "https://www.instagram.com/bibikreativwerkstatt/",
+    "email": "bibikreativwerkstatt@gmail.com"
+  },
+  "footer": {
+    "logo": "/logo.png",
+    "copyright_name": "Bibi Kreativwerkstatt"
+  }
+}

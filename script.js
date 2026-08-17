@@ -1,3 +1,58 @@
+
+let siteContent = {};
+
+function getByPath(obj, path){
+  return path.split(".").reduce((acc, key) => acc && acc[key] !== undefined ? acc[key] : undefined, obj);
+}
+
+async function loadSiteContent(){
+  try{
+    const response = await fetch(`site.json?v=${Date.now()}`);
+    if(!response.ok) throw new Error("site.json konnte nicht geladen werden");
+    siteContent = await response.json();
+    applySiteContent();
+  }catch(error){
+    console.error(error);
+  }
+}
+
+function applySiteContent(){
+  document.querySelectorAll("[data-site]").forEach(el => {
+    const value = getByPath(siteContent, el.dataset.site);
+    if(value !== undefined && value !== null) el.textContent = value;
+  });
+
+  document.querySelectorAll("[data-site-html]").forEach(el => {
+    const value = getByPath(siteContent, el.dataset.siteHtml);
+    if(typeof value === "string") el.innerHTML = escapeHtml(value).replaceAll("\\n","<br>");
+  });
+
+  document.querySelectorAll("[data-site-img]").forEach(el => {
+    const value = getByPath(siteContent, el.dataset.siteImg);
+    if(value) el.src = value;
+  });
+
+  document.querySelectorAll("[data-site-link]").forEach(el => {
+    const value = getByPath(siteContent, el.dataset.siteLink);
+    if(value) el.href = value;
+  });
+
+  document.querySelectorAll("[data-site-mail]").forEach(el => {
+    const value = getByPath(siteContent, el.dataset.siteMail);
+    if(value) el.href = `mailto:${value}`;
+  });
+
+  const benefitsGrid = document.getElementById("benefitsGrid");
+  if(benefitsGrid && Array.isArray(siteContent.benefits)){
+    benefitsGrid.innerHTML = siteContent.benefits.map(item => `
+      <div>
+        <span>${escapeHtml(item.icon || "♡")}</span>
+        <strong>${escapeHtml(item.title || "")}</strong>
+        <small>${escapeHtml(item.text || "")}</small>
+      </div>`).join("");
+  }
+}
+
 const SHOP_EMAIL = "bibikreativwerkstatt@gmail.com";
 
 let products = [];
@@ -122,3 +177,4 @@ function escapeHtml(v=""){
 }
 document.getElementById("year").textContent=new Date().getFullYear();
 loadProducts();
+loadSiteContent();
