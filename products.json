@@ -38,5 +38,15 @@
     "badge": "Elegant",
     "available": true,
     "visible": true
+  },
+  {
+    "id": "schwarz-Gold hex.",
+    "name": "Golden Glam",
+    "price": 14.9,
+    "image": "/media/image0.png",
+    "description": "schlicht, elegante und ein echter Hingucker",
+    "badge": "Elegant",
+    "available": true,
+    "visible": true
   }
 ]
