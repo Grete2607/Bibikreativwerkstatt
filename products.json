@@ -2,8 +2,8 @@
   {
     "id": "zitronenliebe",
     "name": "Zitronenliebe",
-    "price": 20,
-    "image": "/media/zitronenliebe.webp",
+    "price": 14.5,
+    "image": "/media/image9.jpeg",
     "description": "Fröhliche Zitronen mit weißen Blüten.",
     "badge": "Sommerliebling",
     "available": true,
@@ -12,8 +12,8 @@
   {
     "id": "rose-bluetenbogen",
     "name": "Rosé Blütenbogen",
-    "price": 22.9,
-    "image": "/media/bluetenbogen.webp",
+    "price": 15.99,
+    "image": "/media/image4.png",
     "description": "Florales Design in warmem Rosé.",
     "badge": "Handmade",
     "available": true,
@@ -22,8 +22,8 @@
   {
     "id": "blue-blossom",
     "name": "Blue Blossom",
-    "price": 24.9,
-    "image": "/media/blaues-bluemchen.webp",
+    "price": 15.99,
+    "image": "/media/image6-1.jpeg",
     "description": "Zarte Blütenoptik in Creme und Blau.",
     "badge": "Unikat",
     "available": true,
@@ -32,8 +32,8 @@
   {
     "id": "golden-garden",
     "name": "Golden Garden",
-    "price": 24.9,
-    "image": "/media/goldene-bluete.webp",
+    "price": 15.99,
+    "image": "/media/image1.png",
     "description": "Florale Details mit goldfarbenem Stecker.",
     "badge": "Elegant",
     "available": true,
@@ -42,7 +42,7 @@
   {
     "id": "schwarz-Gold hex.",
     "name": "Golden Glam",
-    "price": 14.9,
+    "price": 12.5,
     "image": "/media/image0.png",
     "description": "schlicht, elegante und ein echter Hingucker",
     "badge": "Elegant",
