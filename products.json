@@ -68,5 +68,15 @@
     "badge": "Lebhafaft",
     "available": true,
     "visible": true
+  },
+  {
+    "id": "Blumen Schleifen Ohrringe",
+    "name": "Blue Daisy",
+    "price": 14.969,
+    "image": "/media/image0 (1).png",
+    "description": "Hellblaue Blumenohrringe mit eleganten goldenen Schleife",
+    "badge": "Verspielt",
+    "available": true,
+    "visible": true
   }
 ]
