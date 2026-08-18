@@ -251,9 +251,10 @@ function createOrderNumber(){
 document.getElementById("closeSuccess").onclick = () => document.getElementById("successDialog").close();
 
 
-function handleStripeReturn(){
+async function handleStripeReturn(){
   const params = new URLSearchParams(window.location.search);
   const result = params.get("checkout");
+  const sessionId = params.get("session_id");
 
   if(result === "success"){
     cart = [];
@@ -261,21 +262,29 @@ function handleStripeReturn(){
     renderCart();
 
     const successDialog = document.getElementById("successDialog");
-    const successOrderNumber = document.getElementById("successOrderNumber");
+const successOrderNumber = document.getElementById("successOrderNumber");
 
-    if(successOrderNumber){
-      const now = new Date();
-        const orderNumber =
-          "BIBI-" +
-          now.getFullYear() +
-          String(now.getMonth() + 1).padStart(2, "0") +
-          String(now.getDate()).padStart(2, "0") +
-          "-" +
-          String(Math.floor(1000 + Math.random() * 9000));
-        successOrderNumber.textContent = orderNumber;
+if (sessionId && successOrderNumber) {
+  try {
+    const response = await fetch(
+      `${STRIPE_CHECKOUT_ENDPOINT}/session?session_id=${encodeURIComponent(sessionId)}`
+    );
+
+    const data = await response.json();
+
+    if (response.ok && data.orderNumber) {
+      successOrderNumber.textContent = data.orderNumber;
+    } else {
+      successOrderNumber.textContent = "Bestellung erfolgreich";
     }
+  } catch (error) {
+    console.error("Bestellnummer konnte nicht geladen werden:", error);
+    successOrderNumber.textContent = "Bestellung erfolgreich";
+  }
+}
 
-    if(successDialog && typeof successDialog.showModal === "function"){
+if(successDialog && typeof successDialog.showModal === "function"){
+  
       successDialog.showModal();
     }else{
       alert("Vielen Dank! Die Zahlung war erfolgreich.");
