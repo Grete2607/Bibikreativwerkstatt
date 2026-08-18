@@ -48,5 +48,15 @@
     "badge": "Elegant",
     "available": true,
     "visible": true
+  },
+  {
+    "id": "Schleifen Ohrringe",
+    "name": "Blue Blossom",
+    "price": 16.99,
+    "image": "/media/image8.jpeg",
+    "description": "Modische Statement Ohrringe, Verspielt",
+    "badge": "Verspielt",
+    "available": true,
+    "visible": true
   }
 ]
