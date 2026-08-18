@@ -78,5 +78,15 @@
     "badge": "Verspielt",
     "available": true,
     "visible": true
+  },
+  {
+    "id": "Eukalyptus Ohrringe",
+    "name": "Green Leaf",
+    "price": 16.5,
+    "image": "/media/image1-1.jpeg",
+    "description": "weiße Handgemachte Ohrringe mit filigranen grünen Blüten zum verzaubern",
+    "badge": "Zeitlos",
+    "available": true,
+    "visible": true
   }
 ]
