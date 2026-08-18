@@ -58,5 +58,15 @@
     "badge": "Verspielt",
     "available": true,
     "visible": true
+  },
+  {
+    "id": "Mint Hexagon",
+    "name": "Mint Dreram",
+    "price": 15.5,
+    "image": "/media/image5-1.jpeg",
+    "description": "Zeitlose, moderne Ohrringe in Sommerfarben",
+    "badge": "Lebhafaft",
+    "available": true,
+    "visible": true
   }
 ]
