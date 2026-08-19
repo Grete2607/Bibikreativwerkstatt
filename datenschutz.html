@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Datenschutz | Bibi Kreativwerkstatt</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Great+Vibes&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    .legal-page {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 70px 24px 90px;
+    }
+
+    .legal-page h1 {
+      font-family: "Playfair Display", serif;
+      text-align: center;
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      margin: 0 0 18px;
+    }
+
+    .legal-intro {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 45px;
+      color: var(--muted, #786f7f);
+    }
+
+    .legal-card {
+      background: #fff;
+      border-radius: 24px;
+      padding: 35px 40px;
+      margin-bottom: 24px;
+      box-shadow: 0 8px 30px rgba(0,0,0,.06);
+    }
+
+    .legal-card h2 {
+      font-family: "Playfair Display", serif;
+      margin-top: 0;
+    }
+
+    .legal-card p,
+    .legal-card li {
+      line-height: 1.8;
+    }
+
+    .legal-card a {
+      color: inherit;
+    }
+
+    .legal-back {
+      display: block;
+      width: fit-content;
+      margin: 45px auto 0;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    @media (max-width: 600px) {
+      .legal-page {
+        padding: 45px 18px 70px;
+      }
+
+      .legal-card {
+        padding: 26px 22px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="header">
+  <a href="index.html#start" class="logo-link">
+    <img src="logo.png" alt="Bibi Kreativwerkstatt Logo">
+  </a>
+
+  <nav>
+    <a href="index.html#shop">Shop</a>
+    <a href="index.html#ueber">Über mich</a>
+    <a href="index.html#kontakt">Kontakt</a>
+  </nav>
+
+  <a href="index.html" class="cart-btn">♡ Zum Shop</a>
+</header>
+
+<main class="legal-page">
+
+  <h1>Datenschutzerklärung</h1>
+
+  <p class="legal-intro">
+    Der Schutz deiner personenbezogenen Daten ist uns wichtig.
+    Hier informieren wir darüber, welche Daten beim Besuch und
+    bei einer Bestellung über unsere Website verarbeitet werden.
+  </p>
+
+  <div class="legal-card">
+    <h2>1. Verantwortliche</h2>
+
+    <p>
+      <strong>Bibi Kreativwerkstatt</strong><br>
+      Inhaberin: Bibiana Michaela Gretler<br>
+      Siedlungsstraße 6/1<br>
+      8572 Bärnbach<br>
+      Österreich
+    </p>
+
+    <p>
+      E-Mail:
+      <a href="mailto:bibikreativwerkstatt@gmail.com">
+        bibikreativwerkstatt@gmail.com
+      </a>
+    </p>
+  </div>
+
+  <div class="legal-card">
+    <h2>2. Verarbeitung bei Bestellungen</h2>
+
+    <p>
+      Wenn du über unseren Shop bestellst, verarbeiten wir insbesondere
+      Name, E-Mail-Adresse, Liefer- und Rechnungsadresse, Land,
+      bestellte Produkte, Bestellnummer, Zahlungsstatus und gegebenenfalls
+      freiwillige Anmerkungen.
+    </p>
+
+    <p>
+      Die Verarbeitung erfolgt zur Abwicklung deiner Bestellung,
+      zur Zahlungsabwicklung, zum Versand, zur Kommunikation rund
+      um die Bestellung sowie zur Erfüllung gesetzlicher
+      Aufbewahrungs- und Nachweispflichten.
+    </p>
+
+    <p>
+      Rechtsgrundlage ist insbesondere Art. 6 Abs. 1 lit. b DSGVO
+      sowie, soweit erforderlich, Art. 6 Abs. 1 lit. c DSGVO.
+    </p>
+  </div>
+
+  <div class="legal-card">
+    <h2>3. Zahlungsabwicklung über Stripe</h2>
+
+    <p>
+      Für die Zahlungsabwicklung verwenden wir Stripe.
+      Beim Start des Bezahlvorgangs werden die für die Abwicklung
+      erforderlichen Bestell-, Kontakt- und Zahlungsdaten an Stripe
+      übermittelt. Die eigentlichen Zahlungsdaten werden von Stripe
+      verarbeitet.
+    </p>
+
+    <p>
+      Je nach Verfügbarkeit können über Stripe unterschiedliche
+      Zahlungsmethoden angeboten werden, etwa Karte, Apple Pay,
+      PayPal, Klarna, EPS, Amazon Pay oder weitere unterstützte
+      Zahlungsarten.
+    </p>
+
+    <p>
+      Anbieter: Stripe Payments Europe, Limited und verbundene
+      Stripe-Unternehmen.
+    </p>
+  </div>
+
+  <div class="legal-card">
+    <h2>4. Bestellbestätigungen über Brevo</h2>
+
+    <p>
+      Für transaktionale E-Mails, insbesondere Bestellbestätigungen,
+      verwenden wir Brevo. Hierfür werden insbesondere E-Mail-Adresse,
+      Name, Bestellnummer, bestellte Produkte und Beträge verarbeitet.
+    </p>
+
+    <p>
+      Diese E-Mails dienen der Abwicklung deiner Bestellung
+      und sind keine Newsletter-Anmeldung.
+    </p>
+  </div>
+
+  <div class="legal-card">
+    <h2>5. Cloudflare Worker</h2>
+
+    <p>
+      Für die technische Verbindung zwischen unserem Shop und Stripe
+      nutzen wir einen Cloudflare Worker. Dabei können technisch
+      notwendige Verbindungsdaten, insbesondere IP-Adresse,
+      Zeitpunkt der Anfrage sowie die für die Erstellung der
+      Stripe-Checkout-Sitzung erforderlichen Bestelldaten verarbeitet werden.
+    </p>
+  </div>
+
+  <div class="legal-card">
+    <h2>6. Hosting über GitHub Pages</h2>
+
+    <p>
+      Unsere Website wird über GitHub Pages bereitgestellt.
+      Beim Aufruf können technisch notwendige Verbindungsdaten
+      wie IP-Adresse, Datum und Uhrzeit der Anfrage, aufgerufene Datei
+      sowie Browser- und Geräteinformationen verarbeitet werden.
+    </p>
+  </div>
+
+  <div class="legal-card">
+    <h2>7. Google Fonts</h2>
+
+    <p>
+      Auf dieser Website werden derzeit Schriftarten über Google Fonts
+      geladen. Dabei kann dein Browser eine Verbindung zu Servern von
+      Google herstellen, wobei insbesondere deine IP-Adresse übermittelt
+      werden kann.
+    </p>
+
+    <p>
+      Wir beabsichtigen, die Schriftarten lokal bereitzustellen,
+      um externe Verbindungen zu Google für die Darstellung der
+      Schriftarten zu vermeiden.
+    </p>
+  </div>
+
+  <div class="legal-card">
+    <h2>8. Warenkorb im Browser</h2>
+
+    <p>
+      Der Inhalt deines Warenkorbs wird lokal in deinem Browser gespeichert,
+      damit deine Auswahl beim Navigieren erhalten bleibt.
+      Hierfür nutzen wir den lokalen Browserspeicher (Local Storage).
+      Diese Information wird nicht zu Werbe- oder Analysezwecken verwendet.
+    </p>
+  </div>
+
+  <div class="legal-card">
+    <h2>9. Kontaktaufnahme</h2>
+
+    <p>
+      Wenn du uns per E-Mail oder über einen verlinkten Social-Media-Kanal
+      kontaktierst, verarbeiten wir die von dir übermittelten Daten
+      zur Bearbeitung deiner Anfrage.
+    </p>
+  </div>
+
+  <div class="legal-card">
+    <h2>10. Speicherdauer</h2>
+
+    <p>
+      Wir speichern personenbezogene Daten nur so lange,
+      wie dies für die jeweiligen Zwecke erforderlich ist.
+      Daten aus Bestellungen und Rechnungen werden darüber hinaus
+      entsprechend den gesetzlichen Aufbewahrungspflichten gespeichert.
+    </p>
+  </div>
+
+  <div class="legal-card">
+    <h2>11. Empfänger und Datenübermittlungen</h2>
+
+    <p>
+      Personenbezogene Daten werden nur weitergegeben,
+      soweit dies für den Betrieb der Website, die Bestellabwicklung,
+      Zahlung, den E-Mail-Versand oder die Erfüllung gesetzlicher
+      Pflichten erforderlich ist.
+    </p>
+
+    <p>
+      Bei einzelnen Dienstleistern kann eine Verarbeitung außerhalb
+      des Europäischen Wirtschaftsraums stattfinden.
+      In diesen Fällen erfolgt die Übermittlung auf Grundlage der
+      jeweils vorgesehenen datenschutzrechtlichen Garantien.
+    </p>
+  </div>
+
+  <div class="legal-card">
+    <h2>12. Deine Rechte</h2>
+
+    <p>
+      Du hast nach Maßgabe der gesetzlichen Voraussetzungen insbesondere
+      das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung
+      der Verarbeitung, Datenübertragbarkeit und Widerspruch.
+    </p>
+
+    <p>
+      Wenn eine Verarbeitung auf deiner Einwilligung beruht,
+      kannst du diese jederzeit mit Wirkung für die Zukunft widerrufen.
+    </p>
+
+    <p>
+      Zur Ausübung deiner Rechte:
+      <a href="mailto:bibikreativwerkstatt@gmail.com">
+        bibikreativwerkstatt@gmail.com
+      </a>
+    </p>
+
+    <p>
+      Darüber hinaus besteht das Recht, eine Beschwerde bei der
+      österreichischen Datenschutzbehörde einzureichen.
+    </p>
+  </div>
+
+  <div class="legal-card">
+    <h2>13. Änderungen dieser Datenschutzerklärung</h2>
+
+    <p>
+      Wir können diese Datenschutzerklärung anpassen,
+      wenn sich unsere Website, die eingesetzten Dienste
+      oder die rechtlichen Anforderungen ändern.
+      Es gilt die jeweils veröffentlichte Fassung.
+    </p>
+  </div>
+
+  <a class="legal-back" href="index.html">
+    ← Zurück zur Bibi Kreativwerkstatt
+  </a>
+
+</main>
+
+<footer>
+  <img src="logo.png" alt="Bibi Kreativwerkstatt">
+
+  <div class="footer-links">
+    <a href="impressum.html">Impressum</a>
+    <a href="datenschutz.html">Datenschutz</a>
+    <a href="index.html">Widerruf</a>
+    <a href="index.html">AGB</a>
+  </div>
+
+  <small>© 2026 Bibi Kreativwerkstatt</small>
+</footer>
+
+</body>
+</html>
