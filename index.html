@@ -82,9 +82,14 @@
   <div class="footer-links">
     <a href="impressum.html">Impressum</a>
     <a href="datenschutz.html">Datenschutz</a>
-    <a href="#">Widerruf</a>
+    <a href="widerruf.html">Widerruf</a>
     <a href="#">AGB</a>
   </div>
+  <div class="footer-withdrawal">
+  <button type="button" id="openWithdrawal">
+    Vertrag widerrufen
+  </button>
+</div>
   <small>© <span id="year"></span> <span data-site="footer.copyright_name">Bibi Kreativwerkstatt</span></small>
 </footer>
 
@@ -168,6 +173,92 @@
     <p>Bestellnummer: <strong id="successOrderNumber"></strong></p>
     <button class="button full" id="closeSuccess">Schließen</button>
   </div>
+</dialog>
+  <dialog id="withdrawalDialog">
+  <button
+    type="button"
+    id="closeWithdrawal"
+    class="close-btn dialog-close"
+    aria-label="Widerrufsformular schließen"
+  >
+    ×
+  </button>
+
+  <p class="script small-script">Widerruf</p>
+  <h2>Vertrag widerrufen</h2>
+
+  <p>
+    Hier kannst du uns deinen Widerruf direkt online übermitteln.
+  </p>
+
+  <form id="withdrawalForm">
+
+    <label>
+      Vor- und Nachname
+      <input
+        type="text"
+        name="name"
+        required
+        autocomplete="name"
+      >
+    </label>
+
+    <label>
+      E-Mail-Adresse
+      <input
+        type="email"
+        name="email"
+        required
+        autocomplete="email"
+      >
+    </label>
+
+    <label>
+      Bestellnummer
+      <input
+        type="text"
+        name="orderNumber"
+        placeholder="z. B. BIBI-20260819-1234"
+      >
+    </label>
+
+    <label>
+      Bestellte Ware
+      <textarea
+        name="products"
+        rows="3"
+        required
+        placeholder="Welche Artikel möchtest du widerrufen?"
+      ></textarea>
+    </label>
+
+    <label>
+      Bestellt am
+      <input
+        type="date"
+        name="orderedAt"
+      >
+    </label>
+
+    <label>
+      Ware erhalten am
+      <input
+        type="date"
+        name="receivedAt"
+      >
+    </label>
+
+    <p class="checkout-status" id="withdrawalStatus" aria-live="polite"></p>
+
+    <button
+      class="button full"
+      type="submit"
+      id="submitWithdrawal"
+    >
+      Widerruf absenden
+    </button>
+
+  </form>
 </dialog>
 <script src="script.js"></script>
 </body>
