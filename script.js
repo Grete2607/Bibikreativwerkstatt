@@ -308,4 +308,108 @@ document.getElementById("year").textContent=new Date().getFullYear();
 loadProducts();
 loadSiteContent();
 
+const withdrawalDialog =
+  document.getElementById("withdrawalDialog");
+
+const openWithdrawal =
+  document.getElementById("openWithdrawal");
+
+const closeWithdrawal =
+  document.getElementById("closeWithdrawal");
+
+if (openWithdrawal && withdrawalDialog) {
+  openWithdrawal.onclick = () => {
+    withdrawalDialog.showModal();
+  };
+}
+
+if (closeWithdrawal && withdrawalDialog) {
+  closeWithdrawal.onclick = () => {
+    withdrawalDialog.close();
+  };
+}
+const withdrawalForm =
+  document.getElementById("withdrawalForm");
+
+if (withdrawalForm) {
+  withdrawalForm.onsubmit = async (event) => {
+    event.preventDefault();
+
+    const status =
+      document.getElementById("withdrawalStatus");
+
+    const submitButton =
+      document.getElementById("submitWithdrawal");
+
+    const formData =
+      new FormData(withdrawalForm);
+
+    const data = {
+      name: formData.get("name") || "",
+      email: formData.get("email") || "",
+      orderNumber: formData.get("orderNumber") || "",
+      products: formData.get("products") || "",
+      orderedAt: formData.get("orderedAt") || "",
+      receivedAt: formData.get("receivedAt") || ""
+    };
+
+    submitButton.disabled = true;
+    submitButton.textContent = "Widerruf wird übermittelt …";
+
+    status.textContent =
+      "Dein Widerruf wird übermittelt …";
+
+    status.className = "checkout-status";
+
+    try {
+      const response = await fetch(
+        `${STRIPE_CHECKOUT_ENDPOINT}/withdrawal`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(data)
+        }
+      );
+
+      const result = await response.json();
+
+      if (!response.ok || !result.ok) {
+        throw new Error(
+          result?.error ||
+          "Der Widerruf konnte nicht übermittelt werden."
+        );
+      }
+
+      status.textContent =
+        `Widerruf erfolgreich übermittelt. Eingegangen: ${result.receivedAt}`;
+
+      status.className =
+        "checkout-status success";
+
+      withdrawalForm.reset();
+
+      submitButton.textContent =
+        "Widerruf übermittelt";
+
+    } catch (error) {
+      console.error(
+        "Widerruf konnte nicht übermittelt werden:",
+        error
+      );
+
+      status.textContent =
+        error?.message ||
+        "Der Widerruf konnte nicht übermittelt werden. Bitte versuche es erneut.";
+
+      status.className =
+        "checkout-status error";
+
+      submitButton.disabled = false;
+      submitButton.textContent =
+        "Widerruf absenden";
+    }
+  };
+}
 handleStripeReturn();
