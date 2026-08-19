@@ -5,67 +5,105 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Impressum | Bibi Kreativwerkstatt</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Great+Vibes&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+ <style>
+  .legal-page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 70px 24px 90px;
+  }
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #fffaf8;
-      color: #333;
-      line-height: 1.7;
+  .legal-page h1 {
+    font-family: "Playfair Display", serif;
+    text-align: center;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    margin: 0 0 50px;
+  }
+
+  .legal-card {
+    background: #fff;
+    border-radius: 24px;
+    padding: 35px 40px;
+    margin-bottom: 24px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+  }
+
+  .legal-card h2 {
+    font-family: "Playfair Display", serif;
+    margin-top: 0;
+  }
+
+  .legal-card p {
+    line-height: 1.8;
+    margin-bottom: 0;
+  }
+
+  .legal-card a {
+    color: inherit;
+  }
+
+  .legal-back {
+    display: block;
+    width: fit-content;
+    margin: 45px auto 0;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  @media (max-width: 600px) {
+    .legal-page {
+      padding: 45px 18px 70px;
     }
 
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 50px 24px;
+    .legal-card {
+      padding: 26px 22px;
     }
-
-    h1 {
-      margin-bottom: 30px;
-    }
-
-    h2 {
-      margin-top: 35px;
-      font-size: 1.2rem;
-    }
-
-    a {
-      color: inherit;
-    }
-
-    .back {
-      display: inline-block;
-      margin-top: 40px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-  </style>
+  }
+</style>
 </head>
 
 <body>
+  <header class="header">
+  <a href="index.html#start" class="logo-link">
+    <img src="logo.png" alt="Bibi Kreativwerkstatt Logo">
+  </a>
 
-  <main class="container">
+  <nav>
+    <a href="index.html#shop">Shop</a>
+    <a href="index.html#ueber">Über mich</a>
+    <a href="index.html#kontakt">Kontakt</a>
+  </nav>
+
+  <a href="index.html" class="cart-btn">♡ Zum Shop</a>
+</header>
+
+  <main class="legal-page">
 
     <h1>Impressum</h1>
 
-    <p>
-      <strong>Bibi Kreativwerkstatt</strong><br>
-      Inhaberin: Bibiana Michaela Gretler<br>
-      Siedlungsstraße 6/1<br>
-      8572 Bärnbach<br>
-      Österreich
-    </p>
+<div class="legal-card">
+  <h2>Bibi Kreativwerkstatt</h2>
+  <p>
+    Inhaberin: Bibiana Michaela Gretler<br>
+    Siedlungsstraße 6/1<br>
+    8572 Bärnbach<br>
+    Österreich
+  </p>
+</div>
 
-    <h2>Kontakt</h2>
-
-    <p>
-      E-Mail:
-      <a href="mailto:bibikreativwerkstatt@gmail.com">
-        bibikreativwerkstatt@gmail.com
-      </a>
-    </p>
-
+<div class="legal-card">
+  <h2>Kontakt</h2>
+  <p>
+    E-Mail:
+    <a href="mailto:bibikreativwerkstatt@gmail.com">
+      bibikreativwerkstatt@gmail.com
+    </a>
+  </p>
+</div>
+<div class="legal-card">
     <h2>Unternehmensinformationen</h2>
 
     <p>
@@ -88,21 +126,36 @@
       und das Bemalen und Verzieren von Holz, Keramik, Porzellan,
       Seide, Textilien, Billets und Wachswaren.
     </p>
+  </div>
 
-    <h2>Anwendbare Rechtsvorschriften</h2>
+  <div class="legal-card">
+  <h2>Anwendbare Rechtsvorschriften</h2>
 
-    <p>
-      Gewerbeordnung (GewO)<br>
-      Abrufbar über das Rechtsinformationssystem des Bundes (RIS).
-    </p>
-
+  <p>
+    Gewerbeordnung (GewO)<br>
+    Abrufbar über das Rechtsinformationssystem des Bundes (RIS).
+  </p>
+</div>
     
 
-    <a class="back" href="index.html">
+   <a class="legal-back" href="index.html">
       ← Zurück zur Bibi Kreativwerkstatt
     </a>
 
   </main>
+<footer>
+  <img src="logo.png" alt="Bibi Kreativwerkstatt">
 
+  <div class="footer-links">
+    <a href="impressum.html">Impressum</a>
+    <a href="index.html">Datenschutz</a>
+    <a href="index.html">Widerruf</a>
+    <a href="index.html">AGB</a>
+  </div>
+
+  <small>
+    © 2026 Bibi Kreativwerkstatt
+  </small>
+</footer>
 </body>
 </html>
