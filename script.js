@@ -382,17 +382,22 @@ if (withdrawalForm) {
         );
       }
 
-      status.textContent =
-        `Widerruf erfolgreich übermittelt. Eingegangen: ${result.receivedAt}`;
-
-      status.className =
-        "checkout-status success";
-
       withdrawalForm.reset();
 
-      submitButton.textContent =
-        "Widerruf übermittelt";
+submitButton.disabled = false;
+submitButton.textContent = "Widerruf absenden";
 
+withdrawalDialog.close();
+
+const withdrawalSuccessDialog =
+  document.getElementById("withdrawalSuccessDialog");
+
+if (
+  withdrawalSuccessDialog &&
+  typeof withdrawalSuccessDialog.showModal === "function"
+) {
+  withdrawalSuccessDialog.showModal();
+}
     } catch (error) {
       console.error(
         "Widerruf konnte nicht übermittelt werden:",
@@ -412,4 +417,17 @@ if (withdrawalForm) {
     }
   };
 }
+
+const closeWithdrawalSuccess =
+  document.getElementById("closeWithdrawalSuccess");
+
+const withdrawalSuccessDialog =
+  document.getElementById("withdrawalSuccessDialog");
+
+if (closeWithdrawalSuccess && withdrawalSuccessDialog) {
+  closeWithdrawalSuccess.onclick = () => {
+    withdrawalSuccessDialog.close();
+  };
+}
+
 handleStripeReturn();
