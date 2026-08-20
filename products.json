@@ -198,5 +198,15 @@
     "badge": "Zeitlos, Feminin",
     "available": true,
     "visible": true
+  },
+  {
+    "id": "ruind,gold Ohrrin.",
+    "name": "Zart & Gold",
+    "price": 17.5,
+    "image": "/media/IMG_8252-1.jpeg",
+    "description": "Ein zeitloses Schmuckstück, das sich wunderbar im Alltag  sowie zu besonderen Anlässen tragen lässt.",
+    "badge": "Zeitlos,Leicht",
+    "available": true,
+    "visible": true
   }
 ]
