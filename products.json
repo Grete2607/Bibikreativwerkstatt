@@ -44,7 +44,7 @@
     "name": "Golden Glam",
     "price": 12.5,
     "image": "/media/image0.png",
-    "description": "schlicht, elegante und ein echter Hingucker",
+    "description": "schlicht, elegant und ein echter Hingucker",
     "badge": "Elegant",
     "available": true,
     "visible": true
@@ -174,7 +174,7 @@
     "name": "Herrzielein",
     "price": 12,
     "image": "/media/IMG_8232-1.jpeg",
-    "description": "Herzchiestecker in drei Farben, bei Bestellabschluss in der Anmerkung die Farbe bitte angeben",
+    "description": "Herzchenstecker in drei Farben, bei Bestellabschluss bitte in der Anmerkung die Farbe angeben",
     "badge": "Liebe",
     "available": true,
     "visible": true
