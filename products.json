@@ -148,5 +148,15 @@
     "badge": "Kleies Unikat",
     "available": true,
     "visible": true
+  },
+  {
+    "id": "hellblaue herzen",
+    "name": "Blue Heart",
+    "price": 15.5,
+    "image": "/media/IMG_8244-1.jpeg",
+    "description": "Hellblaue Herzen treffen auf funkelnde Detail.\n",
+    "badge": "Liebe",
+    "available": true,
+    "visible": true
   }
 ]
