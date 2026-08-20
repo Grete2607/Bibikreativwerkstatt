@@ -158,5 +158,15 @@
     "badge": "Liebe",
     "available": true,
     "visible": true
+  },
+  {
+    "id": "Hexa. Türkis-Gold",
+    "name": "Türkiser Traum",
+    "price": 15.5,
+    "image": "/media/IMG_8225-1.jpeg",
+    "description": "Handgefertigte Ohrringe mit einen besonderen Türkisfarbigen Charakter",
+    "badge": "Blickfang",
+    "available": true,
+    "visible": true
   }
 ]
