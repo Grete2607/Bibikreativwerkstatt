@@ -138,5 +138,15 @@
     "badge": "Ohrringverschluss",
     "available": true,
     "visible": true
+  },
+  {
+    "id": "Salbeigrüne Häk. Ohrringe",
+    "name": "Green Flora",
+    "price": 18.99,
+    "image": "/media/IMG_8224-1.jpeg",
+    "description": "Zartes Salbeigrün trifft auf filigrane Handarbeit.",
+    "badge": "Kleies Unikat",
+    "available": true,
+    "visible": true
   }
 ]
