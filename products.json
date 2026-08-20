@@ -84,8 +84,8 @@
     "name": "Green Leaf",
     "price": 16.5,
     "image": "/media/image1-1.jpeg",
-    "description": "weiße Handgemachte Ohrringe mit filigranen grünen Blüten zum verzaubern",
-    "badge": "Zeitlos",
+    "description": "weiße Handgemachte Ohrringe mit filigranen grünen Blüten zum verzaubern.",
+    "badge": "Blütenzauber",
     "available": true,
     "visible": true
   },
@@ -96,6 +96,46 @@
     "image": "/media/image7.jpeg",
     "description": "Zarte rosafarbene Blüten mit goldene Akzente",
     "badge": "Hingucker",
+    "available": true,
+    "visible": true
+  },
+  {
+    "id": "Häkel, Rosa Ohrringe",
+    "name": "Golden Rose",
+    "price": 18.99,
+    "image": "/media/IMG_8193.jpeg",
+    "description": "Handgehäkelte Ohrringe in Rosa mit einem filigranen goldenen Ohrsteckerverschluss.",
+    "badge": "Verspielt & Zeitlos",
+    "available": true,
+    "visible": true
+  },
+  {
+    "id": "gehäkelt Grün mittel Groß",
+    "name": "Olive Mandala",
+    "price": 18.99,
+    "image": "/media/IMG_8198.jpeg",
+    "description": "Zarte, handgehäkelte Ohrringe in Salbeigrün mit filigranem elmuster.",
+    "badge": "zartes Häkelmuster in Salbeigrün",
+    "available": true,
+    "visible": true
+  },
+  {
+    "id": "Holz Häkel",
+    "name": "Walnussblüte",
+    "price": 17.99,
+    "image": "/media/IMG_8192.jpeg",
+    "description": "Mit edlem Walnussholz und einem zarten, handgehäkelten Mandala-Muster",
+    "badge": "Leicht & angenehm zu tragen",
+    "available": true,
+    "visible": true
+  },
+  {
+    "id": "Silikon-Ohrmuttern -  Extra Halt!",
+    "name": "Ohrstecker pro Paar",
+    "price": 0.4,
+    "image": "/media/IMG_8204.jpg",
+    "description": "Silikon Ohrmuttern ",
+    "badge": "Ohrringverschluss",
     "available": true,
     "visible": true
   }
