@@ -287,3 +287,37 @@ select{width:100%;margin-top:6px;padding:12px;border:1px solid var(--line);borde
   font-size: 0.9rem;
   box-shadow: none;
 }
+/* Geschenk-Icon im gleichen feinen Stil wie die anderen Benefit-Symbole */
+.benefits > div:nth-child(4) > span {
+  font-size: 0;
+  position: relative;
+  display: inline-block;
+  width: 24px;
+  height: 22px;
+  margin-bottom: 6px;
+}
+
+/* Geschenkbox */
+.benefits > div:nth-child(4) > span::before {
+  content: "";
+  position: absolute;
+  left: 3px;
+  bottom: 0;
+  width: 18px;
+  height: 14px;
+  border: 2px solid currentColor;
+  border-radius: 2px;
+  box-sizing: border-box;
+}
+
+/* Schleife + Mittelband */
+.benefits > div:nth-child(4) > span::after {
+  content: "♢";
+  position: absolute;
+  left: 50%;
+  top: -8px;
+  transform: translateX(-50%);
+  font-size: 18px;
+  line-height: 1;
+  color: currentColor;
+}
