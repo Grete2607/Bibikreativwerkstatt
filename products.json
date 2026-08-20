@@ -188,5 +188,15 @@
     "badge": "Blumenliebe",
     "available": true,
     "visible": true
+  },
+  {
+    "id": "Hex. classic",
+    "name": "Golden Charms",
+    "price": 12.99,
+    "image": "/media/IMG_8234-1.jpeg",
+    "description": "Zarte Blüten treffen auf edle goldene Akzente.",
+    "badge": "Zeitlos, Feminin",
+    "available": true,
+    "visible": true
   }
 ]
