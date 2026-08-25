@@ -72,7 +72,7 @@
   {
     "id": "Blumen Schleifen Ohrringe",
     "name": "Blue Daisy",
-    "price": 14.969,
+    "price": 14.99,
     "image": "/media/image0 (1).png",
     "description": "Hellblaue Blumenohrringe mit eleganten goldenen Schleife",
     "badge": "Verspielt",
@@ -92,7 +92,7 @@
   {
     "id": "Hexagon mit rosa Blume mod.",
     "name": "Rosy Bloom",
-    "price": 17.99,
+    "price": 16.99,
     "image": "/media/image7.jpeg",
     "description": "Zarte rosafarbene Blüten mit goldene Akzente",
     "badge": "Hingucker",
@@ -102,7 +102,7 @@
   {
     "id": "Häkel, Rosa Ohrringe",
     "name": "Golden Rose",
-    "price": 18.99,
+    "price": 16.99,
     "image": "/media/IMG_8193.jpeg",
     "description": "Handgehäkelte Ohrringe in Rosa mit einem filigranen goldenen Ohrsteckerverschluss.",
     "badge": "Verspielt & Zeitlos",
@@ -112,7 +112,7 @@
   {
     "id": "gehäkelt Grün mittel Groß",
     "name": "Olive Mandala",
-    "price": 18.99,
+    "price": 16.99,
     "image": "/media/IMG_8198.jpeg",
     "description": "Zarte Ohrringe in Salbeigrün mit filigranem Handgehäkeltem Muster.",
     "badge": "zartes Häkelmuster in Salbeigrün",
@@ -122,7 +122,7 @@
   {
     "id": "Holz Häkel",
     "name": "Walnussblüte",
-    "price": 17.99,
+    "price": 13.99,
     "image": "/media/IMG_8192.jpeg",
     "description": "Mit edlem Walnussholz und einem zarten, handgehäkelten Mandala-Muster",
     "badge": "Leicht & angenehm zu tragen",
@@ -132,7 +132,7 @@
   {
     "id": "Silikon-Ohrmuttern -  Extra Halt!",
     "name": "Ohrstecker pro Paar",
-    "price": 0.4,
+    "price": 0.2,
     "image": "/media/IMG_8261.jpeg",
     "description": "Silikon Ohrmuttern ",
     "badge": "Ohrringverschluss",
@@ -142,7 +142,7 @@
   {
     "id": "Salbeigrüne Häk. Ohrringe",
     "name": "Green Flora",
-    "price": 18.99,
+    "price": 15.99,
     "image": "/media/IMG_8224-1.jpeg",
     "description": "Zartes Salbeigrün trifft auf filigrane Handarbeit.",
     "badge": "Kleies Unikat",
@@ -152,7 +152,7 @@
   {
     "id": "hellblaue herzen",
     "name": "Blue Heart",
-    "price": 15.5,
+    "price": 13.5,
     "image": "/media/IMG_8244-1.jpeg",
     "description": "Hellblaue Herzen treffen auf funkelnde Detail.\n",
     "badge": "Liebe",
@@ -162,7 +162,7 @@
   {
     "id": "Hexa. Türkis-Gold",
     "name": "Türkiser Traum",
-    "price": 15.5,
+    "price": 14.5,
     "image": "/media/IMG_8225-1.jpeg",
     "description": "Handgefertigte Ohrringe mit einen besonderen Türkisfarbigen Charakter",
     "badge": "Blickfang",
@@ -182,7 +182,7 @@
   {
     "id": "BlütenOhrringe",
     "name": "Rosa-Blumenliebe",
-    "price": 16.5,
+    "price": 14.5,
     "image": "/media/IMG_8245.jpeg",
     "description": "Zarte Blumenohrringe in sanften Pastellton, veredelt mit goldenen Akzenten.",
     "badge": "Blumenliebe",
@@ -202,7 +202,7 @@
   {
     "id": "ruind,gold Ohrrin.",
     "name": "Zart & Gold",
-    "price": 17.5,
+    "price": 14.5,
     "image": "/media/IMG_8252-1.jpeg",
     "description": "Ein zeitloses Schmuckstück, das sich wunderbar im Alltag  sowie zu besonderen Anlässen tragen lässt.",
     "badge": "Zeitlos,Leicht",
