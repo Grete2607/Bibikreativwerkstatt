@@ -615,3 +615,22 @@ if (closeWithdrawalSuccess && withdrawalSuccessDialog) {
 }
 
 handleStripeReturn();
+
+window.addEventListener("pageshow", () => {
+  const submitButton =
+    document.getElementById("submitOrderButton");
+
+  const status =
+    document.getElementById("checkoutStatus");
+
+  if (submitButton) {
+    submitButton.disabled = false;
+    submitButton.textContent =
+      "Zahlungspflichtig bestellen";
+  }
+
+  if (status) {
+    status.textContent = "";
+    status.className = "checkout-status";
+  }
+});
