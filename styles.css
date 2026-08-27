@@ -441,7 +441,7 @@ body::before {
   background-position: top center;
   background-size: 100% auto;
 
-  opacity: 0.14;
+  opacity: 5.14;
   pointer-events: none;
   z-index: 0;
 }
