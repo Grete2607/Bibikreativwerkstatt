@@ -449,7 +449,7 @@ body::before {
   background-repeat: no-repeat;
   background-position: top center;
   background-size: 100% auto;
-  opacity: 5.14;
+  opacity: 3.14;
   pointer-events: none;
 
   /* hinter dem gesamten Seiteninhalt */
