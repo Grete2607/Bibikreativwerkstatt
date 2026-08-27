@@ -6,5 +6,12 @@
     "valid_from": "2026-08-27",
     "valid_until": "2026-09-30",
     "label": "10 % Rabatt"
+  },
+  {
+    "code": "FAMILIE40",
+    "percent": 38,
+    "active": true,
+    "valid_from": "2026-08-27",
+    "valid_until": "2043-07-26"
   }
 ]
