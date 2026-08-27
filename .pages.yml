@@ -163,6 +163,14 @@ content:
         type: boolean
         default: true
 
+      - name: valid_from
+        label: Gültig ab
+        type: date
+
+      - name: valid_until
+        label: Gültig bis
+        type: date
+
       - name: label
         label: Beschreibung
         type: string
