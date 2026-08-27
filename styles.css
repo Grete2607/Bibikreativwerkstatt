@@ -206,18 +206,31 @@ input,textarea{width:100%;margin-top:6px;padding:12px;border:1px solid var(--lin
     gap:12px;
   }
 
-  .product-bottom{
-    flex-direction:column;
-    align-items:stretch;
-    gap:8px;
-  }
+.product-card{
+  display:flex;
+  flex-direction:column;
+  height:100%;
+}
 
-  .add{
-    width:100%;
-    padding:8px 6px;
-    font-size:12px;
-    text-align:center;
-  }
+.product-card .product-body{
+  display:flex;
+  flex-direction:column;
+  flex:1;
+}
+
+.product-bottom{
+  margin-top:auto;
+  flex-direction:column;
+  align-items:stretch;
+  gap:8px;
+}
+
+.add{
+  width:100%;
+  padding:8px 6px;
+  font-size:12px;
+  text-align:center;
+}
 
   .shop{padding:70px 18px}
   .section-title h2{font-size:36px}
