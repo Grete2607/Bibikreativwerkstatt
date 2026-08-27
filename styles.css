@@ -606,3 +606,49 @@ body::before {
 .gallery-dot.active {
   background: var(--purple);
 }
+/* Große Produktbild-Ansicht */
+.image-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(45, 35, 52, 0.88);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 24px;
+}
+
+.image-lightbox[hidden] {
+  display: none;
+}
+
+.image-lightbox img {
+  max-width: 92vw;
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0,0,0,.28);
+}
+
+.image-lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  z-index: 1001;
+
+  width: 44px;
+  height: 44px;
+
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255,255,255,.92);
+  color: var(--purple);
+
+  font-size: 28px;
+  line-height: 1;
+}
