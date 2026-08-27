@@ -206,7 +206,28 @@ document.querySelectorAll(".gallery-arrow").forEach(button => {
     });
   };
 });
-  
+ document.querySelectorAll(".gallery-image").forEach(image => {
+  image.onclick = () => {
+    const lightbox = document.getElementById("imageLightbox");
+    const lightboxPhoto = document.getElementById("imageLightboxPhoto");
+
+    if (!lightbox || !lightboxPhoto) return;
+
+    lightboxPhoto.src = image.src;
+    lightboxPhoto.alt = image.alt;
+
+    lightbox.hidden = false;
+  };
+}); 
+}
+
+const imageLightbox = document.getElementById("imageLightbox");
+const closeImageLightbox = document.getElementById("closeImageLightbox");
+
+if (closeImageLightbox && imageLightbox) {
+  closeImageLightbox.onclick = () => {
+    imageLightbox.hidden = true;
+  };
 }
 
 function addToCart(id){
