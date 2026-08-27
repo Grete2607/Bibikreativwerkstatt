@@ -50,7 +50,13 @@ nav a:hover{color:var(--purple)}
   display:grid;grid-template-columns:1fr 1fr;
   gap:70px;align-items:center
 }
-.hero-text{padding:30px 0}
+.hero-text{
+  padding:30px 0;
+  min-height:430px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
 .script{
   margin:0 0 6px;
   font-family:"Great Vibes",cursive;
@@ -198,6 +204,9 @@ input,textarea{width:100%;margin-top:6px;padding:12px;border:1px solid var(--lin
   .logo-link img{height:64px}
   .cart-btn{justify-self:end}
   .hero{padding:45px 0 65px}
+  .hero-text{
+  min-height:0;
+}
   .script{font-size:47px}
   .hero h1{font-size:48px}
 
