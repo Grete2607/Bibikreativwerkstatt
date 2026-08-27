@@ -302,3 +302,67 @@ select{width:100%;margin-top:6px;padding:12px;border:1px solid var(--line);borde
   stroke-linecap: round;
   stroke-linejoin: round;
 }
+
+
+/* Rabattcode im Warenkorb */
+.discount-box {
+  margin: 16px 0;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: #fffdfd;
+}
+
+.discount-box label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.discount-row {
+  display: flex;
+  gap: 8px;
+  align-items: stretch;
+}
+
+.discount-row input {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+  padding: 11px 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  font: inherit;
+  text-transform: uppercase;
+}
+
+.discount-button {
+  border: 0;
+  border-radius: 10px;
+  padding: 0 14px;
+  background: var(--pink);
+  color: white;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.discount-button:hover {
+  opacity: 0.9;
+}
+
+.discount-status {
+  min-height: 18px;
+  margin: 7px 0 0;
+  font-size: 0.82rem;
+  line-height: 1.4;
+}
+
+.discount-status.success {
+  color: #4f7a5a;
+}
+
+.discount-status.error {
+  color: #a33f55;
+}
