@@ -217,6 +217,7 @@ document.querySelectorAll(".gallery-arrow").forEach(button => {
     lightboxPhoto.alt = image.alt;
 
     lightbox.hidden = false;
+lightbox.style.display = "flex";
   };
 }); 
 }
@@ -228,7 +229,7 @@ if (closeImageLightbox && imageLightbox) {
   closeImageLightbox.onclick = (event) => {
     event.preventDefault();
     event.stopPropagation();
-    imageLightbox.hidden = true;
+   imageLightbox.style.display = "none";
   };
 }
 
