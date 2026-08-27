@@ -200,7 +200,10 @@ input,textarea{width:100%;margin-top:6px;padding:12px;border:1px solid var(--lin
   .hero{padding:45px 0 65px}
   .script{font-size:47px}
   .hero h1{font-size:48px}
-  .product-grid{grid-template-columns:1fr}
+  .product-grid{
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:12px;
+}
   .shop{padding:70px 18px}
   .section-title h2{font-size:36px}
   .about{padding:70px 0}
