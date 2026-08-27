@@ -66,6 +66,10 @@ const overlay = document.getElementById("overlay");
 const cartItems = document.getElementById("cartItems");
 const cartCount = document.getElementById("cartCount");
 const cartTotal = document.getElementById("cartTotal");
+const cartSubtotal = document.getElementById("cartSubtotal");
+const discountSummary = document.getElementById("discountSummary");
+const discountLabel = document.getElementById("discountLabel");
+const discountAmount = document.getElementById("discountAmount");
 const checkoutDialog = document.getElementById("checkoutDialog");
 
 function escapeHtml(value = ""){
@@ -137,10 +141,30 @@ function cleanupCart(){
 function removeFromCart(id){cart = cart.filter(i => i.id !== id); save(); renderCart()}
 function renderCart(){
   cartCount.textContent = cart.reduce((s,i)=>s+i.qty,0);
-  if(!cart.length){
-    cartItems.innerHTML='<div class="cart-empty">Dein Warenkorb ist noch leer.<br>Such dir dein Lieblingspaar aus ♡</div>';
-    cartTotal.textContent=money(0); return;
+ if(!cart.length){
+  cartItems.innerHTML =
+    '<div class="cart-empty">Dein Warenkorb ist noch leer.<br>Such dir dein Lieblingspaar aus ♡</div>';
+
+  cartSubtotal.textContent = money(0);
+  cartTotal.textContent = money(0);
+
+  discountSummary.hidden = true;
+  discountLabel.textContent = "Rabatt";
+  discountAmount.textContent = "− € 0,00";
+
+  appliedDiscount = null;
+
+  if (discountInput) {
+    discountInput.value = "";
   }
+
+  if (discountStatus) {
+    discountStatus.textContent = "";
+    discountStatus.className = "discount-status";
+  }
+
+  return;
+}
   cartItems.innerHTML = cart.map(i => {
     const p = products.find(p=>p.id===i.id);
     if(!p) return "";
@@ -155,11 +179,27 @@ function renderCart(){
     : sum;
 }, 0);
 
-const finalTotal = appliedDiscount
-  ? subtotal * (1 - appliedDiscount.percent / 100)
-  : subtotal;
+const discountValue = appliedDiscount
+  ? subtotal * (appliedDiscount.percent / 100)
+  : 0;
 
+const finalTotal = subtotal - discountValue;
+
+cartSubtotal.textContent = money(subtotal);
 cartTotal.textContent = money(finalTotal);
+
+if (appliedDiscount) {
+  discountSummary.hidden = false;
+  discountLabel.textContent =
+    `Rabatt ${appliedDiscount.code} (${appliedDiscount.percent} %)`;
+
+  discountAmount.textContent =
+    `− ${money(discountValue)}`;
+} else {
+  discountSummary.hidden = true;
+  discountLabel.textContent = "Rabatt";
+  discountAmount.textContent = "− € 0,00";
+}
 }
 
 let appliedDiscount = null;
