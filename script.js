@@ -206,20 +206,47 @@ document.querySelectorAll(".gallery-arrow").forEach(button => {
     });
   };
 });
- document.querySelectorAll(".gallery-image").forEach(image => {
+
+document.querySelectorAll(".gallery-image").forEach(image => {
   image.onclick = () => {
     const lightbox = document.getElementById("imageLightbox");
     const lightboxPhoto = document.getElementById("imageLightboxPhoto");
+    const lightboxPrev = document.getElementById("lightboxPrev");
+    const lightboxNext = document.getElementById("lightboxNext");
 
-    if (!lightbox || !lightboxPhoto) return;
+    const gallery = image.closest(".product-gallery");
+    const id = gallery?.dataset.gallery;
+    const product = products.find(p => p.id === id);
 
-    lightboxPhoto.src = image.src;
+    if (!lightbox || !lightboxPhoto || !product) return;
+
+    const productImages = [
+      product.image,
+      ...(Array.isArray(product.images) ? product.images : [])
+    ].filter(Boolean);
+
+    const currentIndex = Number(image.dataset.index || 0);
+
+    lightboxPhoto.src = productImages[currentIndex];
     lightboxPhoto.alt = image.alt;
 
+    lightbox.dataset.productId = id;
+    lightbox.dataset.index = String(currentIndex);
+
+    const hasMultipleImages = productImages.length > 1;
+
+    if (lightboxPrev) {
+      lightboxPrev.hidden = !hasMultipleImages;
+    }
+
+    if (lightboxNext) {
+      lightboxNext.hidden = !hasMultipleImages;
+    }
+
     lightbox.hidden = false;
-lightbox.style.display = "flex";
+    lightbox.style.display = "flex";
   };
-}); 
+});
 }
 
 const imageLightbox = document.getElementById("imageLightbox");
@@ -230,6 +257,51 @@ if (closeImageLightbox && imageLightbox) {
     event.preventDefault();
     event.stopPropagation();
    imageLightbox.style.display = "none";
+  };
+}
+
+const lightboxPrev = document.getElementById("lightboxPrev");
+const lightboxNext = document.getElementById("lightboxNext");
+const lightboxPhoto = document.getElementById("imageLightboxPhoto");
+
+function changeLightboxImage(direction) {
+  if (!imageLightbox || !lightboxPhoto) return;
+
+  const id = imageLightbox.dataset.productId;
+  const product = products.find(p => p.id === id);
+
+  if (!product) return;
+
+  const productImages = [
+    product.image,
+    ...(Array.isArray(product.images) ? product.images : [])
+  ].filter(Boolean);
+
+  if (productImages.length <= 1) return;
+
+  let index = Number(imageLightbox.dataset.index || 0);
+
+  index =
+    (index + direction + productImages.length) %
+    productImages.length;
+
+  lightboxPhoto.src = productImages[index];
+  imageLightbox.dataset.index = String(index);
+}
+
+if (lightboxPrev) {
+  lightboxPrev.onclick = (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    changeLightboxImage(-1);
+  };
+}
+
+if (lightboxNext) {
+  lightboxNext.onclick = (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    changeLightboxImage(1);
   };
 }
 
