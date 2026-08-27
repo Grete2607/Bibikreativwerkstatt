@@ -461,6 +461,6 @@ body::before {
     background-size: 100% auto;
     background-position: top center;
     background-repeat: no-repeat;
-    opacity: 1.00;
+    opacity: 0.25;
   }
 }
