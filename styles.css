@@ -688,3 +688,22 @@ body::before {
 .image-lightbox-next {
   right: calc(50% - 500px);
 }
+@media (max-width: 768px) {
+  .image-lightbox-arrow {
+    width: 36px;
+    height: 36px;
+    background: rgba(255,255,255,.45);
+    border: 1px solid rgba(255,255,255,.25);
+    box-shadow: none;
+    font-size: 26px;
+    color: var(--purple);
+  }
+
+  .image-lightbox-prev {
+    left: 8px;
+  }
+
+  .image-lightbox-next {
+    right: 8px;
+  }
+}
