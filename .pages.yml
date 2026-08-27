@@ -126,6 +126,10 @@ content:
         label: Produktfoto
         type: image
         required: true
+      - name: images
+        label: Weitere Produktbilder
+        type: image
+        list: true
       - name: description
         label: Beschreibung
         type: text
