@@ -225,7 +225,9 @@ const imageLightbox = document.getElementById("imageLightbox");
 const closeImageLightbox = document.getElementById("closeImageLightbox");
 
 if (closeImageLightbox && imageLightbox) {
-  closeImageLightbox.onclick = () => {
+  closeImageLightbox.onclick = (event) => {
+    event.preventDefault();
+    event.stopPropagation();
     imageLightbox.hidden = true;
   };
 }
