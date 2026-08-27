@@ -368,3 +368,43 @@ select{width:100%;margin-top:6px;padding:12px;border:1px solid var(--line);borde
 .discount-status.error {
   color: #a33f55;
 }
+/* Warenkorb – Zusammenfassung */
+.cart-summary {
+  margin-bottom: 14px;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 6px 0;
+  font-size: 0.9rem;
+}
+
+.summary-row strong {
+  font-weight: 600;
+}
+
+.discount-summary {
+  color: #7650a3;
+}
+
+.summary-row.total {
+  margin-top: 5px;
+  padding-top: 10px;
+  border-top: 1px solid var(--line);
+  font-size: 1rem;
+}
+
+/* Button „Code einlösen“ */
+.discount-button {
+  background: #7650a3;
+  color: #fff;
+  border: 1px solid #7650a3;
+}
+
+.discount-button:hover {
+  background: #68458f;
+  border-color: #68458f;
+}
