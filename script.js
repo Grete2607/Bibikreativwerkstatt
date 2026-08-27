@@ -206,6 +206,7 @@ let appliedDiscount = null;
 
 const discountInput = document.getElementById("discountCode");
 const applyDiscountButton = document.getElementById("applyDiscount");
+const removeDiscountButton = document.getElementById("removeDiscount");
 const discountStatus = document.getElementById("discountStatus");
 
 if (applyDiscountButton) {
@@ -294,6 +295,7 @@ if (applyDiscountButton) {
       };
 
       discountInput.value = code;
+      removeDiscountButton.hidden = false;
 
       discountStatus.textContent =
         `${percent} % Rabatt wurden angewendet.`;
@@ -314,7 +316,24 @@ if (applyDiscountButton) {
     }
   };
 }
+if (removeDiscountButton) {
+  removeDiscountButton.onclick = () => {
+    appliedDiscount = null;
 
+    if (discountInput) {
+      discountInput.value = "";
+    }
+
+    if (discountStatus) {
+      discountStatus.textContent = "";
+      discountStatus.className = "discount-status";
+    }
+
+    removeDiscountButton.hidden = true;
+
+    renderCart();
+  };
+}
 function openCart(){cartDrawer.classList.add("open");overlay.classList.add("open")}
 function closeCart(){cartDrawer.classList.remove("open");overlay.classList.remove("open")}
 document.getElementById("openCart").onclick=openCart;
