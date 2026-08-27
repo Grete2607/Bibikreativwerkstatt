@@ -455,3 +455,11 @@ body::before {
   /* hinter dem gesamten Seiteninhalt */
   z-index: -1;
 }
+/* Blumenrahmen auf Handys dezenter */
+@media (max-width: 768px) {
+  body::before {
+    background-size: 180% auto;
+    background-position: top center;
+    opacity: 1.00;
+  }
+}
