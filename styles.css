@@ -439,7 +439,7 @@ body::before {
   background-repeat: no-repeat;
   background-position: top center;
   background-size: 100% auto;
-  opacity: 0.25;
+  opacity: 5.25;
   pointer-events: none;
   z-index: 0;
 }
