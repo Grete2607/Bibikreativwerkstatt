@@ -4,9 +4,6 @@
     "name": "Zitronenliebe",
     "price": 14.5,
     "image": "/media/image9.jpeg",
-    "images": [
-      "/media/il_600x600.7079815674_n535.webp"
-    ],
     "description": "Fröhliche Zitronen mit weißen Blüten.",
     "badge": "Sommerliebling",
     "available": true,
