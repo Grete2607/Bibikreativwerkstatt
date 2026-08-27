@@ -116,11 +116,45 @@
     <button id="closeCart" class="close-btn">×</button>
   </div>
   <div id="cartItems" class="cart-items"></div>
-  <div class="cart-footer">
-    <div class="total"><span>Gesamt</span><strong id="cartTotal">€ 0,00</strong></div>
-    <button id="checkoutButton" class="button full">Bestellung vorbereiten</button>
-    <small>Die Bestellung wird direkt über die Website übermittelt.</small>
+ <div class="cart-footer">
+
+  <div class="total">
+    <span>Gesamt</span>
+    <strong id="cartTotal">€ 0,00</strong>
   </div>
+
+  <div class="discount-box">
+    <label for="discountCode">Rabattcode</label>
+
+    <div class="discount-row">
+      <input
+        type="text"
+        id="discountCode"
+        placeholder="z. B. BIBI10"
+        autocomplete="off"
+      >
+
+      <button
+        type="button"
+        id="applyDiscount"
+        class="discount-button"
+      >
+        Anwenden
+      </button>
+    </div>
+
+    <p id="discountStatus" class="discount-status"></p>
+  </div>
+
+  <button id="checkoutButton" class="button full">
+    Bestellung vorbereiten
+  </button>
+
+  <small>
+    Die Bestellung wird direkt über die Website übermittelt.
+  </small>
+
+</div>
 </aside>
 
 <dialog id="checkoutDialog">
