@@ -118,10 +118,22 @@
   <div id="cartItems" class="cart-items"></div>
  <div class="cart-footer">
 
-  <div class="total">
+ <div class="cart-summary">
+  <div class="summary-row">
+    <span>Zwischensumme</span>
+    <strong id="cartSubtotal">€ 0,00</strong>
+  </div>
+
+  <div class="summary-row discount-summary" id="discountSummary" hidden>
+    <span id="discountLabel">Rabatt</span>
+    <strong id="discountAmount">− € 0,00</strong>
+  </div>
+
+  <div class="summary-row total">
     <span>Gesamt</span>
     <strong id="cartTotal">€ 0,00</strong>
   </div>
+</div>
 
   <div class="discount-box">
     <label for="discountCode">Rabattcode</label>
