@@ -430,23 +430,28 @@ select{width:100%;margin-top:6px;padding:12px;border:1px solid var(--line);borde
 .discount-remove-button[hidden] {
   display: none !important;
 }
-/* Blumenrahmen im Hintergrund */
+/* Blumen wirklich hinter der gesamten Homepage */
+html {
+  background: #fff;
+}
+
+body {
+  position: relative;
+  isolation: isolate;
+  background: transparent;
+}
+
 body::before {
   content: "";
   position: fixed;
   inset: 0;
-
   background-image: url("/media/blumen-hintergrund.png");
   background-repeat: no-repeat;
   background-position: top center;
   background-size: 100% auto;
-
-  opacity: 5.14;
+  opacity: 0.12;
   pointer-events: none;
-  z-index: 0;
-}
 
-/* Weißer Seitenhintergrund */
-body {
-  background-color: #fff;
+  /* hinter dem gesamten Seiteninhalt */
+  z-index: -1;
 }
