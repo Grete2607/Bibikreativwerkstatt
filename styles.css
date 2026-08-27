@@ -430,23 +430,25 @@ select{width:100%;margin-top:6px;padding:12px;border:1px solid var(--line);borde
 .discount-remove-button[hidden] {
   display: none !important;
 }
-/* Blumenrahmen im Hintergrund */
+/* Dezenter Blumenrahmen im Hintergrund */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
-
   background-image: url("/media/blumen-hintergrund.png");
   background-repeat: no-repeat;
   background-position: top center;
   background-size: 100% auto;
-
-  opacity: 0.14;
+  opacity: 5.25;
   pointer-events: none;
   z-index: 0;
 }
 
-/* Weißer Seitenhintergrund */
-body {
-  background-color: #fff;
+header,
+main,
+footer,
+.cart,
+dialog {
+  position: relative;
+  z-index: 1;
 }
