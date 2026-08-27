@@ -682,9 +682,9 @@ body::before {
 }
 
 .image-lightbox-prev {
-  left: calc(50% - 420px);
+  left: calc(50% - 500px);
 }
 
 .image-lightbox-next {
-  right: calc(50% - 420px);
+  right: calc(50% - 500px);
 }
