@@ -260,6 +260,14 @@ if (closeImageLightbox && imageLightbox) {
   };
 }
 
+if (imageLightbox) {
+  imageLightbox.onclick = (event) => {
+    if (event.target === imageLightbox) {
+      imageLightbox.style.display = "none";
+    }
+  };
+}
+
 const lightboxPrev = document.getElementById("lightboxPrev");
 const lightboxNext = document.getElementById("lightboxNext");
 const lightboxPhoto = document.getElementById("imageLightboxPhoto");
