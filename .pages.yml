@@ -140,3 +140,29 @@ content:
         label: Im Shop anzeigen
         type: boolean
         default: true
+
+  - name: discounts
+    label: Rabattcodes
+    type: file
+    path: discounts.json
+    format: json
+    list: true
+    fields:
+      - name: code
+        label: Rabattcode
+        type: string
+        required: true
+
+      - name: percent
+        label: Rabatt in Prozent
+        type: number
+        required: true
+
+      - name: active
+        label: Aktiv
+        type: boolean
+        default: true
+
+      - name: label
+        label: Beschreibung
+        type: string
