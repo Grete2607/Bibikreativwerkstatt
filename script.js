@@ -100,12 +100,48 @@ async function loadProducts(){
 
 function renderProducts(){
   const visible = products.filter(p => p.visible !== false);
-  grid.innerHTML = visible.map(p => `
+ grid.innerHTML = visible.map(p => {
+  const productImages = [
+    p.image,
+    ...(Array.isArray(p.images) ? p.images : [])
+  ].filter(Boolean);
+
+  return `
     <article class="product-card ${p.available === false ? "sold-out" : ""}">
-      <div class="product-img">
-        <img src="${p.image}" alt="${escapeHtml(p.name)}">
-        <span class="badge">${p.available === false ? "Ausverkauft" : escapeHtml(p.badge || "Handmade")}</span>
-      </div>
+<div class="product-img product-gallery" data-gallery="${escapeHtml(p.id)}">
+  <img
+    src="${productImages[0]}"
+    alt="${escapeHtml(p.name)}"
+    class="gallery-image"
+    data-index="0"
+  >
+
+  <span class="badge">
+    ${p.available === false ? "Ausverkauft" : escapeHtml(p.badge || "Handmade")}
+  </span>
+
+  ${productImages.length > 1 ? `
+    <button
+      type="button"
+      class="gallery-arrow gallery-prev"
+      data-id="${escapeHtml(p.id)}"
+      aria-label="Vorheriges Bild"
+    >‹</button>
+
+    <button
+      type="button"
+      class="gallery-arrow gallery-next"
+      data-id="${escapeHtml(p.id)}"
+      aria-label="Nächstes Bild"
+    >›</button>
+
+    <div class="gallery-dots">
+      ${productImages.map((_, index) => `
+        <span class="gallery-dot ${index === 0 ? "active" : ""}"></span>
+      `).join("")}
+    </div>
+  ` : ""}
+</div>
       <div class="product-body">
         <h3>${escapeHtml(p.name)}</h3>
         <p>${escapeHtml(p.description || "")}</p>
@@ -115,10 +151,60 @@ function renderProducts(){
             ? '<button class="add disabled" disabled>Ausverkauft</button>'
             : `<button class="add" data-id="${escapeHtml(p.id)}">+ Warenkorb</button>`}
         </div>
-      </div>
-    </article>`).join("");
+           </div>
+    </article>
+  `;
+}).join("");
 
-  document.querySelectorAll(".add[data-id]").forEach(b => b.onclick = () => addToCart(b.dataset.id));
+document.querySelectorAll(".add[data-id]").forEach(
+  b => b.onclick = () => addToCart(b.dataset.id)
+);
+
+document.querySelectorAll(".gallery-arrow").forEach(button => {
+  button.onclick = () => {
+    const id = button.dataset.id;
+    const product = products.find(p => p.id === id);
+
+    if (!product) return;
+
+    const productImages = [
+      product.image,
+      ...(Array.isArray(product.images) ? product.images : [])
+    ].filter(Boolean);
+
+    if (productImages.length <= 1) return;
+
+    const gallery = document.querySelector(
+      `.product-gallery[data-gallery="${CSS.escape(id)}"]`
+    );
+
+    if (!gallery) return;
+
+    const image = gallery.querySelector(".gallery-image");
+    const dots = gallery.querySelectorAll(".gallery-dot");
+
+    let index = Number(image.dataset.index || 0);
+
+    if (button.classList.contains("gallery-next")) {
+      index = (index + 1) % productImages.length;
+    } else {
+      index =
+        (index - 1 + productImages.length) %
+        productImages.length;
+    }
+
+    image.src = productImages[index];
+    image.dataset.index = String(index);
+
+    dots.forEach((dot, dotIndex) => {
+      dot.classList.toggle(
+        "active",
+        dotIndex === index
+      );
+    });
+  };
+});
+  
 }
 
 function addToCart(id){
