@@ -3,6 +3,8 @@
     "code": "BIBI10",
     "percent": 10,
     "active": true,
+    "valid_from": "2026-08-27",
+    "valid_until": "2026-09-30",
     "label": "10 % Rabatt"
   }
 ]
