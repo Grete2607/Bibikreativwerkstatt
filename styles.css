@@ -231,6 +231,29 @@ input,textarea{width:100%;margin-top:6px;padding:12px;border:1px solid var(--lin
   font-size:12px;
   text-align:center;
 }
+  
+  .gallery-arrow {
+  width: 28px;
+  height: 28px;
+  font-size: 21px;
+}
+
+.gallery-prev {
+  left: 6px;
+}
+
+.gallery-next {
+  right: 6px;
+}
+
+.gallery-dots {
+  bottom: 6px;
+}
+
+.gallery-dot {
+  width: 6px;
+  height: 6px;
+}
 
   .shop{padding:70px 18px}
   .section-title h2{font-size:36px}
