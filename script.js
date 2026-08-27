@@ -147,11 +147,134 @@ function renderCart(){
     return `<div class="cart-item"><img src="${p.image}" alt="${escapeHtml(p.name)}"><div><h4>${escapeHtml(p.name)}</h4><small>${i.qty} × ${money(Number(p.price)||0)}</small></div><button class="remove" data-id="${escapeHtml(p.id)}">×</button></div>`;
   }).join("");
   document.querySelectorAll(".remove").forEach(b=>b.onclick=()=>removeFromCart(b.dataset.id));
-  cartTotal.textContent = money(cart.reduce((s,i)=>{
-    const p=products.find(p=>p.id===i.id);
-    return p ? s+(Number(p.price)||0)*i.qty : s;
-  },0));
+ const subtotal = cart.reduce((sum, item) => {
+  const product = products.find(p => p.id === item.id);
+
+  return product
+    ? sum + (Number(product.price) || 0) * item.qty
+    : sum;
+}, 0);
+
+const finalTotal = appliedDiscount
+  ? subtotal * (1 - appliedDiscount.percent / 100)
+  : subtotal;
+
+cartTotal.textContent = money(finalTotal);
 }
+
+let appliedDiscount = null;
+
+const discountInput = document.getElementById("discountCode");
+const applyDiscountButton = document.getElementById("applyDiscount");
+const discountStatus = document.getElementById("discountStatus");
+
+if (applyDiscountButton) {
+  applyDiscountButton.onclick = async () => {
+    const code = String(discountInput?.value || "")
+      .trim()
+      .toUpperCase();
+
+    discountStatus.className = "discount-status";
+
+    if (!code) {
+      appliedDiscount = null;
+      discountStatus.textContent = "Bitte gib einen Rabattcode ein.";
+      discountStatus.classList.add("error");
+      renderCart();
+      return;
+    }
+
+    try {
+      const response = await fetch(
+        `discounts.json?v=${Date.now()}`
+      );
+
+      if (!response.ok) {
+        throw new Error("Rabattcodes konnten nicht geladen werden.");
+      }
+
+      const data = await response.json();
+
+      const discounts = Array.isArray(data)
+        ? data
+        : Object.values(data);
+
+      const discount = discounts.find(
+        item =>
+          String(item.code || "")
+            .trim()
+            .toUpperCase() === code
+      );
+
+      if (!discount) {
+        throw new Error("Dieser Rabattcode ist ungültig.");
+      }
+
+      if (discount.active !== true) {
+        throw new Error("Dieser Rabattcode ist nicht aktiv.");
+      }
+
+      const today = new Intl.DateTimeFormat(
+        "en-CA",
+        {
+          timeZone: "Europe/Vienna",
+          year: "numeric",
+          month: "2-digit",
+          day: "2-digit"
+        }
+      ).format(new Date());
+
+      if (
+        discount.valid_from &&
+        today < discount.valid_from
+      ) {
+        throw new Error("Dieser Rabattcode ist noch nicht gültig.");
+      }
+
+      if (
+        discount.valid_until &&
+        today > discount.valid_until
+      ) {
+        throw new Error("Dieser Rabattcode ist leider abgelaufen.");
+      }
+
+      const percent = Number(discount.percent);
+
+      if (
+        !Number.isFinite(percent) ||
+        percent <= 0 ||
+        percent > 100
+      ) {
+        throw new Error("Dieser Rabattcode ist ungültig.");
+      }
+
+      appliedDiscount = {
+        code,
+        percent
+      };
+
+      discountInput.value = code;
+
+      discountStatus.textContent =
+        `${percent} % Rabatt wurden angewendet.`;
+
+      discountStatus.classList.add("success");
+
+      renderCart();
+
+    } catch (error) {
+      appliedDiscount = null;
+
+      discountStatus.textContent =
+        error?.message || "Rabattcode konnte nicht geprüft werden.";
+
+      discountStatus.classList.add("error");
+
+      renderCart();
+    }
+  };
+}
+
 function openCart(){cartDrawer.classList.add("open");overlay.classList.add("open")}
 function closeCart(){cartDrawer.classList.remove("open");overlay.classList.remove("open")}
 document.getElementById("openCart").onclick=openCart;
@@ -211,10 +334,12 @@ document.getElementById("checkoutForm").onsubmit = async e => {
       headers: {
         "Content-Type": "text/plain;charset=UTF-8"
       },
-      body: JSON.stringify({
-        items,
-        customer
-      })
+     body: JSON.stringify({
+  items,
+  customer,
+discountCode:
+  appliedDiscount?.code || ""
+})
     });
 
     const data = await response.json();
@@ -237,7 +362,7 @@ document.getElementById("checkoutForm").onsubmit = async e => {
       "Die Zahlung konnte nicht gestartet werden. Bitte versuche es erneut.";
     status.classList.add("error");
     submitButton.disabled = false;
-    submitButton.textContent = "Bestellung absenden";
+    submitButton.textContent = "Zahlungspflichtig bestellen";
   }
 };
 
