@@ -109,12 +109,14 @@ function renderProducts(){
   return `
     <article class="product-card ${p.available === false ? "sold-out" : ""}">
 <div class="product-img product-gallery" data-gallery="${escapeHtml(p.id)}">
-  <img
-    src="${productImages[0]}"
-    alt="${escapeHtml(p.name)}"
-    class="gallery-image"
-    data-index="0"
-  >
+<img
+  src="${productImages[0]}"
+  alt="${escapeHtml(p.name)}"
+  class="gallery-image"
+  data-index="0"
+  loading="lazy"
+  decoding="async"
+>
 
   <span class="badge">
     ${p.available === false ? "Ausverkauft" : escapeHtml(p.badge || "Handmade")}
