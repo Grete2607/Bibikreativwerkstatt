@@ -710,9 +710,9 @@ body::before {
 }
 .shipping-options {
   display: grid;
-  gap: 6px;
-  margin-top: 10px;
-  margin-bottom: 12px;
+  gap: 8px;
+  margin-top: 12px;
+  margin-bottom: 18px;
 }
 
 .shipping-options-title {
@@ -723,7 +723,7 @@ body::before {
 
 #shippingOptionsList {
   display: grid;
-  gap: 5px;
+  gap: 7px;
 }
 
 #shippingOptionsList > div,
@@ -753,7 +753,7 @@ body::before {
   border: 1px solid var(--purple);
   border-radius: 2px;
   background: white;
-  transform: scale(0.60);
+  transform: scale(0.55);
   cursor: pointer;
 }
 
