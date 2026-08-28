@@ -11,6 +11,12 @@
     "script": "Meine Lieblinge",
     "title": "Handgemachte Ohrringe",
     "subtitle": "Jedes Paar ein Unikat – so besonders wie du."
+   },
+  "shipping": {
+    "austria_standard": 0,
+    "austria_premium": 0.90,
+    "austria_tracking": 2.50,
+    "eu_registered": 3.80
   },
   "about": {
     "script": "Über mich",
