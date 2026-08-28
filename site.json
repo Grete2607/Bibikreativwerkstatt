@@ -5,7 +5,7 @@
     "lead": "Leicht. Einzigartig. Mit Liebe gemacht.",
     "intro": "Jedes Paar wird liebevoll von Hand gestaltet und mit viel Liebe zum Detail gefertigt.",
     "button_text": "Ohrringe entdecken ♡",
-    "image": "/media/Profilbild.png"
+    "image": "/media/klein-Profilbild.png"
   },
   "shop": {
     "script": "Meine Lieblinge",
@@ -29,7 +29,7 @@
     "email": "bibikreativwerkstatt@gmail.com"
   },
   "footer": {
-    "logo": "/logo.png",
+    "logo": "/media/klein-Profilbild.png",
     "copyright_name": "Bibi Kreativwerkstatt"
   }
 }
