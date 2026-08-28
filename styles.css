@@ -708,3 +708,35 @@ body::before {
     right: 8px;
   }
 }
+.shipping-options {
+  display: grid;
+  gap: 8px;
+}
+
+.shipping-options-title {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+#shippingOptionsList {
+  display: grid;
+  gap: 8px;
+}
+
+#shippingOptionsList label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+#shippingOptionsList input[type="radio"] {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  flex: 0 0 16px;
+  accent-color: var(--purple);
+}
