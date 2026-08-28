@@ -561,29 +561,27 @@ function renderShippingOptions(){
 
   if(country === "Österreich"){
     shippingOptionsList.innerHTML = `
-      <label>
-        <input type="radio" name="shippingMethod" value="austria_standard" required checked>
+      <div>
         Standardversand – ${Number(shippingConfig.austria_standard) === 0
           ? "Gratis"
           : money(Number(shippingConfig.austria_standard))}
-      </label>
+      </div>
 
       <label>
-        <input type="radio" name="shippingMethod" value="austria_premium" required>
+        <input type="checkbox" name="shippingPremium" value="1">
         Premiumversand – + ${money(Number(shippingConfig.austria_premium))}
       </label>
 
       <label>
-        <input type="radio" name="shippingMethod" value="austria_tracking" required>
-        Versand mit Sendungsverfolgung – + ${money(Number(shippingConfig.austria_tracking))}
+        <input type="checkbox" name="shippingTracking" value="1">
+        Sendungsverfolgung – + ${money(Number(shippingConfig.austria_tracking))}
       </label>
     `;
   }else if(country){
     shippingOptionsList.innerHTML = `
-      <label>
-        <input type="radio" name="shippingMethod" value="eu_registered" required checked>
+      <div>
         Einschreiben inkl. Sendungsverfolgung – ${money(Number(shippingConfig.eu_registered))}
-      </label>
+      </div>
     `;
   }else{
     shippingOptionsList.innerHTML =
@@ -642,7 +640,8 @@ document.getElementById("checkoutForm").onsubmit = async e => {
     return;
   }
 
-const shippingMethod = d.shippingMethod || "";
+const shippingPremium = d.shippingPremium === "1";
+const shippingTracking = d.shippingTracking === "1";
   
   const customer = {
     firstName: d.firstName || "",
@@ -665,10 +664,11 @@ const shippingMethod = d.shippingMethod || "";
       headers: {
         "Content-Type": "text/plain;charset=UTF-8"
       },
-   body: JSON.stringify({
+  body: JSON.stringify({
   items,
   customer,
-  shippingMethod,
+  shippingPremium,
+  shippingTracking,
   discountCode: appliedDiscount?.code || ""
 })
     });
