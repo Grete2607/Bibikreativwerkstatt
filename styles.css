@@ -745,10 +745,10 @@ body::before {
 
 #shippingOptionsList input[type="checkbox"],
 #shippingOptionsList input[type="radio"] {
-  width: 13px;
-  height: 13px;
+  width: 10px;
+  height: 10px;
   margin: 0;
-  flex: 0 0 13px;
+  flex: 0 0 10px;
   appearance: none;
   border: 1px solid var(--purple);
   border-radius: 2px;
