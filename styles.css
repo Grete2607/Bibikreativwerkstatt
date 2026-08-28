@@ -724,6 +724,7 @@ body::before {
 #shippingOptionsList {
   display: grid;
   gap: 7px;
+  padding-left: 6px;
 }
 
 #shippingOptionsList > div,
