@@ -202,3 +202,29 @@ content:
       - name: label
         label: Beschreibung
         type: string
+        
+  - name: shipping
+    label: Versand
+    type: file
+    path: shipping.json
+    format: json
+    fields:
+      - name: austria_standard
+        label: Österreich – Standardversand
+        type: number
+        required: true
+
+      - name: austria_premium
+        label: Österreich – Premiumversand
+        type: number
+        required: true
+
+      - name: austria_tracking
+        label: Österreich – Sendungsverfolgung
+        type: number
+        required: true
+
+      - name: eu_registered
+        label: EU – Einschreiben inkl. Sendungsverfolgung
+        type: number
+        required: true
