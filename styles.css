@@ -170,7 +170,7 @@ h1,h2{font-family:"Playfair Display",serif;font-weight:500}
   padding:10px 14px;color:var(--purple);font-weight:600
 }
 footer{text-align:center;padding:30px 20px;background:white;border-top:1px solid var(--line)}
-footer img{width:150px;margin:0 auto 8px}
+footer img{width:150px;height:auto;margin:0 auto 8px}
 .footer-links{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;font-size:13px;margin:8px 0}
 footer small{color:var(--muted)}
 .overlay{
