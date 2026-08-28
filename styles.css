@@ -539,6 +539,7 @@ body::before {
 }
 @media (max-width: 768px) {
   body::before {
+    position: absolute;
     background-image: url("/media/blumen-hintergrund-mobil.png");
     background-size: 100% auto;
     background-position: top center;
