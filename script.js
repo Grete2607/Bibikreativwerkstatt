@@ -838,14 +838,75 @@ function updateProductStructuredData(){
       "name": product.name,
       "description": product.description,
       "image": new URL(product.image, window.location.origin).href,
-      "offers": {
-        "@type": "Offer",
-        "priceCurrency": "EUR",
-        "price": product.price,
-        "availability": product.available
-          ? "https://schema.org/InStock"
-          : "https://schema.org/OutOfStock"
+     "offers": {
+  "@type": "Offer",
+  "priceCurrency": "EUR",
+  "price": product.price,
+  "availability": product.available
+    ? "https://schema.org/InStock"
+    : "https://schema.org/OutOfStock",
+  "shippingDetails": [
+    {
+      "@type": "OfferShippingDetails",
+      "shippingDestination": {
+        "@type": "DefinedRegion",
+        "addressCountry": "AT"
+      },
+      "shippingRate": {
+        "@type": "MonetaryAmount",
+        "value": 4.90,
+        "currency": "EUR"
+      },
+      "deliveryTime": {
+        "@type": "ShippingDeliveryTime",
+        "handlingTime": {
+          "@type": "QuantitativeValue",
+          "minValue": 1,
+          "maxValue": 2,
+          "unitCode": "DAY"
+        },
+        "transitTime": {
+          "@type": "QuantitativeValue",
+          "minValue": 1,
+          "maxValue": 3,
+          "unitCode": "DAY"
+        }
       }
+    },
+    {
+      "@type": "OfferShippingDetails",
+    "shippingDestination": {
+  "@type": "DefinedRegion",
+  "addressCountry": [
+    "BE", "BG", "CZ", "DK", "DE", "EE", "IE", "GR",
+    "ES", "FR", "HR", "IT", "CY", "LV", "LT", "LU",
+    "HU", "MT", "NL", "PL", "PT", "RO", "SI", "SK",
+    "FI", "SE"
+  ]
+},
+      "shippingRate": {
+        "@type": "MonetaryAmount",
+        "value": 7.90,
+        "currency": "EUR"
+      },
+      "deliveryTime": {
+        "@type": "ShippingDeliveryTime",
+        "handlingTime": {
+          "@type": "QuantitativeValue",
+          "minValue": 1,
+          "maxValue": 2,
+          "unitCode": "DAY"
+        },
+        "transitTime": {
+          "@type": "QuantitativeValue",
+          "minValue": 3,
+          "maxValue": 7,
+          "unitCode": "DAY"
+        }
+      }
+    }
+  ]
+}
     }));
 
   const structuredData = {
