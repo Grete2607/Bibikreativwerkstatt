@@ -1,6 +1,25 @@
 
 let siteContent = {};
 
+
+let shippingConfig = {
+  austria_standard: 0,
+  austria_premium: 0.90,
+  austria_tracking: 2.50,
+  eu_registered: 3.80
+};
+
+async function loadShippingConfig(){
+  try{
+    const response = await fetch(`shipping.json?v=${Date.now()}`);
+    if(!response.ok) throw new Error("shipping.json konnte nicht geladen werden");
+
+    shippingConfig = await response.json();
+  }catch(error){
+    console.error("Versandpreise konnten nicht geladen werden:", error);
+  }
+}
+
 function getByPath(obj, path){
   return path.split(".").reduce((acc, key) => acc && acc[key] !== undefined ? acc[key] : undefined, obj);
 }
@@ -527,6 +546,59 @@ if (removeDiscountButton) {
     renderCart();
   };
 }
+
+function renderShippingOptions(){
+  const countrySelect = document.querySelector(
+    '#checkoutForm select[name="country"]'
+  );
+
+  const shippingOptionsList =
+    document.getElementById("shippingOptionsList");
+
+  if(!countrySelect || !shippingOptionsList) return;
+
+  const country = countrySelect.value;
+
+  if(country === "Österreich"){
+    shippingOptionsList.innerHTML = `
+      <label>
+        <input type="radio" name="shippingMethod" value="austria_standard" required checked>
+        Standardversand – ${Number(shippingConfig.austria_standard) === 0
+          ? "Gratis"
+          : money(Number(shippingConfig.austria_standard))}
+      </label>
+
+      <label>
+        <input type="radio" name="shippingMethod" value="austria_premium" required>
+        Premiumversand – + ${money(Number(shippingConfig.austria_premium))}
+      </label>
+
+      <label>
+        <input type="radio" name="shippingMethod" value="austria_tracking" required>
+        Versand mit Sendungsverfolgung – + ${money(Number(shippingConfig.austria_tracking))}
+      </label>
+    `;
+  }else if(country){
+    shippingOptionsList.innerHTML = `
+      <label>
+        <input type="radio" name="shippingMethod" value="eu_registered" required checked>
+        Einschreiben inkl. Sendungsverfolgung – ${money(Number(shippingConfig.eu_registered))}
+      </label>
+    `;
+  }else{
+    shippingOptionsList.innerHTML =
+      "<small>Bitte zuerst ein Land auswählen.</small>";
+  }
+}
+
+const checkoutCountry = document.querySelector(
+  '#checkoutForm select[name="country"]'
+);
+
+if(checkoutCountry){
+  checkoutCountry.addEventListener("change", renderShippingOptions);
+}
+
 function openCart(){cartDrawer.classList.add("open");overlay.classList.add("open")}
 function closeCart(){cartDrawer.classList.remove("open");overlay.classList.remove("open")}
 document.getElementById("openCart").onclick=openCart;
@@ -535,8 +607,13 @@ overlay.onclick=closeCart;
 
 document.getElementById("checkoutButton").onclick=()=>{
   if(!cart.length) return alert("Dein Warenkorb ist leer.");
-  closeCart(); checkoutDialog.showModal();
+
+  renderShippingOptions();
+
+  closeCart();
+  checkoutDialog.showModal();
 };
+
 document.getElementById("closeCheckout").onclick=()=>checkoutDialog.close();
 
 document.getElementById("checkoutForm").onsubmit = async e => {
@@ -565,6 +642,8 @@ document.getElementById("checkoutForm").onsubmit = async e => {
     return;
   }
 
+const shippingMethod = d.shippingMethod || "";
+  
   const customer = {
     firstName: d.firstName || "",
     lastName: d.lastName || "",
@@ -586,11 +665,11 @@ document.getElementById("checkoutForm").onsubmit = async e => {
       headers: {
         "Content-Type": "text/plain;charset=UTF-8"
       },
-     body: JSON.stringify({
+   body: JSON.stringify({
   items,
   customer,
-discountCode:
-  appliedDiscount?.code || ""
+  shippingMethod,
+  discountCode: appliedDiscount?.code || ""
 })
     });
 
@@ -684,6 +763,7 @@ if(successDialog && typeof successDialog.showModal === "function"){
 document.getElementById("year").textContent=new Date().getFullYear();
 loadProducts();
 loadSiteContent();
+loadShippingConfig();
 
 const withdrawalDialog =
   document.getElementById("withdrawalDialog");
