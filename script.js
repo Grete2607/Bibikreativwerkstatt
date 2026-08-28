@@ -89,6 +89,7 @@ async function loadProducts(){
     if(!response.ok) throw new Error("products.json konnte nicht geladen werden");
     const data = await response.json();
     products = Array.isArray(data) ? data : Object.values(data);
+    updateProductStructuredData();
     renderProducts();
     cleanupCart();
     renderCart();
@@ -826,3 +827,36 @@ window.addEventListener("pageshow", () => {
     status.className = "checkout-status";
   }
 });
+function updateProductStructuredData(){
+  const oldScript = document.getElementById("product-structured-data");
+  if(oldScript) oldScript.remove();
+
+  const productData = products
+    .filter(product => product.visible !== false)
+    .map(product => ({
+      "@type": "Product",
+      "name": product.name,
+      "description": product.description,
+      "image": new URL(product.image, window.location.origin).href,
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "EUR",
+        "price": product.price,
+        "availability": product.available
+          ? "https://schema.org/InStock"
+          : "https://schema.org/OutOfStock"
+      }
+    }));
+
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@graph": productData
+  };
+
+  const script = document.createElement("script");
+  script.type = "application/ld+json";
+  script.id = "product-structured-data";
+  script.textContent = JSON.stringify(structuredData);
+
+  document.head.appendChild(script);
+}
