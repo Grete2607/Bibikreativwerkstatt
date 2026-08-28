@@ -733,7 +733,8 @@ body::before {
   cursor: pointer;
 }
 
-#shippingOptionsList input[type="radio"] {
+#shippingOptionsList input[type="radio"],
+#shippingOptionsList input[type="checkbox"] {
   width: 16px;
   height: 16px;
   margin: 0;
