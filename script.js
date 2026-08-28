@@ -560,23 +560,37 @@ function renderShippingOptions(){
   const country = countrySelect.value;
 
   if(country === "Österreich"){
-    shippingOptionsList.innerHTML = `
-      <div>
-        Standardversand – ${Number(shippingConfig.austria_standard) === 0
-          ? "Gratis"
-          : money(Number(shippingConfig.austria_standard))}
-      </div>
+  shippingOptionsList.innerHTML = `
+    <label>
+      <input
+        type="radio"
+        name="shippingBase"
+        value="standard"
+        checked
+      >
+      Standardversand – ${Number(shippingConfig.austria_standard) === 0
+        ? "Gratis"
+        : money(Number(shippingConfig.austria_standard))}
+    </label>
 
-      <label>
-        <input type="checkbox" name="shippingPremium" value="1">
-        Premiumversand – + ${money(Number(shippingConfig.austria_premium))}
-      </label>
+    <label>
+      <input
+        type="radio"
+        name="shippingBase"
+        value="premium"
+      >
+      Premiumversand – + ${money(Number(shippingConfig.austria_premium))}
+    </label>
 
-      <label>
-        <input type="checkbox" name="shippingTracking" value="1">
-        Sendungsverfolgung – + ${money(Number(shippingConfig.austria_tracking))}
-      </label>
-    `;
+    <label>
+      <input
+        type="checkbox"
+        name="shippingTracking"
+        value="1"
+      >
+      Sendungsverfolgung – + ${money(Number(shippingConfig.austria_tracking))}
+    </label>
+  `;
   }else if(country){
     shippingOptionsList.innerHTML = `
       <div>
@@ -640,7 +654,8 @@ document.getElementById("checkoutForm").onsubmit = async e => {
     return;
   }
 
-const shippingPremium = d.shippingPremium === "1";
+const shippingBase = d.shippingBase || "standard";
+const shippingPremium = shippingBase === "premium";
 const shippingTracking = d.shippingTracking === "1";
   
   const customer = {
@@ -664,9 +679,10 @@ const shippingTracking = d.shippingTracking === "1";
       headers: {
         "Content-Type": "text/plain;charset=UTF-8"
       },
-  body: JSON.stringify({
+ body: JSON.stringify({
   items,
   customer,
+  shippingBase,
   shippingPremium,
   shippingTracking,
   discountCode: appliedDiscount?.code || ""
