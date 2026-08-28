@@ -904,8 +904,21 @@ function updateProductStructuredData(){
           "unitCode": "DAY"
         }
       }
-    }
-  ]
+     }
+  ],
+  "hasMerchantReturnPolicy": {
+    "@type": "MerchantReturnPolicy",
+    "applicableCountry": [
+      "AT", "BE", "BG", "CZ", "DK", "DE", "EE", "IE", "GR",
+      "ES", "FR", "HR", "IT", "CY", "LV", "LT", "LU",
+      "HU", "MT", "NL", "PL", "PT", "RO", "SI", "SK",
+      "FI", "SE"
+    ],
+    "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+    "merchantReturnDays": 14,
+    "returnMethod": "https://schema.org/ReturnByMail",
+    "returnFees": "https://schema.org/ReturnShippingFees"
+  }
 }
     }));
 
