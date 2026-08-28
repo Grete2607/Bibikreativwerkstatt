@@ -743,11 +743,21 @@ body::before {
   cursor: pointer;
 }
 
-#shippingOptionsList input[type="checkbox"] {
+#shippingOptionsList input[type="checkbox"],
+#shippingOptionsList input[type="radio"] {
   width: 13px;
   height: 13px;
   margin: 0;
   flex: 0 0 13px;
-  accent-color: var(--purple);
+  appearance: none;
+  border: 1px solid var(--purple);
+  border-radius: 2px;
+  background: white;
   cursor: pointer;
+}
+
+#shippingOptionsList input[type="checkbox"]:checked,
+#shippingOptionsList input[type="radio"]:checked {
+  background: var(--purple);
+  box-shadow: inset 0 0 0 3px white;
 }
