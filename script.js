@@ -838,6 +838,10 @@ function updateProductStructuredData(){
       "name": product.name,
       "description": product.description,
       "image": new URL(product.image, window.location.origin).href,
+      "brand": {
+  "@type": "Brand",
+  "name": "Bibi Kreativwerkstatt"
+},
      "offers": {
   "@type": "Offer",
   "priceCurrency": "EUR",
