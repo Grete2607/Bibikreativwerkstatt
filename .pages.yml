@@ -46,6 +46,30 @@ content:
             label: Untertext
             type: string
 
+      - name: shipping
+        label: Versand
+        type: object
+        fields:
+          - name: austria_standard
+            label: Österreich – Standardversand
+            type: number
+            required: true
+
+          - name: austria_premium
+            label: Österreich – Premiumversand
+            type: number
+            required: true
+
+          - name: austria_tracking
+            label: Österreich – Sendungsverfolgung
+            type: number
+            required: true
+
+          - name: eu_registered
+            label: EU – Einschreiben inkl. Sendungsverfolgung
+            type: number
+            required: true
+
       - name: about
         label: Über mich
         type: object
