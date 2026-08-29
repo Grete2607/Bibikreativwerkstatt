@@ -322,5 +322,15 @@
     "badge": "Edel, Einzigartig ",
     "available": true,
     "visible": true
+  },
+  {
+    "id": "Gänseblümchen Oh.",
+    "name": "Daisy Dream",
+    "price": 16.2,
+    "image": "/media/5114a175-15a2-4e93-add6-2bd22fe03913.jpeg",
+    "description": "Ein kleines Stück Sommer für deine Ohren.\nDie grauen Ohrringe sind mit vielen liebevoll gearbeiteten gelben Gänseblümchen verziert und werden durch die goldfarbenen Details wunderschön abgerundet.",
+    "badge": "Gänseblümchen ",
+    "available": true,
+    "visible": true
   }
 ]
