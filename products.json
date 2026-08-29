@@ -231,5 +231,15 @@
     "badge": "Verspielt ",
     "available": true,
     "visible": true
+  },
+  {
+    "id": "Grün gehäelt mit kleinen platt",
+    "name": "Green Boho",
+    "price": 14.9,
+    "image": "/media/062377b8-11e2-4ee1-ac35-54bfa4d24d17.jpeg",
+    "description": "Zarte gehäkelte Ohrringe in Salbeigrün mit einem eleganten goldfarbenen Anhänger.",
+    "badge": "Leicht",
+    "available": true,
+    "visible": true
   }
 ]
