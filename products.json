@@ -271,5 +271,29 @@
     "badge": "Stilvoll",
     "available": true,
     "visible": true
+  },
+  {
+    "id": "Mandala schwarz",
+    "name": "Noir Blossom",
+    "price": 15.9,
+    "image": "/media/c42a5c61-b42e-464f-ac5f-d50de9b25714.jpeg",
+    "description": "Handgemachte Ohrringe aus Polymer Clay in elegantem Schwarz mit floralem Blüten-Design. Die detailreiche Struktur macht jedes Paar zu einem besonderen Hingucker. ",
+    "badge": "Selten",
+    "available": true,
+    "visible": true
+  },
+  {
+    "id": "Blattdesinge",
+    "name": "    Leaf Glam",
+    "price": 13.45,
+    "image": "/media/10fa54cf-eaf2-4a19-8eb8-22a3dd84694a.jpeg",
+    "images": [
+      "/media/45f53773-87c5-4827-bf2b-14135b0e8e66.jpeg",
+      "/media/IMG_8466-2.jpeg"
+    ],
+    "description": "Handgemachte Ohrringe aus Polymer Clay mit einem wunderschönen, floralen Blattdesign. Bei Bestellabschluss bitte die Farbe angeben ",
+    "badge": "Zeitlos",
+    "available": true,
+    "visible": true
   }
 ]
