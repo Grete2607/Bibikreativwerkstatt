@@ -332,5 +332,15 @@
     "badge": "Gänseblümchen ",
     "available": true,
     "visible": true
+  },
+  {
+    "id": "Blumen muster mit golden Kresi",
+    "name": "Floral Elegance",
+    "price": 13.45,
+    "image": "/media/f83e3fbc-2af7-4475-b15b-a0b5917808fb.jpeg",
+    "description": "Zarte, handgemachte Ohrringe in Weiß und Gold mit filigranem Blumenmuster. 🌸✨\nDie weißen Polymer-Clay-Elemente liegen in einem strukturierten goldfarbenen Kreis und ergeben dadurch einen besonders eleganten und femininen Look.",
+    "badge": "Elegant, Zeitlos",
+    "available": true,
+    "visible": true
   }
 ]
