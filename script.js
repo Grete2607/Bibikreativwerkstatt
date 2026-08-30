@@ -757,11 +757,28 @@ if (sessionId && successOrderNumber) {
 
     const data = await response.json();
 
-    if (response.ok && data.orderNumber) {
-      successOrderNumber.textContent = data.orderNumber;
-    } else {
-      successOrderNumber.textContent = "Bestellung erfolgreich";
-    }
+   if (response.ok && data.orderNumber) {
+  successOrderNumber.textContent = data.orderNumber;
+
+  // Meta Pixel – erfolgreicher Kauf
+  const purchaseKey = `metaPurchase_${sessionId}`;
+
+  if (
+    typeof fbq === "function" &&
+    !localStorage.getItem(purchaseKey) &&
+    Number.isFinite(Number(data.amountTotal))
+  ) {
+    fbq("track", "Purchase", {
+      value: Number(data.amountTotal) / 100,
+      currency: String(data.currency || "EUR").toUpperCase()
+    });
+
+    localStorage.setItem(purchaseKey, "1");
+  }
+
+} else {
+  successOrderNumber.textContent = "Bestellung erfolgreich";
+}
   } catch (error) {
     console.error("Bestellnummer konnte nicht geladen werden:", error);
     successOrderNumber.textContent = "Bestellung erfolgreich";
