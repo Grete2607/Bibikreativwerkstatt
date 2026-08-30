@@ -336,11 +336,24 @@ if (lightboxNext) {
 function addToCart(id){
   const p = products.find(p => p.id === id);
   if(!p || p.available === false) return;
+
   const found = cart.find(i => i.id === id);
   found ? found.qty++ : cart.push({id, qty:1});
+
   save();
   renderCart();
   openCart();
+
+  // Meta Pixel – Produkt zum Warenkorb hinzugefügt
+  if (typeof fbq === "function") {
+    fbq("track", "AddToCart", {
+      content_ids: [String(p.id)],
+      content_name: p.name || p.title || "",
+      content_type: "product",
+      value: Number(p.price),
+      currency: "EUR"
+    });
+  }
 }
 function save(){localStorage.setItem("bibiCart", JSON.stringify(cart))}
 function cleanupCart(){
