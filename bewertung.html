@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Bewertung abgeben | Bibi Kreativwerkstatt</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Arial, sans-serif;
+      background: #faf7fb;
+      color: #333;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .review-box {
+      width: 100%;
+      max-width: 600px;
+      background: white;
+      border-radius: 18px;
+      padding: 32px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+      text-align: center;
+    }
+
+    h1 {
+      margin-top: 0;
+    }
+
+    .intro {
+      line-height: 1.6;
+      margin-bottom: 28px;
+    }
+
+    .stars {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin: 15px 0 25px;
+    }
+
+    .star {
+      border: 0;
+      background: transparent;
+      font-size: 42px;
+      cursor: pointer;
+      color: #ccc;
+      padding: 2px;
+    }
+
+    .star.active {
+      color: #f2b01e;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 130px;
+      resize: vertical;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      font: inherit;
+      margin-top: 8px;
+    }
+
+    .submit-button {
+      width: 100%;
+      border: 0;
+      border-radius: 10px;
+      padding: 14px 20px;
+      margin-top: 20px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+      background: #76558f;
+      color: white;
+    }
+
+    .submit-button:hover {
+      opacity: 0.9;
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="review-box">
+
+    <h1>Wie gefällt dir deine Bestellung? ♡</h1>
+
+    <p class="intro">
+      Wir freuen uns sehr über deine Bewertung.
+      Vergib Sterne und erzähle uns gerne, wie dir deine
+      Bestellung gefällt.
+    </p>
+
+    <form id="reviewForm">
+
+      <p><strong>Deine Bewertung</strong></p>
+
+      <div class="stars" id="stars">
+        <button type="button" class="star" data-rating="1">★</button>
+        <button type="button" class="star" data-rating="2">★</button>
+        <button type="button" class="star" data-rating="3">★</button>
+        <button type="button" class="star" data-rating="4">★</button>
+        <button type="button" class="star" data-rating="5">★</button>
+      </div>
+
+      <textarea
+        id="comment"
+        maxlength="1000"
+        placeholder="Schreib uns gerne ein paar Worte zu deiner Bestellung..."
+      ></textarea>
+
+      <button type="submit" class="submit-button">
+        Bewertung absenden
+      </button>
+
+    </form>
+
+  </main>
+
+  <script>
+    let selectedRating = 0;
+
+    const stars = document.querySelectorAll(".star");
+
+    stars.forEach(star => {
+      star.addEventListener("click", () => {
+        selectedRating = Number(star.dataset.rating);
+
+        stars.forEach(item => {
+          const rating = Number(item.dataset.rating);
+
+          item.classList.toggle(
+            "active",
+            rating <= selectedRating
+          );
+        });
+      });
+    });
+
+    document
+      .getElementById("reviewForm")
+      .addEventListener("submit", event => {
+        event.preventDefault();
+
+        if (selectedRating < 1) {
+          alert("Bitte wähle zuerst 1 bis 5 Sterne aus.");
+          return;
+        }
+
+        alert(
+          `Test: ${selectedRating} Sterne wurden ausgewählt.`
+        );
+      });
+  </script>
+
+</body>
+</html>
