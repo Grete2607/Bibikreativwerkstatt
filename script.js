@@ -806,10 +806,74 @@ if(successDialog && typeof successDialog.showModal === "function"){
   }
 }
 
+async function loadReviews() {
+  const reviewsGrid = document.getElementById("reviewsGrid");
+
+  if (!reviewsGrid) {
+    return;
+  }
+
+  try {
+    const response = await fetch(
+      "https://throbbing-breeze-6d1d.bibikreativwerkstatt.workers.dev/reviews"
+    );
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      throw new Error(
+        data.error || "Bewertungen konnten nicht geladen werden."
+      );
+    }
+
+    reviewsGrid.innerHTML = "";
+
+    if (!data.reviews || data.reviews.length === 0) {
+      return;
+    }
+
+    data.reviews.forEach(review => {
+      const card = document.createElement("article");
+      card.className = "review-card";
+
+      const stars = document.createElement("div");
+      stars.className = "review-stars";
+      stars.textContent =
+        "★".repeat(review.rating) +
+        "☆".repeat(5 - review.rating);
+
+      const comment = document.createElement("p");
+      comment.className = "review-comment";
+      comment.textContent = review.comment;
+
+      const name = document.createElement("strong");
+      name.className = "review-name";
+      name.textContent = review.name;
+
+      card.appendChild(stars);
+
+      if (review.comment) {
+        card.appendChild(comment);
+      }
+
+      card.appendChild(name);
+
+      reviewsGrid.appendChild(card);
+    });
+
+  } catch (error) {
+    console.error(
+      "Bewertungen konnten nicht geladen werden:",
+      error
+    );
+  }
+}
+
 document.getElementById("year").textContent=new Date().getFullYear();
 loadProducts();
 loadSiteContent();
 loadShippingConfig();
+loadReviews();
 
 const withdrawalDialog =
   document.getElementById("withdrawalDialog");
