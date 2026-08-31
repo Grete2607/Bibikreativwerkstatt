@@ -133,6 +133,17 @@
   <script>
     let selectedRating = 0;
 
+const params = new URLSearchParams(window.location.search);
+const reviewToken = params.get("token");
+
+if (!reviewToken) {
+  document.getElementById("reviewForm").innerHTML = `
+    <p>
+      Dieser Bewertungslink ist ungültig oder unvollständig.
+    </p>
+  `;
+}
+    
     const stars = document.querySelectorAll(".star");
 
     stars.forEach(star => {
