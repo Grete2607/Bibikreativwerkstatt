@@ -1,6 +1,6 @@
 {
-  "active": false,
-  "reward_percent": 10,
+  "active": true,
+  "reward_percent": 15,
   "valid_days": 30,
   "code_prefix": "DANKE"
 }
