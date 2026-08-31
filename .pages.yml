@@ -186,6 +186,7 @@ content:
     path: shipping.json
     format: json
     fields:
+    
       - name: austria_standard
         label: Österreich – Standardversand
         type: number
@@ -204,4 +205,30 @@ content:
       - name: eu_registered
         label: EU – Einschreiben inkl. Sendungsverfolgung
         type: number
+        required: true
+
+  - name: review_settings
+    label: Bewertungsrabatt
+    type: file
+    path: review-settings.json
+    format: json
+    fields:
+      - name: active
+        label: Bewertungsrabatt aktiv
+        type: boolean
+        default: true
+
+      - name: reward_percent
+        label: Rabatt in Prozent
+        type: number
+        required: true
+
+      - name: valid_days
+        label: Gültigkeit in Tagen
+        type: number
+        required: true
+
+      - name: code_prefix
+        label: Anfang des Rabattcodes
+        type: string
         required: true
