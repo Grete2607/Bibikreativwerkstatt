@@ -239,11 +239,43 @@ if (reviewToken) {
 
       reviewForm.innerHTML = "";
 
-      const message = document.createElement("p");
-      message.textContent =
-        data.message || "Vielen Dank für deine Bewertung!";
+     const message = document.createElement("p");
+message.textContent =
+  data.message || "Vielen Dank für deine Bewertung!";
 
-      reviewForm.appendChild(message);
+reviewForm.appendChild(message);
+
+if (data.discountCode) {
+  const reward = document.createElement("div");
+
+  reward.style.marginTop = "24px";
+  reward.style.padding = "20px";
+  reward.style.background = "#f7f1fa";
+  reward.style.borderRadius = "14px";
+
+  const rewardText = document.createElement("p");
+  rewardText.textContent =
+    `Als Dankeschön erhältst du ${data.discountPercent} % Rabatt auf deine nächste Bestellung ♡`;
+
+  const code = document.createElement("strong");
+  code.textContent = data.discountCode;
+
+  code.style.display = "block";
+  code.style.fontSize = "22px";
+  code.style.margin = "12px 0";
+  code.style.letterSpacing = "1px";
+  code.style.color = "#76558f";
+
+  const info = document.createElement("small");
+  info.textContent =
+    "Dieser Rabattcode kann einmal verwendet werden.";
+
+  reward.appendChild(rewardText);
+  reward.appendChild(code);
+  reward.appendChild(info);
+
+  reviewForm.appendChild(reward);
+}
 
     } catch (error) {
       alert(error.message);
