@@ -465,16 +465,35 @@ if (applyDiscountButton) {
         ? data
         : Object.values(data);
 
-      const discount = discounts.find(
-        item =>
-          String(item.code || "")
-            .trim()
-            .toUpperCase() === code
-      );
+      let discount = discounts.find(
+  item =>
+    String(item.code || "")
+      .trim()
+      .toUpperCase() === code
+);
 
-      if (!discount) {
-        throw new Error("Dieser Rabattcode ist ungültig.");
-      }
+if (!discount) {
+  const reviewResponse = await fetch(
+    `${STRIPE_CHECKOUT_ENDPOINT}/discount-check?code=${encodeURIComponent(code)}`
+  );
+
+  const reviewData = await reviewResponse.json();
+
+  if (!reviewResponse.ok || !reviewData.ok) {
+    throw new Error(
+      reviewData?.error ||
+      "Dieser Rabattcode ist ungültig."
+    );
+  }
+
+  discount = {
+    code: reviewData.code,
+    percent: reviewData.percent,
+    active: true,
+    valid_from: "",
+    valid_until: ""
+  };
+}
 
       if (discount.active !== true) {
         throw new Error("Dieser Rabattcode ist nicht aktiv.");
