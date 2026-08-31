@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Bewertungen verwalten | Bibi Kreativwerkstatt</title>
+
+  <meta name="robots" content="noindex,nofollow">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f8f5fa;
+      color: #333;
+    }
+
+    .admin-container {
+      width: min(1000px, calc(100% - 32px));
+      margin: 40px auto;
+    }
+
+    h1 {
+      color: #76558f;
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      margin-top: 0;
+      color: #666;
+    }
+
+    .login-box,
+    .review-card {
+      background: white;
+      border-radius: 14px;
+      padding: 20px;
+      margin-bottom: 18px;
+      box-shadow: 0 3px 14px rgba(0,0,0,0.08);
+    }
+
+    .login-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    input {
+      flex: 1;
+      min-width: 220px;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+
+    button {
+      border: 0;
+      border-radius: 8px;
+      padding: 11px 16px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .primary {
+      background: #76558f;
+      color: white;
+    }
+
+    .publish {
+      background: #e5f5e8;
+      color: #276738;
+    }
+
+    .hide {
+      background: #fff3d9;
+      color: #765b19;
+    }
+
+    .delete {
+      background: #fbe4e4;
+      color: #9b2727;
+    }
+
+    .stars {
+      color: #d6a300;
+      font-size: 21px;
+      letter-spacing: 2px;
+    }
+
+    .review-meta {
+      color: #777;
+      font-size: 14px;
+      margin: 8px 0;
+    }
+
+    .comment {
+      margin: 16px 0;
+      white-space: pre-wrap;
+    }
+
+    .actions {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 15px;
+    }
+
+    .status {
+      margin-top: 12px;
+      font-weight: bold;
+    }
+
+    .error {
+      color: #a32020;
+    }
+
+    .success {
+      color: #28713a;
+    }
+
+    .published-badge {
+      display: inline-block;
+      padding: 5px 9px;
+      border-radius: 999px;
+      background: #e5f5e8;
+      color: #276738;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .hidden-badge {
+      display: inline-block;
+      padding: 5px 9px;
+      border-radius: 999px;
+      background: #eee;
+      color: #555;
+      font-size: 13px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="admin-container">
+
+    <h1>Bewertungen verwalten</h1>
+    <p class="subtitle">
+      Bibi Kreativwerkstatt
+    </p>
+
+    <section class="login-box">
+      <h2>Admin-Anmeldung</h2>
+
+      <div class="login-row">
+        <input
+          type="password"
+          id="adminSecret"
+          placeholder="Admin-Passwort"
+          autocomplete="current-password"
+        >
+
+        <button
+          type="button"
+          id="loginButton"
+          class="primary"
+        >
+          Bewertungen laden
+        </button>
+      </div>
+
+      <div id="status" class="status"></div>
+    </section>
+
+    <section id="reviewsContainer"></section>
+
+  </main>
+
+<script>
+const WORKER =
+  "https://throbbing-breeze-6d1d.bibikreativwerkstatt.workers.dev";
+
+const secretInput =
+  document.getElementById("adminSecret");
+
+const loginButton =
+  document.getElementById("loginButton");
+
+const statusElement =
+  document.getElementById("status");
+
+const reviewsContainer =
+  document.getElementById("reviewsContainer");
+
+
+loginButton.onclick = () => {
+  loadReviews();
+};
+
+
+secretInput.addEventListener("keydown", event => {
+  if (event.key === "Enter") {
+    loadReviews();
+  }
+});
+
+
+async function loadReviews() {
+
+  const secret = secretInput.value;
+
+  if (!secret) {
+    showStatus(
+      "Bitte Admin-Passwort eingeben.",
+      true
+    );
+    return;
+  }
+
+  showStatus("Bewertungen werden geladen …");
+
+  try {
+
+    const response = await fetch(
+      `${WORKER}/admin/reviews`,
+      {
+        headers: {
+          "X-Admin-Secret": secret
+        }
+      }
+    );
+
+    const data = await response.json();
+
+    if (!response.ok || !data.ok) {
+      throw new Error(
+        data.error || "Bewertungen konnten nicht geladen werden."
+      );
+    }
+
+    renderReviews(data.reviews || []);
+
+    showStatus(
+      `${data.reviews.length} Bewertung(en) geladen.`,
+      false
+    );
+
+  } catch (error) {
+
+    reviewsContainer.innerHTML = "";
+
+    showStatus(
+      error.message || "Fehler beim Laden.",
+      true
+    );
+  }
+}
+
+
+function renderReviews(reviews) {
+
+  reviewsContainer.innerHTML = "";
+
+  if (!reviews.length) {
+    reviewsContainer.textContent =
+      "Noch keine Bewertungen vorhanden.";
+    return;
+  }
+
+  reviews.forEach(review => {
+
+    const card =
+      document.createElement("article");
+
+    card.className = "review-card";
+
+
+    const stars =
+      document.createElement("div");
+
+    stars.className = "stars";
+
+    const rating =
+      Math.max(
+        0,
+        Math.min(5, Number(review.rating) || 0)
+      );
+
+    stars.textContent =
+      "★".repeat(rating) +
+      "☆".repeat(5 - rating);
+
+
+    const title =
+      document.createElement("h3");
+
+    title.textContent =
+      review.customer_name || "Kundin";
+
+
+    const meta =
+      document.createElement("div");
+
+    meta.className = "review-meta";
+
+    const date =
+      review.created_at
+        ? new Date(review.created_at).toLocaleString("de-AT")
+        : "";
+
+    meta.textContent =
+      `${review.order_number || ""} · ${date}`;
+
+
+    const products =
+      document.createElement("div");
+
+    products.className = "review-meta";
+
+    products.textContent =
+      review.products || "";
+
+
+    const comment =
+      document.createElement("div");
+
+    comment.className = "comment";
+
+    comment.textContent =
+      review.comment || "Kein Kommentar";
+
+
+    const badge =
+      document.createElement("span");
+
+    if (Number(review.published) === 1) {
+
+      badge.className = "published-badge";
+      badge.textContent = "Veröffentlicht";
+
+    } else {
+
+      badge.className = "hidden-badge";
+      badge.textContent = "Nicht veröffentlicht";
+    }
+
+
+    const actions =
+      document.createElement("div");
+
+    actions.className = "actions";
+
+
+    const publishButton =
+      document.createElement("button");
+
+    if (Number(review.published) === 1) {
+
+      publishButton.textContent = "Ausblenden";
+      publishButton.className = "hide";
+
+      publishButton.onclick = () =>
+        setPublished(review.id, false);
+
+    } else {
+
+      publishButton.textContent = "Freigeben";
+      publishButton.className = "publish";
+
+      publishButton.onclick = () =>
+        setPublished(review.id, true);
+    }
+
+
+    const deleteButton =
+      document.createElement("button");
+
+    deleteButton.textContent = "Löschen";
+    deleteButton.className = "delete";
+
+    deleteButton.onclick = () =>
+      deleteReview(review.id);
+
+
+    actions.appendChild(publishButton);
+    actions.appendChild(deleteButton);
+
+    card.appendChild(stars);
+    card.appendChild(title);
+    card.appendChild(meta);
+    card.appendChild(products);
+    card.appendChild(comment);
+    card.appendChild(badge);
+    card.appendChild(actions);
+
+    reviewsContainer.appendChild(card);
+  });
+}
+
+
+async function setPublished(id, published) {
+
+  const secret = secretInput.value;
+
+  try {
+
+    const response = await fetch(
+      `${WORKER}/admin/review-publish`,
+      {
+        method: "POST",
+
+        headers: {
+          "Content-Type": "application/json",
+          "X-Admin-Secret": secret
+        },
+
+        body: JSON.stringify({
+          id,
+          published
+        })
+      }
+    );
+
+    const data = await response.json();
+
+    if (!response.ok || !data.ok) {
+      throw new Error(
+        data.error || "Änderung fehlgeschlagen."
+      );
+    }
+
+    await loadReviews();
+
+  } catch (error) {
+
+    showStatus(
+      error.message || "Änderung fehlgeschlagen.",
+      true
+    );
+  }
+}
+
+
+async function deleteReview(id) {
+
+  if (
+    !confirm(
+      "Diese Bewertung wirklich dauerhaft löschen?"
+    )
+  ) {
+    return;
+  }
+
+  const secret = secretInput.value;
+
+  try {
+
+    const response = await fetch(
+      `${WORKER}/admin/review-delete`,
+      {
+        method: "POST",
+
+        headers: {
+          "Content-Type": "application/json",
+          "X-Admin-Secret": secret
+        },
+
+        body: JSON.stringify({
+          id
+        })
+      }
+    );
+
+    const data = await response.json();
+
+    if (!response.ok || !data.ok) {
+      throw new Error(
+        data.error || "Löschen fehlgeschlagen."
+      );
+    }
+
+    await loadReviews();
+
+  } catch (error) {
+
+    showStatus(
+      error.message || "Löschen fehlgeschlagen.",
+      true
+    );
+  }
+}
+
+
+function showStatus(message, isError = false) {
+
+  statusElement.textContent = message;
+
+  statusElement.className =
+    isError
+      ? "status error"
+      : "status success";
+}
+</script>
+
+</body>
+</html>
