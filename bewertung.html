@@ -143,6 +143,31 @@ if (!reviewToken) {
     </p>
   `;
 }
+
+if (reviewToken) {
+  fetch(
+    `https://throbbing-breeze-6d1d.bibikreativwerkstatt.workers.dev/review-info?token=${encodeURIComponent(reviewToken)}`
+  )
+    .then(async response => {
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(
+          data.error || "Bewertungslink konnte nicht geprüft werden."
+        );
+      }
+
+      return data;
+    })
+    .then(data => {
+      console.log("Bewertungslink gültig:", data);
+    })
+    .catch(error => {
+  document.getElementById("reviewForm").textContent =
+    error.message;
+});
+}
+
     
     const stars = document.querySelectorAll(".star");
 
