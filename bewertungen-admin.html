@@ -452,8 +452,15 @@ function renderReviews(reviews) {
         ? new Date(review.created_at).toLocaleString("de-AT")
         : "";
 
-    meta.textContent =
-      `${review.order_number || ""} · ${date}`;
+  
+if (
+  String(review.order_number || "").startsWith("MANUELL-")
+) {
+  meta.textContent = date;
+} else {
+  meta.textContent =
+    `${review.order_number || ""} · ${date}`;
+}
 
 
     const products =
@@ -461,8 +468,14 @@ function renderReviews(reviews) {
 
     products.className = "review-meta";
 
-    products.textContent =
-      review.products || "";
+    if (
+  String(review.order_number || "").startsWith("MANUELL-")
+) {
+  products.textContent = "";
+} else {
+  products.textContent =
+    review.products || "";
+}
 
 
     const comment =
