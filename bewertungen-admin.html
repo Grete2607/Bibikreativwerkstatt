@@ -178,7 +178,7 @@
       <div id="status" class="status"></div>
     </section>
 
-<section class="login-box" id="manualReviewMailBox">
+<section class="login-box" id="manualReviewMailBox" style="display: none;">
   <h2>Bewertungsmail manuell senden</h2>
 
   <p>
@@ -380,6 +380,7 @@ async function loadReviews() {
     }
 
     renderReviews(data.reviews || []);
+    document.getElementById("manualReviewMailBox").style.display = "block";
 
     showStatus(
       `${data.reviews.length} Bewertung(en) geladen.`,
@@ -389,6 +390,8 @@ async function loadReviews() {
   } catch (error) {
 
     reviewsContainer.innerHTML = "";
+
+    document.getElementById("manualReviewMailBox").style.display = "none";
 
     showStatus(
       error.message || "Fehler beim Laden.",
