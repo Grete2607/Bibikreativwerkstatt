@@ -178,6 +178,41 @@
       <div id="status" class="status"></div>
     </section>
 
+<section class="login-box" id="manualReviewMailBox">
+  <h2>Bewertungsmail manuell senden</h2>
+
+  <p>
+    Für Kundinnen und Kunden, die ihre Ohrringe persönlich gekauft haben.
+  </p>
+
+  <div class="login-row">
+    <input
+      type="text"
+      id="manualCustomerName"
+      placeholder="Name"
+      autocomplete="name"
+    >
+
+    <input
+      type="email"
+      id="manualCustomerEmail"
+      placeholder="E-Mail-Adresse"
+      autocomplete="email"
+    >
+
+    <button
+      type="button"
+      id="sendReviewMailButton"
+      class="primary"
+    >
+      Bewertungsmail senden
+    </button>
+  </div>
+
+  <div id="mailStatus" class="status"></div>
+</section>
+
+    
     <section id="reviewsContainer"></section>
 
   </main>
@@ -198,12 +233,28 @@ const statusElement =
 const reviewsContainer =
   document.getElementById("reviewsContainer");
 
+const manualCustomerName =
+  document.getElementById("manualCustomerName");
+
+const manualCustomerEmail =
+  document.getElementById("manualCustomerEmail");
+
+const sendReviewMailButton =
+  document.getElementById("sendReviewMailButton");
+
+const mailStatus =
+  document.getElementById("mailStatus");
+  
 
 loginButton.onclick = () => {
   loadReviews();
 };
 
+sendReviewMailButton.onclick = () => {
+  sendManualReviewMail();
+};
 
+  
 secretInput.addEventListener("keydown", event => {
   if (event.key === "Enter") {
     loadReviews();
@@ -211,6 +262,90 @@ secretInput.addEventListener("keydown", event => {
 });
 
 
+async function sendManualReviewMail() {
+
+  const secret = secretInput.value.trim();
+  const name = manualCustomerName.value.trim();
+  const email = manualCustomerEmail.value.trim();
+
+  if (!secret) {
+    mailStatus.textContent =
+      "Bitte zuerst das Admin-Passwort eingeben.";
+    mailStatus.className = "status error";
+    return;
+  }
+
+  if (!name) {
+    mailStatus.textContent =
+      "Bitte einen Namen eingeben.";
+    mailStatus.className = "status error";
+    return;
+  }
+
+  if (!email) {
+    mailStatus.textContent =
+      "Bitte eine E-Mail-Adresse eingeben.";
+    mailStatus.className = "status error";
+    return;
+  }
+
+  if (!manualCustomerEmail.checkValidity()) {
+    mailStatus.textContent =
+      "Bitte eine gültige E-Mail-Adresse eingeben.";
+    mailStatus.className = "status error";
+    return;
+  }
+
+  mailStatus.textContent =
+    "Bewertungsmail wird versendet …";
+  mailStatus.className = "status";
+
+  try {
+
+    const response = await fetch(
+      `${WORKER}/admin/send-review-mail`,
+      {
+        method: "POST",
+
+        headers: {
+          "Content-Type": "application/json",
+          "X-Admin-Secret": secret
+        },
+
+        body: JSON.stringify({
+          name,
+          email
+        })
+      }
+    );
+
+    const data = await response.json();
+
+    if (!response.ok || !data.ok) {
+      throw new Error(
+        data.error ||
+        "Bewertungsmail konnte nicht versendet werden."
+      );
+    }
+
+    mailStatus.textContent =
+      `Bewertungsmail wurde an ${email} versendet.`;
+    mailStatus.className = "status success";
+
+    manualCustomerName.value = "";
+    manualCustomerEmail.value = "";
+
+  } catch (error) {
+
+    mailStatus.textContent =
+      error.message ||
+      "Bewertungsmail konnte nicht versendet werden.";
+
+    mailStatus.className = "status error";
+  }
+}
+
+  
 async function loadReviews() {
 
   const secret = secretInput.value;
