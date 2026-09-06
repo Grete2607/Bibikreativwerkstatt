@@ -932,8 +932,13 @@ async function loadReviews() {
 }
 
 document.getElementById("year").textContent=new Date().getFullYear();
-loadCategories();
-loadProducts();
+
+async function loadShop(){
+  await loadCategories();
+  await loadProducts();
+}
+
+loadShop();
 loadSiteContent();
 loadShippingConfig();
 loadReviews();
