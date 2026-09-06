@@ -32,6 +32,34 @@ button{cursor:pointer}
   min-height:96px;background:rgba(255,255,255,.94);
   backdrop-filter:blur(12px);border-bottom:1px solid var(--line)
 }
+
+.category-menu-button{
+  width:44px;
+  height:44px;
+  padding:0;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border:1px solid #dccce7;
+  border-radius:50%;
+
+  background:white;
+  color:var(--purple);
+
+  font-size:24px;
+  line-height:1;
+
+  box-shadow:0 5px 15px rgba(120,84,160,.10);
+  transition:.2s ease;
+}
+
+.category-menu-button:hover{
+  background:var(--pink-soft);
+  transform:scale(1.04);
+}
+
 .logo-link img{height:76px;width:auto}
 nav{display:flex;justify-content:center;gap:30px;font-weight:600;font-size:14px}
 nav a:hover{color:var(--purple)}
