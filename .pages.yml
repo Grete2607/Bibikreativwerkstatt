@@ -143,16 +143,16 @@ content:
         type: reference
         options:
           collection: categories
-          value: id
-          label: name
+          value: "{id}"
+          label: "{name}"
 
       - name: subcategory
         label: Unterkategorie
         type: reference
         options:
           collection: categories
-          value: id
-          label: name
+          value: "{id}"
+          label: "{name}"
 
       - name: available
         label: Verfügbar
