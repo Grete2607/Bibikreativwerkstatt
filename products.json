@@ -412,5 +412,19 @@
     "subcategory": "ohrringe-gehaekelt",
     "available": true,
     "visible": true
+  },
+  {
+    "id": "Rot pflanzen muster ",
+    "name": "Bordeaux Leaf",
+    "price": 15.9,
+    "image": "/media/d412c58b-5d78-4652-b20c-dc627e1f5233.jpeg",
+    "images": [
+      "/media/4bf466ac-d4a0-4582-a7c6-6119f7375629.jpeg"
+    ],
+    "description": "Handgefertigte Ohrringe in einem warmen Bordeaux-Rot mit zartem Blattmuster. Der goldfarbene Ring verleiht ihnen einen eleganten Look und macht sie zu einem besonderen Hingucker - perfekt für Alltag und besondere Anlässe.",
+    "badge": "Tracht, Heebstlich",
+    "category": "ohrringe",
+    "available": true,
+    "visible": true
   }
 ]
