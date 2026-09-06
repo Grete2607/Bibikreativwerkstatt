@@ -78,7 +78,62 @@ const STRIPE_CHECKOUT_ENDPOINT = "https://throbbing-breeze-6d1d.bibikreativwerks
 
 let products = [];
 let categories = [];
+let selectedCategory = "";
 let cart = JSON.parse(localStorage.getItem("bibiCart") || "[]");
+
+function renderCategoryMenu(){
+  const menuContent =
+    document.getElementById("categoryMenuContent");
+
+  if(!menuContent) return;
+
+  const activeCategories = categories
+    .filter(category => category.active !== false)
+    .sort((a, b) => Number(a.position || 0) - Number(b.position || 0));
+
+  const mainCategories = activeCategories.filter(
+    category => !category.parent
+  );
+
+  menuContent.innerHTML = `
+    <button
+      type="button"
+      class="category-link active"
+      data-category=""
+    >
+      Alle Produkte
+    </button>
+
+    ${mainCategories.map(mainCategory => {
+      const subcategories = activeCategories.filter(
+        category => category.parent === mainCategory.id
+      );
+
+      return `
+        <div class="category-group">
+          <button
+            type="button"
+            class="category-link category-main"
+            data-category="${escapeHtml(mainCategory.id)}"
+          >
+            ${escapeHtml(mainCategory.name)}
+          </button>
+
+          ${subcategories.map(subcategory => `
+            <button
+              type="button"
+              class="category-link category-sub"
+              data-category="${escapeHtml(subcategory.id)}"
+            >
+              ${escapeHtml(subcategory.name)}
+            </button>
+          `).join("")}
+        </div>
+      `;
+    }).join("")}
+  `;
+}
+
 
 const grid = document.getElementById("productGrid");
 const cartDrawer = document.getElementById("cartDrawer");
@@ -116,6 +171,8 @@ async function loadCategories(){
     categories = Array.isArray(data)
       ? data
       : Object.values(data);
+    
+    renderCategoryMenu();
 
   }catch(error){
     console.error(
