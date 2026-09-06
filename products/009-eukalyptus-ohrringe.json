@@ -1,0 +1,12 @@
+{
+  "id": "Eukalyptus Ohrringe",
+  "name": "Green Leaf",
+  "price": 16.5,
+  "image": "/media/image1.jpeg",
+  "description": "weiße Handgemachte Ohrringe mit filigranen grünen Blüten zum verzaubern.",
+  "badge": "Blütenzauber",
+  "category": "ohrringe",
+  "subcategory": "ohrring-clay",
+  "available": true,
+  "visible": true
+}

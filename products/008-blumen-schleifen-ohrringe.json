@@ -1,0 +1,12 @@
+{
+  "id": "Blumen Schleifen Ohrringe",
+  "name": "Blue Daisy",
+  "price": 14.99,
+  "image": "/media/klein-2.jpeg",
+  "description": "Hellblaue Blumenohrringe mit eleganten goldenen Schleife",
+  "badge": "Verspielt",
+  "category": "ohrringe",
+  "subcategory": "ohrring-clay",
+  "available": true,
+  "visible": true
+}

@@ -1,0 +1,16 @@
+{
+  "id": "Herzchien Stecker",
+  "name": "Herrzielein",
+  "price": 12,
+  "image": "/media/4a853810-f577-47e1-bb4a-bf9d9426f5e1.jpeg",
+  "images": [
+    "/media/3af58b0a-a8c9-4aff-b30d-5ef77486f808.jpeg",
+    "/media/28eda1d6-bd2e-42d0-ac41-76dc7b822782.jpeg"
+  ],
+  "description": "Herzchenstecker in drei Farben, bei Bestellabschluss bitte in der Anmerkung die Farbe angeben",
+  "badge": "Liebe",
+  "category": "ohrringe",
+  "subcategory": "ohrring-clay",
+  "available": true,
+  "visible": true
+}

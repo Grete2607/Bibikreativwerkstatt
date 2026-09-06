@@ -1,0 +1,12 @@
+{
+  "id": "schwarz-Gold hex.",
+  "name": "Golden Glam",
+  "price": 12.5,
+  "image": "/media/klein-5.jpeg",
+  "description": "schlicht, elegant und ein echter Hingucker",
+  "badge": "Elegant",
+  "category": "ohrringe",
+  "subcategory": "ohrring-clay",
+  "available": true,
+  "visible": true
+}

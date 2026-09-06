@@ -1,0 +1,16 @@
+{
+  "id": "Blattdesinge",
+  "name": "    Leaf Glam",
+  "price": 13.45,
+  "image": "/media/10fa54cf-eaf2-4a19-8eb8-22a3dd84694a.jpeg",
+  "images": [
+    "/media/45f53773-87c5-4827-bf2b-14135b0e8e66.jpeg",
+    "/media/IMG_8466-2.jpeg"
+  ],
+  "description": "Handgemachte Ohrringe aus Polymer Clay mit einem wunderschönen, floralen Blattdesign. Bei Bestellabschluss bitte die Farbe angeben ",
+  "badge": "Zeitlos",
+  "category": "ohrringe",
+  "subcategory": "ohrring-clay",
+  "available": true,
+  "visible": true
+}

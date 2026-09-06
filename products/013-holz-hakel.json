@@ -1,0 +1,12 @@
+{
+  "id": "Holz Häkel",
+  "name": "Walnussblüte",
+  "price": 13.99,
+  "image": "/media/b19206c9-c2e4-4e93-9d86-7fc1b0b1cb2a.jpeg",
+  "description": "Mit edlem Walnussholz und einem zarten, handgehäkelten Mandala-Muster",
+  "badge": "Leicht & angenehm zu tragen",
+  "category": "ohrringe",
+  "subcategory": "ohrringe-gehaekelt",
+  "available": true,
+  "visible": true
+}

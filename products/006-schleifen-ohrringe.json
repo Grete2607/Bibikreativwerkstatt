@@ -1,0 +1,15 @@
+{
+  "id": "Schleifen Ohrringe",
+  "name": "Flower Dream",
+  "price": 15.99,
+  "image": "/media/image8.jpeg",
+  "images": [
+    "/media/d283e310-e01d-466f-a5b8-cc519937151f.jpeg"
+  ],
+  "description": "Modische Statement Ohrringe, Verspielt",
+  "badge": "Verspielt",
+  "category": "ohrringe",
+  "subcategory": "ohrring-clay",
+  "available": true,
+  "visible": true
+}

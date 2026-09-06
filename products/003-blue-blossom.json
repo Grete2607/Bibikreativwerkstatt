@@ -1,0 +1,12 @@
+{
+  "id": "blue-blossom",
+  "name": "Blue Blossom",
+  "price": 15.99,
+  "image": "/media/klein-image6.jpeg",
+  "description": "Zarte Blütenoptik in Creme und Blau.",
+  "badge": "Unikat",
+  "category": "ohrringe",
+  "subcategory": "ohrring-clay",
+  "available": true,
+  "visible": true
+}

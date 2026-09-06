@@ -1,0 +1,12 @@
+{
+  "id": "rose-bluetenbogen",
+  "name": "Rosé Blütenbogen",
+  "price": 15.99,
+  "image": "/media/klein-6.jpeg",
+  "description": "Florales Design in warmem Rosé.",
+  "badge": "Handmade",
+  "category": "ohrringe",
+  "subcategory": "ohrring-clay",
+  "available": true,
+  "visible": true
+}

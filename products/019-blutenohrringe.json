@@ -1,0 +1,12 @@
+{
+  "id": "BlütenOhrringe",
+  "name": "Rosa-Blumenliebe",
+  "price": 14.5,
+  "image": "/media/9fa14803-17aa-4fb6-9d30-b78d676195ea.jpeg",
+  "description": "Zarte Blumenohrringe in sanften Pastellton, veredelt mit goldenen Akzenten.",
+  "badge": "Blumenliebe",
+  "category": "ohrringe",
+  "subcategory": "ohrring-clay",
+  "available": true,
+  "visible": true
+}

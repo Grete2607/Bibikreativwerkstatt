@@ -1,0 +1,12 @@
+{
+  "id": "golden-garden",
+  "name": "Golden Garden",
+  "price": 15.99,
+  "image": "/media/klein-3.jpeg",
+  "description": "Florale Details mit goldfarbenem Stecker.",
+  "badge": "Elegant",
+  "category": "ohrringe",
+  "subcategory": "ohrring-clay",
+  "available": true,
+  "visible": true
+}
