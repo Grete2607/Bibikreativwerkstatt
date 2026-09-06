@@ -1,0 +1,47 @@
+name: Build categories.json
+
+on:
+  push:
+    paths:
+      - "categories/**"
+      - ".github/workflows/build-categories.yml"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Repository laden
+        uses: actions/checkout@v4
+
+      - name: categories.json erstellen
+        run: |
+          python3 - <<'PY'
+          import json
+          import glob
+
+          categories = []
+
+          for path in sorted(glob.glob("categories/*.json")):
+              with open(path, "r", encoding="utf-8") as f:
+                  categories.append(json.load(f))
+
+          with open("categories.json", "w", encoding="utf-8") as f:
+              json.dump(categories, f, ensure_ascii=False, indent=2)
+
+          print(f"{len(categories)} Kategorien in categories.json geschrieben.")
+          PY
+
+      - name: Änderungen speichern
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add categories.json
+
+          if git diff --cached --quiet; then
+            echo "Keine Änderungen."
+          else
+            git commit -m "Update categories.json"
+            git push
+          fi
