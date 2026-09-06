@@ -144,7 +144,25 @@ async function loadProducts(){
 }
 
 function renderProducts(){
-  const visible = products.filter(p => p.visible !== false);
+  const activeCategoryIds = new Set(
+    categories
+      .filter(category => category.active !== false)
+      .map(category => category.id)
+  );
+
+  const visible = products.filter(p => {
+    if (p.visible === false) return false;
+
+    // Noch nicht zugeordnete Produkte weiterhin anzeigen
+    if (!p.category && !p.subcategory) return true;
+
+    // Zugeordnete Produkte nur anzeigen,
+    // wenn ihre Kategorie aktiv ist
+    if (p.category && !activeCategoryIds.has(p.category)) return false;
+    if (p.subcategory && !activeCategoryIds.has(p.subcategory)) return false;
+
+    return true;
+  });
  grid.innerHTML = visible.map(p => {
   const productImages = [
     p.image,
