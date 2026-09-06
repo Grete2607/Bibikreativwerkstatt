@@ -686,11 +686,47 @@ if(checkoutCountry){
   checkoutCountry.addEventListener("change", renderShippingOptions);
 }
 
-function openCart(){cartDrawer.classList.add("open");overlay.classList.add("open")}
-function closeCart(){cartDrawer.classList.remove("open");overlay.classList.remove("open")}
-document.getElementById("openCart").onclick=openCart;
-document.getElementById("closeCart").onclick=closeCart;
-overlay.onclick=closeCart;
+const categoryMenu =
+  document.getElementById("categoryMenu");
+
+const openCategoryMenuButton =
+  document.getElementById("openCategoryMenu");
+
+const closeCategoryMenuButton =
+  document.getElementById("closeCategoryMenu");
+
+function openCart(){
+  categoryMenu.classList.remove("open");
+  cartDrawer.classList.add("open");
+  overlay.classList.add("open");
+}
+
+function closeCart(){
+  cartDrawer.classList.remove("open");
+  overlay.classList.remove("open");
+}
+
+function openCategoryMenu(){
+  cartDrawer.classList.remove("open");
+  categoryMenu.classList.add("open");
+  overlay.classList.add("open");
+}
+
+function closeCategoryMenu(){
+  categoryMenu.classList.remove("open");
+  overlay.classList.remove("open");
+}
+
+document.getElementById("openCart").onclick = openCart;
+document.getElementById("closeCart").onclick = closeCart;
+
+openCategoryMenuButton.onclick = openCategoryMenu;
+closeCategoryMenuButton.onclick = closeCategoryMenu;
+
+overlay.onclick = () => {
+  closeCart();
+  closeCategoryMenu();
+};
 
 document.getElementById("checkoutButton").onclick=()=>{
   if(!cart.length) return alert("Dein Warenkorb ist leer.");
