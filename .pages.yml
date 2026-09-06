@@ -106,10 +106,12 @@ content:
 
   - name: products
     label: Produkte
-    type: file
-    path: products.json
+    type: collection
+    path: products
     format: json
-    list: true
+    filename: "{fields.id}.json"
+    view:
+      primary: name
     fields:
       - name: id
         label: Interne ID
