@@ -95,14 +95,22 @@ function renderCategoryMenu(){
     category => !category.parent
   );
 
-  menuContent.innerHTML = `
-    <button
-      type="button"
-     class="category-link"
-      data-category=""
-    >
-      Alle Produkte
-    </button>
+ menuContent.innerHTML = `
+  <button
+    type="button"
+    class="category-link category-home"
+    data-action="home"
+  >
+    Startseite
+  </button>
+
+  <button
+    type="button"
+    class="category-link"
+    data-category=""
+  >
+    Alle Produkte
+  </button>
 
     ${mainCategories.map(mainCategory => {
       const subcategories = activeCategories.filter(
