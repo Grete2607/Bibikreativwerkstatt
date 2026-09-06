@@ -232,3 +232,38 @@ content:
         label: Anfang des Rabattcodes
         type: string
         required: true
+        
+  - name: categories
+    label: Shop-Kategorien
+    type: file
+    path: categories.json
+    format: json
+    list: true
+    fields:
+      - name: id
+        label: Interne ID
+        type: string
+        required: true
+
+      - name: name
+        label: Name
+        type: string
+        required: true
+
+      - name: parent
+        label: Übergeordnete Kategorie
+        type: string
+
+      - name: position
+        label: Position
+        type: number
+        required: true
+
+      - name: active
+        label: Im Shop anzeigen
+        type: boolean
+        default: true
+
+      - name: image
+        label: Kategoriebild
+        type: image
