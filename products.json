@@ -397,5 +397,20 @@
     "subcategory": "ohrring-clay",
     "available": true,
     "visible": true
+  },
+  {
+    "id": "Dunkelrot mit troofen",
+    "name": "Bordeaux Glam",
+    "price": 19.5,
+    "image": "/media/9ed01f2f-4e34-4912-9605-eb625b1218ed.jpeg",
+    "images": [
+      "/media/4e31c2e2-b2a1-4439-b083-527342699294.jpeg"
+    ],
+    "description": "Handgehäkelte Ohrringe in einem wunderschönen Bordeaux-Ton, kombiniert mit goldfarbenen Details und einem funkelnden Kristallanhänger.\nEin elegantes Statement-Piece, das jedes Outfit besonders macht.",
+    "badge": "Edel,Herbstlich ",
+    "category": "ohrringe",
+    "subcategory": "ohrringe-gehaekelt",
+    "available": true,
+    "visible": true
   }
 ]
