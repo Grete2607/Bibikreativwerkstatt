@@ -144,7 +144,7 @@ content:
         options:
           collection: categories
           value: "{id}"
-          label: "{primary}"
+          label: "{fields.name}"
 
       - name: subcategory
         label: Unterkategorie
@@ -152,7 +152,7 @@ content:
         options:
           collection: categories
           value: "{id}"
-          label: "{primary}"
+          label: "{fields.name}"
 
       - name: available
         label: Verfügbar
