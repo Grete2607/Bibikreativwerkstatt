@@ -78,7 +78,7 @@ const STRIPE_CHECKOUT_ENDPOINT = "https://throbbing-breeze-6d1d.bibikreativwerks
 
 let products = [];
 let categories = [];
-let selectedCategory = "";
+let selectedCategory = null;
 let cart = JSON.parse(localStorage.getItem("bibiCart") || "[]");
 
 function renderCategoryMenu(){
@@ -98,7 +98,7 @@ function renderCategoryMenu(){
   menuContent.innerHTML = `
     <button
       type="button"
-      class="category-link active"
+     class="category-link"
       data-category=""
     >
       Alle Produkte
@@ -227,6 +227,18 @@ async function loadProducts(){
 }
 
 function renderProducts(){
+
+  const shopSection =
+    document.getElementById("shop");
+
+  if(selectedCategory === null){
+    shopSection.hidden = true;
+    grid.innerHTML = "";
+    return;
+  }
+
+  shopSection.hidden = false;
+  
   const activeCategoryIds = new Set(
     categories
       .filter(category => category.active !== false)
@@ -842,6 +854,17 @@ document.getElementById("closeCart").onclick = closeCart;
 
 openCategoryMenuButton.onclick = openCategoryMenu;
 closeCategoryMenuButton.onclick = closeCategoryMenu;
+
+document
+  .querySelectorAll(
+    '.header nav a[href="#shop"], .hero a[href="#shop"]'
+  )
+  .forEach(link => {
+    link.addEventListener("click", event => {
+      event.preventDefault();
+      openCategoryMenu();
+    });
+  });
 
 overlay.onclick = () => {
   closeCart();
