@@ -177,8 +177,9 @@ button{cursor:pointer}
 
 .category-sub{
   background:transparent;
-  color:#b3688c;
+  color:#9274aa;
   border:0;
+  font-weight:500;
 }
 
 .category-link:hover{
