@@ -1,5 +1,8 @@
 name: Build categories.json
 
+permissions:
+  contents: write
+
 on:
   push:
     paths:
