@@ -77,6 +77,7 @@ const ORDER_FORM_ENDPOINT = "https://formspree.io/f/xkjwqedp";
 const STRIPE_CHECKOUT_ENDPOINT = "https://throbbing-breeze-6d1d.bibikreativwerkstatt.workers.dev";
 
 let products = [];
+let categories = [];
 let cart = JSON.parse(localStorage.getItem("bibiCart") || "[]");
 
 const grid = document.getElementById("productGrid");
