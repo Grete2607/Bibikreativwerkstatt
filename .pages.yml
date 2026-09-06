@@ -143,7 +143,7 @@ content:
         type: reference
         options:
           collection: categories
-          value: "{id}"
+          value: "{fields.id}"
           label: "{fields.name}"
 
       - name: subcategory
@@ -151,7 +151,7 @@ content:
         type: reference
         options:
           collection: categories
-          value: "{id}"
+          value: "{fields.id}"
           label: "{fields.name}"
 
       - name: available
