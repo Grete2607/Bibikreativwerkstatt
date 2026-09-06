@@ -20,5 +20,11 @@
     "position": 1,
     "active": true,
     "image": ""
+  },
+  {
+    "id": "zubehoer",
+    "name": "Zubehör",
+    "position": 3,
+    "active": true
   }
 ]
