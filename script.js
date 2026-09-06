@@ -98,7 +98,7 @@ function renderCategoryMenu(){
  menuContent.innerHTML = `
   <button
     type="button"
-    class="category-link category-home"
+    class="category-link category-main category-home"
     data-action="home"
   >
     Startseite
@@ -106,7 +106,7 @@ function renderCategoryMenu(){
 
   <button
     type="button"
-    class="category-link"
+    class="category-link category-main"
     data-category=""
   >
     Alle Produkte
