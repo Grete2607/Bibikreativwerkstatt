@@ -1,0 +1,34 @@
+[
+  {
+    "id": "ohrringe",
+    "name": "Ohrringe",
+    "parent": "",
+    "position": 1,
+    "active": true,
+    "image": ""
+  },
+  {
+    "id": "ohrringe-clay",
+    "name": "Clay",
+    "parent": "ohrringe",
+    "position": 1,
+    "active": true,
+    "image": ""
+  },
+  {
+    "id": "ohrringe-gehaekelt",
+    "name": "Gehäkelt",
+    "parent": "ohrringe",
+    "position": 2,
+    "active": true,
+    "image": ""
+  },
+  {
+    "id": "zubehoer",
+    "name": "Zubehör",
+    "parent": "",
+    "position": 2,
+    "active": true,
+    "image": ""
+  }
+]
