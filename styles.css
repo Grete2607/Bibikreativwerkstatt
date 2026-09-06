@@ -726,7 +726,7 @@ body::before {
   body::before {
     position: fixed;
     background-image: url("/media/blumen-hintergrund-mobil.png");
-    background-size: cover;
+    background-size: 100% 100%;
     background-position: top center;
     background-repeat: no-repeat;
     opacity: 0.25;
