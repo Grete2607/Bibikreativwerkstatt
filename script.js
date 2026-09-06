@@ -144,8 +144,29 @@ function renderCategoryMenu(){
     .querySelectorAll(".category-link")
     .forEach(button => {
       button.addEventListener("click", () => {
-        selectedCategory =
-          button.dataset.category || "";
+  if(button.dataset.action === "home"){
+    selectedCategory = null;
+
+    menuContent
+      .querySelectorAll(".category-link")
+      .forEach(link => {
+        link.classList.remove("active");
+      });
+
+    renderProducts();
+    closeCategoryMenu();
+
+    document
+      .getElementById("start")
+      ?.scrollIntoView({
+        behavior: "smooth"
+      });
+
+    return;
+  }
+
+  selectedCategory =
+    button.dataset.category || "";
 
         menuContent
           .querySelectorAll(".category-link")
