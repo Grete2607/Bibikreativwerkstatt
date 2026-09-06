@@ -132,6 +132,32 @@ function renderCategoryMenu(){
       `;
     }).join("")}
   `;
+    menuContent
+    .querySelectorAll(".category-link")
+    .forEach(button => {
+      button.addEventListener("click", () => {
+        selectedCategory =
+          button.dataset.category || "";
+
+        menuContent
+          .querySelectorAll(".category-link")
+          .forEach(link => {
+            link.classList.toggle(
+              "active",
+              link === button
+            );
+          });
+
+        renderProducts();
+        closeCategoryMenu();
+
+        document
+          .getElementById("shop")
+          ?.scrollIntoView({
+            behavior: "smooth"
+          });
+      });
+    });
 }
 
 
@@ -207,18 +233,55 @@ function renderProducts(){
       .map(category => category.id)
   );
 
+  const selectedCategoryData = categories.find(
+    category => category.id === selectedCategory
+  );
+
+  const selectedSubcategoryIds = new Set(
+    categories
+      .filter(category =>
+        category.active !== false &&
+        category.parent === selectedCategory
+      )
+      .map(category => category.id)
+  );
+
   const visible = products.filter(p => {
-    if (p.visible === false) return false;
+    if(p.visible === false) return false;
 
-    // Noch nicht zugeordnete Produkte weiterhin anzeigen
-    if (!p.category && !p.subcategory) return true;
+    if(
+      p.category &&
+      !activeCategoryIds.has(p.category)
+    ){
+      return false;
+    }
 
-    // Zugeordnete Produkte nur anzeigen,
-    // wenn ihre Kategorie aktiv ist
-    if (p.category && !activeCategoryIds.has(p.category)) return false;
-    if (p.subcategory && !activeCategoryIds.has(p.subcategory)) return false;
+    if(
+      p.subcategory &&
+      !activeCategoryIds.has(p.subcategory)
+    ){
+      return false;
+    }
 
-    return true;
+    // „Alle Produkte“
+    if(!selectedCategory) return true;
+
+    // Hauptkategorie, beispielsweise „Ohrringe“
+    if(
+      selectedCategoryData &&
+      !selectedCategoryData.parent
+    ){
+      return (
+        p.category === selectedCategory ||
+        selectedSubcategoryIds.has(p.subcategory)
+      );
+    }
+
+    // Unterkategorie, beispielsweise „Clay“
+    return (
+      p.category === selectedCategory ||
+      p.subcategory === selectedCategory
+    );
   });
  grid.innerHTML = visible.map(p => {
   const productImages = [
