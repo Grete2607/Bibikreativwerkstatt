@@ -137,6 +137,15 @@ content:
       - name: badge
         label: Kennzeichnung
         type: string
+
+      - name: category
+        label: Hauptkategorie
+        type: string
+
+      - name: subcategory
+        label: Unterkategorie
+        type: string
+
       - name: available
         label: Verfügbar
         type: boolean
