@@ -1,0 +1,104 @@
+name: Build products.json
+
+permissions:
+  contents: write
+
+on:
+  push:
+    paths:
+      - "products/**"
+      - ".github/workflows/build-products.yml"
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Repository laden
+        uses: actions/checkout@v4
+
+      - name: Produktdateien erstellen und zusammenführen
+        run: |
+          python3 - <<'PY'
+          import glob
+          import json
+          import os
+          import re
+          import unicodedata
+
+          os.makedirs("products", exist_ok=True)
+          product_files = sorted(glob.glob("products/*.json"))
+
+          def slugify(value):
+              value = unicodedata.normalize("NFKD", str(value))
+              value = value.encode("ascii", "ignore").decode("ascii")
+              value = value.lower().replace("ß", "ss")
+              value = re.sub(r"[^a-z0-9]+", "-", value)
+              return value.strip("-") or "produkt"
+
+          if not product_files:
+              with open("products.json", "r", encoding="utf-8") as file:
+                  products = json.load(file)
+
+              used_names = set()
+
+              for index, product in enumerate(products, start=1):
+                  base = slugify(
+                      product.get("id") or product.get("name")
+                  )
+                  filename = f"{index:03d}-{base}.json"
+
+                  while filename in used_names:
+                      base += "-2"
+                      filename = f"{index:03d}-{base}.json"
+
+                  used_names.add(filename)
+                  path = os.path.join("products", filename)
+
+                  with open(path, "w", encoding="utf-8") as file:
+                      json.dump(
+                          product,
+                          file,
+                          ensure_ascii=False,
+                          indent=2
+                      )
+                      file.write("\n")
+
+              product_files = sorted(
+                  glob.glob("products/*.json")
+              )
+
+          products = []
+
+          for path in product_files:
+              with open(path, "r", encoding="utf-8") as file:
+                  products.append(json.load(file))
+
+          with open("products.json", "w", encoding="utf-8") as file:
+              json.dump(
+                  products,
+                  file,
+                  ensure_ascii=False,
+                  indent=2
+              )
+              file.write("\n")
+
+          print(
+              f"{len(products)} Produkte verarbeitet."
+          )
+          PY
+
+      - name: Änderungen speichern
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add products products.json
+
+          if git diff --cached --quiet; then
+            echo "Keine Änderungen."
+          else
+            git commit -m "Produkte automatisch aktualisieren"
+            git push
+          fi
