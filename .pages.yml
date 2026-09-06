@@ -139,7 +139,15 @@ content:
         type: string
 
       - name: category
-        label: Kategorie
+        label: Hauptkategorie
+        type: reference
+        options:
+          collection: categories
+          value: "{fields.id}"
+          label: "{fields.name}"
+
+      - name: subcategory
+        label: Unterkategorie
         type: reference
         options:
           collection: categories
