@@ -22,6 +22,8 @@
     "image": "/media/klein-6.jpeg",
     "description": "Florales Design in warmem Rosé.",
     "badge": "Handmade",
+    "category": "ohrringe",
+    "subcategory": "ohrring-clay",
     "available": true,
     "visible": true
   },
@@ -32,6 +34,8 @@
     "image": "/media/klein-image6.jpeg",
     "description": "Zarte Blütenoptik in Creme und Blau.",
     "badge": "Unikat",
+    "category": "ohrringe",
+    "subcategory": "ohrring-clay",
     "available": true,
     "visible": true
   },
@@ -42,6 +46,8 @@
     "image": "/media/klein-3.jpeg",
     "description": "Florale Details mit goldfarbenem Stecker.",
     "badge": "Elegant",
+    "category": "ohrringe",
+    "subcategory": "ohrring-clay",
     "available": true,
     "visible": true
   },
@@ -52,6 +58,8 @@
     "image": "/media/klein-5.jpeg",
     "description": "schlicht, elegant und ein echter Hingucker",
     "badge": "Elegant",
+    "category": "ohrringe",
+    "subcategory": "ohrring-clay",
     "available": true,
     "visible": true
   },
@@ -65,6 +73,8 @@
     ],
     "description": "Modische Statement Ohrringe, Verspielt",
     "badge": "Verspielt",
+    "category": "ohrringe",
+    "subcategory": "ohrring-clay",
     "available": true,
     "visible": true
   },
@@ -75,7 +85,8 @@
     "image": "/media/edac1997-2eb6-4807-ac5d-77e3d3cc0939.jpeg",
     "description": "Zeitlose, moderne Ohrringe in Sommerfarben.",
     "badge": "Lebhaft",
-    "category": "ohrring-clay",
+    "category": "ohrringe",
+    "subcategory": "ohrring-clay",
     "available": true,
     "visible": true
   },
@@ -86,7 +97,8 @@
     "image": "/media/klein-2.jpeg",
     "description": "Hellblaue Blumenohrringe mit eleganten goldenen Schleife",
     "badge": "Verspielt",
-    "category": "ohrring-clay",
+    "category": "ohrringe",
+    "subcategory": "ohrring-clay",
     "available": true,
     "visible": true
   },
@@ -97,7 +109,8 @@
     "image": "/media/image1.jpeg",
     "description": "weiße Handgemachte Ohrringe mit filigranen grünen Blüten zum verzaubern.",
     "badge": "Blütenzauber",
-    "category": "ohrring-clay",
+    "category": "ohrringe",
+    "subcategory": "ohrring-clay",
     "available": true,
     "visible": true
   },
@@ -108,7 +121,8 @@
     "image": "/media/klein-image7.jpeg",
     "description": "Zarte rosafarbene Blüten mit goldene Akzente",
     "badge": "Hingucker",
-    "category": "ohrring-clay",
+    "category": "ohrringe",
+    "subcategory": "ohrring-clay",
     "available": true,
     "visible": true
   },
@@ -119,7 +133,8 @@
     "image": "/media/b55d9d6a-da93-4ef1-8a20-2be9afb6be1d.jpeg",
     "description": "Handgehäkelte Ohrringe in Rosa mit einem filigranen silbernen Ohrsteckerverschluss.",
     "badge": "Verspielt & Zeitlos",
-    "category": "ohrringe-gehaekelt",
+    "category": "ohrringe",
+    "subcategory": "ohrringe-gehaekelt",
     "available": true,
     "visible": true
   },
@@ -130,7 +145,8 @@
     "image": "/media/4489f4ae-5f7a-4ab9-bb91-2c72cbebc9fe.jpeg",
     "description": "Zarte Ohrringe in Salbeigrün mit filigranem Handgehäkeltem Muster.",
     "badge": "zartes Häkelmuster in Salbeigrün",
-    "category": "ohrringe-gehaekelt",
+    "category": "ohrringe",
+    "subcategory": "ohrringe-gehaekelt",
     "available": true,
     "visible": true
   },
@@ -141,7 +157,8 @@
     "image": "/media/b19206c9-c2e4-4e93-9d86-7fc1b0b1cb2a.jpeg",
     "description": "Mit edlem Walnussholz und einem zarten, handgehäkelten Mandala-Muster",
     "badge": "Leicht & angenehm zu tragen",
-    "category": "ohrringe-gehaekelt",
+    "category": "ohrringe",
+    "subcategory": "ohrringe-gehaekelt",
     "available": true,
     "visible": true
   },
@@ -162,7 +179,8 @@
     "image": "/media/dc3c7847-13fb-44e2-8dde-d8c837a72dec.jpeg",
     "description": "Zartes Salbeigrün trifft auf filigrane Handarbeit.",
     "badge": "Kleies Unikat",
-    "category": "ohrringe-gehaekelt",
+    "category": "ohrringe",
+    "subcategory": "ohrringe-gehaekelt",
     "available": true,
     "visible": true
   },
@@ -173,7 +191,8 @@
     "image": "/media/IMG_8472-1.jpeg",
     "description": "Hellblaue Herzen treffen auf funkelnde Detail.\n",
     "badge": "Liebe",
-    "category": "ohrring-clay",
+    "category": "ohrringe",
+    "subcategory": "ohrring-clay",
     "available": true,
     "visible": true
   },
@@ -184,7 +203,8 @@
     "image": "/media/f631ab37-1b12-47f9-a3bb-aa1727a7380a-1.jpeg",
     "description": "Handgefertigte Ohrringe mit einen besonderen Türkisfarbigen Charakter",
     "badge": "Blickfang",
-    "category": "ohrring-clay",
+    "category": "ohrringe",
+    "subcategory": "ohrring-clay",
     "available": true,
     "visible": true
   },
@@ -199,7 +219,8 @@
     ],
     "description": "Herzchenstecker in drei Farben, bei Bestellabschluss bitte in der Anmerkung die Farbe angeben",
     "badge": "Liebe",
-    "category": "ohrring-clay",
+    "category": "ohrringe",
+    "subcategory": "ohrring-clay",
     "available": true,
     "visible": true
   },
@@ -210,7 +231,8 @@
     "image": "/media/9fa14803-17aa-4fb6-9d30-b78d676195ea.jpeg",
     "description": "Zarte Blumenohrringe in sanften Pastellton, veredelt mit goldenen Akzenten.",
     "badge": "Blumenliebe",
-    "category": "ohrring-clay",
+    "category": "ohrringe",
+    "subcategory": "ohrring-clay",
     "available": true,
     "visible": true
   },
@@ -221,7 +243,8 @@
     "image": "/media/0039bc64-a74b-4459-a049-69a168d287be.jpeg",
     "description": "Zarte Blüten treffen auf edle goldene Akzente.",
     "badge": "Zeitlos, Feminin",
-    "category": "ohrring-clay",
+    "category": "ohrringe",
+    "subcategory": "ohrring-clay",
     "available": true,
     "visible": true
   },
@@ -232,7 +255,8 @@
     "image": "/media/df2a3247-7ee5-4067-a1de-766fcc293366.jpeg",
     "description": "Ein zeitloses Schmuckstück, das sich wunderbar im Alltag  sowie zu besonderen Anlässen tragen lässt.",
     "badge": "Zeitlos,Leicht",
-    "category": "ohrring-clay",
+    "category": "ohrringe",
+    "subcategory": "ohrring-clay",
     "available": true,
     "visible": true
   },
@@ -243,7 +267,8 @@
     "image": "/media/f98f32f8-abc6-4a6d-8356-da616f226cfd.jpeg",
     "description": "elegante, handgemachte Ohrringe in edlem Schwarz & Gold. Ein stilvoller Hingucker für jeden Anlass.",
     "badge": "Elegant ",
-    "category": "ohrring-clay",
+    "category": "ohrringe",
+    "subcategory": "ohrring-clay",
     "available": true,
     "visible": true
   },
@@ -254,7 +279,8 @@
     "image": "/media/4a1f0cd5-9dd2-4398-89a8-78d28a6edbef.jpeg",
     "description": "Zarte, handgemachte Ohrringe in Pfirsichrosa mit goldfarbenem Detail.",
     "badge": "Verspielt ",
-    "category": "ohrring-clay",
+    "category": "ohrringe",
+    "subcategory": "ohrring-clay",
     "available": true,
     "visible": true
   },
@@ -265,7 +291,8 @@
     "image": "/media/062377b8-11e2-4ee1-ac35-54bfa4d24d17.jpeg",
     "description": "Zarte gehäkelte Ohrringe in Salbeigrün mit einem eleganten goldfarbenen Anhänger.",
     "badge": "Leicht",
-    "category": "ohrringe-gehaekelt",
+    "category": "ohrringe",
+    "subcategory": "ohrringe-gehaekelt",
     "available": true,
     "visible": true
   },
@@ -276,7 +303,8 @@
     "image": "/media/7b800647-dd6a-4b14-9d50-13c43e40a44e.jpeg",
     "description": "Zarte, handgehäkelte Ohrringe in einem wunderschönen Salbeigrün, kombiniert mit goldfarbenen Details.",
     "badge": "Tracht",
-    "category": "ohrringe-gehaekelt",
+    "category": "ohrringe",
+    "subcategory": "ohrringe-gehaekelt",
     "available": true,
     "visible": true
   },
@@ -287,7 +315,8 @@
     "image": "/media/064698b6-3d40-4176-90dc-04ff0aeab872.jpeg",
     "description": "Wunderschöne, handgehäkelte Ohrringe in zartem Salbeigrün mit filigranem Blütenmuster und goldfarbenem Anhänger. ",
     "badge": "Elegant zur Tracht",
-    "category": "ohrringe-gehaekelt",
+    "category": "ohrringe",
+    "subcategory": "ohrringe-gehaekelt",
     "available": true,
     "visible": true
   },
@@ -298,7 +327,8 @@
     "image": "/media/dd1b7439-c45e-48fb-8f96-953b297703ed.jpeg",
     "description": "Elegante, handgemachte Ohrringe in Anthrazit mit goldfarbenen Details. Das filigrane Blattmuster und der große runde Rahmen verleihen ihnen einen modernen und edlen Look.",
     "badge": "Stilvoll",
-    "category": "ohrring-clay",
+    "category": "ohrringe",
+    "subcategory": "ohrring-clay",
     "available": true,
     "visible": true
   },
@@ -309,7 +339,8 @@
     "image": "/media/c42a5c61-b42e-464f-ac5f-d50de9b25714.jpeg",
     "description": "Handgemachte Ohrringe aus Polymer Clay in elegantem Schwarz mit floralem Blüten-Design. Die detailreiche Struktur macht jedes Paar zu einem besonderen Hingucker. ",
     "badge": "Selten",
-    "category": "ohrring-clay",
+    "category": "ohrringe",
+    "subcategory": "ohrring-clay",
     "available": true,
     "visible": true
   },
@@ -324,7 +355,8 @@
     ],
     "description": "Handgemachte Ohrringe aus Polymer Clay mit einem wunderschönen, floralen Blattdesign. Bei Bestellabschluss bitte die Farbe angeben ",
     "badge": "Zeitlos",
-    "category": "ohrring-clay",
+    "category": "ohrringe",
+    "subcategory": "ohrring-clay",
     "available": true,
     "visible": true
   },
@@ -335,7 +367,8 @@
     "image": "/media/8c005efc-7554-48da-be0c-33dfb4e65797.jpeg",
     "description": "Handgemachte Statement-Ohrringe aus Polymer Clay in edlem Schwarz mit strukturiertem V-Design und goldfarbenem Ring. ",
     "badge": "Unikat",
-    "category": "ohrring-clay",
+    "category": "ohrringe",
+    "subcategory": "ohrring-clay",
     "available": true,
     "visible": true
   },
@@ -346,7 +379,8 @@
     "image": "/media/59b2e3a0-6664-4521-8b4b-9e6e9c227fd3.jpeg",
     "description": "Die fein strukturierte Oberfläche sorgt für einen besonderen Look, während die goldfarbene Halbmond-Form und die passenden Details die Ohrringe edel abrunden.",
     "badge": "Edel, Einzigartig ",
-    "category": "ohrring-clay",
+    "category": "ohrringe",
+    "subcategory": "ohrring-clay",
     "available": true,
     "visible": true
   },
@@ -357,7 +391,8 @@
     "image": "/media/f83e3fbc-2af7-4475-b15b-a0b5917808fb.jpeg",
     "description": "Zarte, handgemachte Ohrringe in Weiß und Gold mit filigranem Blumenmuster. 🌸✨\nDie weißen Polymer-Clay-Elemente liegen in einem strukturierten goldfarbenen Kreis und ergeben dadurch einen besonders eleganten und femininen Look.",
     "badge": "Elegant, Zeitlos",
-    "category": "ohrring-clay",
+    "category": "ohrringe",
+    "subcategory": "ohrring-clay",
     "available": true,
     "visible": true
   }
