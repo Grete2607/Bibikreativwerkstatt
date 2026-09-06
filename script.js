@@ -103,6 +103,30 @@ function escapeHtml(value = ""){
 
 const money = v => new Intl.NumberFormat("de-AT", {style:"currency", currency:"EUR"}).format(v);
 
+async function loadCategories(){
+  try{
+    const response = await fetch(`categories.json?v=${Date.now()}`);
+
+    if(!response.ok){
+      throw new Error("categories.json konnte nicht geladen werden");
+    }
+
+    const data = await response.json();
+
+    categories = Array.isArray(data)
+      ? data
+      : Object.values(data);
+
+  }catch(error){
+    console.error(
+      "Kategorien konnten nicht geladen werden:",
+      error
+    );
+
+    categories = [];
+  }
+}
+
 async function loadProducts(){
   try{
     const response = await fetch(`products.json?v=${Date.now()}`);
@@ -890,6 +914,7 @@ async function loadReviews() {
 }
 
 document.getElementById("year").textContent=new Date().getFullYear();
+loadCategories();
 loadProducts();
 loadSiteContent();
 loadShippingConfig();
