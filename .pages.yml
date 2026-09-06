@@ -140,19 +140,21 @@ content:
 
       - name: category
         label: Hauptkategorie
-        type: reference
+        type: select
         options:
-          collection: categories
-          value: "{fields.id}"
-          label: "{fields.name}"
+          values:
+            - value: ohrringe
+              label: Ohrringe
 
       - name: subcategory
         label: Unterkategorie
-        type: reference
+        type: select
         options:
-          collection: categories
-          value: "{fields.id}"
-          label: "{fields.name}"
+          values:
+            - value: ohrring-clay
+              label: Clay
+            - value: ohrringe-gehaekelt
+              label: Gehäkelt
 
       - name: available
         label: Verfügbar
