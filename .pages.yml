@@ -257,7 +257,7 @@ content:
     format: json
     filename: "{primary}.json"
     view:
-      primary: id
+      primary: name
     fields:
       - name: id
         label: Interne ID
