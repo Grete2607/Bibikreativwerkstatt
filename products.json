@@ -414,6 +414,21 @@
     "visible": true
   },
   {
+    "id": "Rot gehäkel Mit blatt",
+    "name": "Golden Autumn",
+    "price": 18,
+    "image": "/media/10404497-d650-4ace-947e-1c62b636daa7.jpeg",
+    "images": [
+      "/media/e26b8a7e-8f51-4573-8cbf-52314ad2ae44.jpeg"
+    ],
+    "description": "Handgehäkelte Ohrringe in edlem Bordeaux, kombiniert mit goldfarbenen Details und einem filigranen Blattanhänger. Ein besonderer Hingucker mit einem wunderschönen Boho-Touch.",
+    "badge": "Tracht, Edel",
+    "category": "ohrringe",
+    "subcategory": "ohrringe-gehaekelt",
+    "available": true,
+    "visible": true
+  },
+  {
     "id": "Rot pflanzen muster ",
     "name": "Bordeaux Leaf",
     "price": 15.9,
