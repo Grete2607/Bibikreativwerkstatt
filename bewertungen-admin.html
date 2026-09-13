@@ -545,13 +545,56 @@ function renderOrders(orders) {
         : "";
 
 
-    card.appendChild(title);
-    card.appendChild(orderNumber);
-    card.appendChild(email);
-    card.appendChild(products);
-    card.appendChild(date);
+    const actions =
+      document.createElement("div");
 
-    ordersContainer.appendChild(card);
+actions.className = "actions";
+
+
+const shippedButton =
+  document.createElement("button");
+
+shippedButton.textContent =
+  "📦 Versand bestätigen";
+
+shippedButton.className =
+  "publish";
+
+shippedButton.onclick = () => {
+  alert(
+    "Die Versandfunktion bauen wir im nächsten Schritt ein."
+  );
+};
+
+
+const doneButton =
+  document.createElement("button");
+
+doneButton.textContent =
+  "✓ Ohne Mail erledigen";
+
+doneButton.className =
+  "hide";
+
+doneButton.onclick = () => {
+  alert(
+    "Die Funktion ohne Mail bauen wir im nächsten Schritt ein."
+  );
+};
+
+
+actions.appendChild(shippedButton);
+actions.appendChild(doneButton);
+
+
+card.appendChild(title);
+card.appendChild(orderNumber);
+card.appendChild(email);
+card.appendChild(products);
+card.appendChild(date);
+card.appendChild(actions);
+
+ordersContainer.appendChild(card);
   });
 }
   
