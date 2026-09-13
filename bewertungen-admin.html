@@ -178,6 +178,19 @@
       <div id="status" class="status"></div>
     </section>
 
+<section class="login-box" id="ordersBox" style="display: none;">
+  <h2>Offene Bestellungen</h2>
+
+  <p>
+    Bestellungen, die noch nicht als versendet markiert wurden.
+  </p>
+
+  <div id="ordersContainer"></div>
+
+  <div id="ordersStatus" class="status"></div>
+</section>
+
+    
 <section class="login-box" id="manualReviewMailBox" style="display: none;">
   <h2>Bewertungsmail manuell senden</h2>
 
@@ -244,7 +257,15 @@ const sendReviewMailButton =
 
 const mailStatus =
   document.getElementById("mailStatus");
-  
+
+  const ordersBox =
+  document.getElementById("ordersBox");
+
+const ordersContainer =
+  document.getElementById("ordersContainer");
+
+const ordersStatus =
+  document.getElementById("ordersStatus");
 
 loginButton.onclick = () => {
   loadReviews();
@@ -379,13 +400,16 @@ async function loadReviews() {
       );
     }
 
-    renderReviews(data.reviews || []);
-    document.getElementById("manualReviewMailBox").style.display = "block";
+   renderReviews(data.reviews || []);
 
-    showStatus(
-      `${data.reviews.length} Bewertung(en) geladen.`,
-      false
-    );
+document.getElementById("manualReviewMailBox").style.display = "block";
+
+await loadOrders();
+
+showStatus(
+  `${data.reviews.length} Bewertung(en) geladen.`,
+  false
+);
 
   } catch (error) {
 
@@ -400,7 +424,137 @@ async function loadReviews() {
   }
 }
 
+async function loadOrders() {
 
+  const secret = secretInput.value.trim();
+
+  ordersStatus.textContent =
+    "Bestellungen werden geladen …";
+
+  ordersStatus.className = "status";
+
+  try {
+
+    const response = await fetch(
+      `${WORKER}/admin/orders`,
+      {
+        headers: {
+          "X-Admin-Secret": secret
+        }
+      }
+    );
+
+    const data = await response.json();
+
+    if (!response.ok || !data.ok) {
+      throw new Error(
+        data.error ||
+        "Bestellungen konnten nicht geladen werden."
+      );
+    }
+
+    renderOrders(data.orders || []);
+
+    ordersBox.style.display = "block";
+
+    ordersStatus.textContent =
+      `${data.orders.length} offene Bestellung(en).`;
+
+    ordersStatus.className =
+      "status success";
+
+  } catch (error) {
+
+    ordersContainer.innerHTML = "";
+
+    ordersBox.style.display = "block";
+
+    ordersStatus.textContent =
+      error.message ||
+      "Bestellungen konnten nicht geladen werden.";
+
+    ordersStatus.className =
+      "status error";
+  }
+}
+
+function renderOrders(orders) {
+
+  ordersContainer.innerHTML = "";
+
+  if (!orders.length) {
+
+    ordersContainer.innerHTML =
+      "<p>Aktuell gibt es keine offenen Bestellungen. 🎉</p>";
+
+    return;
+  }
+
+  orders.forEach(order => {
+
+    const card =
+      document.createElement("article");
+
+    card.className = "review-card";
+
+
+    const title =
+      document.createElement("h3");
+
+    title.textContent =
+      order.customer_name || "Kunde";
+
+
+    const orderNumber =
+      document.createElement("div");
+
+    orderNumber.className = "review-meta";
+
+    orderNumber.textContent =
+      `Bestellung: ${order.order_number || ""}`;
+
+
+    const email =
+      document.createElement("div");
+
+    email.className = "review-meta";
+
+    email.textContent =
+      `E-Mail: ${order.customer_email || ""}`;
+
+
+    const products =
+      document.createElement("div");
+
+    products.className = "comment";
+
+    products.textContent =
+      order.products || "";
+
+
+    const date =
+      document.createElement("div");
+
+    date.className = "review-meta";
+
+    date.textContent =
+      order.purchased_at
+        ? "Bestellt am: " +
+          new Date(order.purchased_at)
+            .toLocaleString("de-AT")
+        : "";
+
+
+    card.appendChild(title);
+    card.appendChild(orderNumber);
+    card.appendChild(email);
+    card.appendChild(products);
+    card.appendChild(date);
+
+    ordersContainer.appendChild(card);
+  });
+}
+  
 function renderReviews(reviews) {
 
   reviewsContainer.innerHTML = "";
