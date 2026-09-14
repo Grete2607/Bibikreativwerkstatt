@@ -210,6 +210,7 @@
     "name": "Blue Heart",
     "price": 13.5,
     "image": "/media/IMG_8472-1.jpeg",
+    "ai_image": true,
     "description": "Hellblaue Herzen treffen auf funkelnde Detail.\n",
     "badge": "Liebe",
     "category": "ohrringe",
