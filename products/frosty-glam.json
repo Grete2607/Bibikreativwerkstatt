@@ -1,0 +1,15 @@
+{
+  "id": "Frosty Glam",
+  "name": "Frosty Glam",
+  "price": 19.5,
+  "image": "/media/e0dc185e-4acb-4e71-8e74-07d7f49bcc86.jpeg",
+  "images": [
+    "/media/c5258309-4768-4519-be47-7ad67a2dbf54.jpeg"
+  ],
+  "description": "Ein Hauch von Eleganz trifft auf liebevolle Handarbeit. ✨\nDie Ice Blue Glam Ohrringe verbinden zartes Eisblau mit edlen goldfarbenen Details und einem funkelnden Schmuckstein.",
+  "badge": "Einzigartig, Elegant ",
+  "category": "ohrringe",
+  "subcategory": "ohrringe-gehaekelt",
+  "available": true,
+  "visible": true
+}
