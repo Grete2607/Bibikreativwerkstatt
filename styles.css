@@ -815,6 +815,16 @@ body::before {
   box-shadow: 0 2px 8px rgba(80, 57, 95, 0.14);
 }
 
+.product-ai-label {
+  position: static;
+  transform: none;
+
+  margin: 8px 12px 0;
+  align-self: flex-start;
+
+  max-width: calc(100% - 24px);
+}
+
 /* KI-Kennzeichnung in der großen Bildansicht */
 .lightbox-ai-label {
   position: fixed;
