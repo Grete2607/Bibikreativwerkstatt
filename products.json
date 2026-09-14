@@ -5,9 +5,18 @@
     "price": 14.5,
     "image": "/media/bd468294-dcbc-4b6f-a5c3-275b58158a04.jpeg",
     "images": [
-      "/media/83c2454e-d642-44d5-a2ee-98384a544172.jpeg",
-      "/media/f28b2977-cd21-49cc-b122-155ca50d0093.jpeg",
-      "/media/617f7993-2506-4d92-b457-b84eed3eb746-1.jpeg"
+      {
+        "image": "/media/83c2454e-d642-44d5-a2ee-98384a544172.jpeg",
+        "ai_image": false
+      },
+      {
+        "image": "/media/f28b2977-cd21-49cc-b122-155ca50d0093.jpeg",
+        "ai_image": false
+      },
+      {
+        "image": "/media/617f7993-2506-4d92-b457-b84eed3eb746-1.jpeg",
+        "ai_image": false
+      }
     ],
     "description": "Fröhliche Zitronen mit weißen Blüten.",
     "badge": "Sommerliebling",
@@ -70,8 +79,14 @@
     "price": 15.99,
     "image": "/media/image8.jpeg",
     "images": [
-      "/media/d283e310-e01d-466f-a5b8-cc519937151f.jpeg",
-      "/media/cc8323a2-14a3-4a6e-8225-bc26019c7fd3-1.jpeg"
+      {
+        "image": "/media/d283e310-e01d-466f-a5b8-cc519937151f.jpeg",
+        "ai_image": false
+      },
+      {
+        "image": "/media/cc8323a2-14a3-4a6e-8225-bc26019c7fd3-1.jpeg",
+        "ai_image": false
+      }
     ],
     "description": "Modische Statement Ohrringe, Verspielt",
     "badge": "Verspielt",
@@ -218,8 +233,14 @@
     "price": 12,
     "image": "/media/4a853810-f577-47e1-bb4a-bf9d9426f5e1.jpeg",
     "images": [
-      "/media/3af58b0a-a8c9-4aff-b30d-5ef77486f808.jpeg",
-      "/media/28eda1d6-bd2e-42d0-ac41-76dc7b822782.jpeg"
+      {
+        "image": "/media/3af58b0a-a8c9-4aff-b30d-5ef77486f808.jpeg",
+        "ai_image": false
+      },
+      {
+        "image": "/media/28eda1d6-bd2e-42d0-ac41-76dc7b822782.jpeg",
+        "ai_image": false
+      }
     ],
     "description": "Herzchenstecker in drei Farben, bei Bestellabschluss bitte in der Anmerkung die Farbe angeben",
     "badge": "Liebe",
@@ -294,7 +315,10 @@
     "price": 14.9,
     "image": "/media/062377b8-11e2-4ee1-ac35-54bfa4d24d17.jpeg",
     "images": [
-      "/media/f4716c3a-0a7e-4d21-bb1c-9e071639d703-1.jpeg"
+      {
+        "image": "/media/f4716c3a-0a7e-4d21-bb1c-9e071639d703-1.jpeg",
+        "ai_image": false
+      }
     ],
     "description": "Zarte gehäkelte Ohrringe in Salbeigrün mit einem eleganten goldfarbenen Anhänger.",
     "badge": "Leicht",
@@ -357,8 +381,14 @@
     "price": 13.45,
     "image": "/media/10fa54cf-eaf2-4a19-8eb8-22a3dd84694a.jpeg",
     "images": [
-      "/media/45f53773-87c5-4827-bf2b-14135b0e8e66.jpeg",
-      "/media/IMG_8466-2.jpeg"
+      {
+        "image": "/media/45f53773-87c5-4827-bf2b-14135b0e8e66.jpeg",
+        "ai_image": false
+      },
+      {
+        "image": "/media/IMG_8466-2.jpeg",
+        "ai_image": false
+      }
     ],
     "description": "Handgemachte Ohrringe aus Polymer Clay mit einem wunderschönen, floralen Blattdesign. Bei Bestellabschluss bitte die Farbe angeben ",
     "badge": "Zeitlos",
@@ -373,7 +403,10 @@
     "price": 14.55,
     "image": "/media/8c005efc-7554-48da-be0c-33dfb4e65797.jpeg",
     "images": [
-      "/media/5fb79320-a821-4a0d-b8bd-ff5a6bf96cdc-1.jpeg"
+      {
+        "image": "/media/5fb79320-a821-4a0d-b8bd-ff5a6bf96cdc-1.jpeg",
+        "ai_image": false
+      }
     ],
     "description": "Handgemachte Statement-Ohrringe aus Polymer Clay in edlem Schwarz mit strukturiertem V-Design und goldfarbenem Ring. ",
     "badge": "Unikat",
@@ -411,8 +444,12 @@
     "name": "    Autumn Romance",
     "price": 19.9,
     "image": "/media/875735ca-d29b-4d81-8442-1472832d359a.jpeg",
+    "ai_image": true,
     "images": [
-      "/media/f7ed7ff8-1bb5-4a16-bd45-5c499c9dd669.jpeg"
+      {
+        "image": "/media/f7ed7ff8-1bb5-4a16-bd45-5c499c9dd669.jpeg",
+        "ai_image": false
+      }
     ],
     "description": "Das warme Bordeaux passt perfekt zur Herbstzeit und macht die Ohrringe zu einem besonderen Hingucker.",
     "badge": "Leicht & angenehm zu tragen",
@@ -427,7 +464,10 @@
     "price": 15.5,
     "image": "/media/4acee174-ac7c-4d60-abe1-15c39c2e965e.jpeg",
     "images": [
-      "/media/0eefa0cd-d5a3-469b-a462-c7016a3daa2f.jpeg"
+      {
+        "image": "/media/0eefa0cd-d5a3-469b-a462-c7016a3daa2f.jpeg",
+        "ai_image": false
+      }
     ],
     "description": "Die handgefertigten Polymer-Clay-Elemente mit feiner Blattstruktur machen jedes Paar zu einem kleinen Unikat. Die goldfarbenen, strukturierten Anhänger setzen einen wunderschönen Kontrast und verleihen dem Design einen stilvollen, femininen Look.",
     "badge": "Stillvoll",
@@ -442,7 +482,10 @@
     "price": 17.9,
     "image": "/media/e7ef3c50-ce19-479f-8bb1-4703ade7dae0.jpeg",
     "images": [
-      "/media/f320b378-829b-44e2-86f1-a9622a410e1e.jpeg"
+      {
+        "image": "/media/f320b378-829b-44e2-86f1-a9622a410e1e.jpeg",
+        "ai_image": false
+      }
     ],
     "description": "Elegante, handgemachte Ohrringe aus Polymer Clay in einem wunderschönen Bordeaux-Ton. Die goldfarbenen Blätter und funkelnden Steine verleihen ihnen einen edlen Herbst-Look. 🍁✨",
     "badge": "Perfekt als Geschenk oder für deinen eigenen Herbst-Look",
@@ -457,7 +500,10 @@
     "price": 19.5,
     "image": "/media/9ed01f2f-4e34-4912-9605-eb625b1218ed.jpeg",
     "images": [
-      "/media/4e31c2e2-b2a1-4439-b083-527342699294.jpeg"
+      {
+        "image": "/media/4e31c2e2-b2a1-4439-b083-527342699294.jpeg",
+        "ai_image": false
+      }
     ],
     "description": "Handgehäkelte Ohrringe in einem wunderschönen Bordeaux-Ton, kombiniert mit goldfarbenen Details und einem funkelnden Kristallanhänger.\nEin elegantes Statement-Piece, das jedes Outfit besonders macht.",
     "badge": "Edel,Herbstlich ",
@@ -472,7 +518,10 @@
     "price": 19.5,
     "image": "/media/e0dc185e-4acb-4e71-8e74-07d7f49bcc86.jpeg",
     "images": [
-      "/media/c5258309-4768-4519-be47-7ad67a2dbf54.jpeg"
+      {
+        "image": "/media/c5258309-4768-4519-be47-7ad67a2dbf54.jpeg",
+        "ai_image": false
+      }
     ],
     "description": "Ein Hauch von Eleganz trifft auf liebevolle Handarbeit. ✨\nDie Ice Blue Glam Ohrringe verbinden zartes Eisblau mit edlen goldfarbenen Details und einem funkelnden Schmuckstein.",
     "badge": "Einzigartig, Elegant ",
@@ -487,7 +536,10 @@
     "price": 17.5,
     "image": "/media/9aafb19e-061f-4235-a93d-ca4bb76711f9.jpeg",
     "images": [
-      "/media/e4091e8f-8b58-4d71-abc0-b7c6844f168f.jpeg"
+      {
+        "image": "/media/e4091e8f-8b58-4d71-abc0-b7c6844f168f.jpeg",
+        "ai_image": false
+      }
     ],
     "description": "Edle, handgemachte Ohrringe in einem wunderschönen Bordeaux-Ton, kombiniert mit eleganten goldfarbenen Elementen. ",
     "badge": "Bordeaux liebe",
@@ -502,7 +554,10 @@
     "price": 18,
     "image": "/media/76e9a0eb-77c8-49ec-a642-ecb9d1c01ceb.jpeg",
     "images": [
-      "/media/6a750db5-7f7e-46a5-828d-4a432038f395.jpeg"
+      {
+        "image": "/media/6a750db5-7f7e-46a5-828d-4a432038f395.jpeg",
+        "ai_image": false
+      }
     ],
     "description": "Zartes Eisblau trifft auf edles Gold – die handgefertigten Golden Frost Ohrringe sind ein besonderer Hingucker. 🩵✨ der Hacken befindet sich aus Sternilingssilber 925",
     "badge": "Mit Liebe gemacht",
@@ -517,7 +572,10 @@
     "price": 13.2,
     "image": "/media/c6ec2d11-2750-4af7-ac87-6413beecf33f-1.jpeg",
     "images": [
-      "/media/04050690-1bfe-410d-a436-93e4a662243a.jpeg"
+      {
+        "image": "/media/04050690-1bfe-410d-a436-93e4a662243a.jpeg",
+        "ai_image": false
+      }
     ],
     "description": "Edle, handgefertigte Ohrringe in einem wunderschönen Bordeaux-Ton. Die strukturierte runde Form wird durch einen eleganten goldfarbenen Ring ergänzt und macht die Ohrringe zu einem stilvollen Hingucker.",
     "badge": "Edel, Hingucker ",
@@ -532,7 +590,10 @@
     "price": 18,
     "image": "/media/10404497-d650-4ace-947e-1c62b636daa7.jpeg",
     "images": [
-      "/media/e26b8a7e-8f51-4573-8cbf-52314ad2ae44.jpeg"
+      {
+        "image": "/media/e26b8a7e-8f51-4573-8cbf-52314ad2ae44.jpeg",
+        "ai_image": false
+      }
     ],
     "description": "Handgehäkelte Ohrringe in edlem Bordeaux, kombiniert mit goldfarbenen Details und einem filigranen Blattanhänger. Ein besonderer Hingucker mit einem wunderschönen Boho-Touch.",
     "badge": "Tracht, Edel",
@@ -547,7 +608,10 @@
     "price": 15.9,
     "image": "/media/d412c58b-5d78-4652-b20c-dc627e1f5233.jpeg",
     "images": [
-      "/media/4bf466ac-d4a0-4582-a7c6-6119f7375629.jpeg"
+      {
+        "image": "/media/4bf466ac-d4a0-4582-a7c6-6119f7375629.jpeg",
+        "ai_image": false
+      }
     ],
     "description": "Handgefertigte Ohrringe in einem warmen Bordeaux-Rot mit zartem Blattmuster. Der goldfarbene Ring verleiht ihnen einen eleganten Look und macht sie zu einem besonderen Hingucker - perfekt für Alltag und besondere Anlässe.",
     "badge": "Tracht, Heebstlich",
