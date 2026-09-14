@@ -133,6 +133,10 @@ content:
         label: Weitere Produktbilder
         type: image
         list: true
+      - name: ai_image
+        label: KI-generiertes Produktbild
+        type: boolean
+        default: false
       - name: description
         label: Beschreibung
         type: text
