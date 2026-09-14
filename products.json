@@ -142,6 +142,7 @@
     "name": "Rosy Bloom",
     "price": 16.99,
     "image": "/media/klein-image7.jpeg",
+    "ai_image": true,
     "description": "Zarte rosafarbene Blüten mit goldene Akzente",
     "badge": "Hingucker",
     "category": "ohrringe",
