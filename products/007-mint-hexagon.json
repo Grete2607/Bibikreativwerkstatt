@@ -3,6 +3,7 @@
   "name": "Mint Dreram",
   "price": 15.5,
   "image": "/media/edac1997-2eb6-4807-ac5d-77e3d3cc0939.jpeg",
+  "ai_image": true,
   "description": "Zeitlose, moderne Ohrringe in Sommerfarben.",
   "badge": "Lebhaft",
   "category": "ohrringe",
