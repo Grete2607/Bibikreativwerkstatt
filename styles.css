@@ -793,6 +793,40 @@ body::before {
 .gallery-dot.active {
   background: var(--purple);
 }
+
+/* Kennzeichnung für KI-generierte Produktbilder */
+.ai-image-label {
+  position: absolute;
+  left: 10px;
+  bottom: 28px;
+  z-index: 4;
+
+  max-width: calc(100% - 20px);
+  padding: 5px 9px;
+
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+
+  color: var(--purple);
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1.2;
+
+  box-shadow: 0 2px 8px rgba(80, 57, 95, 0.14);
+}
+
+/* KI-Kennzeichnung in der großen Bildansicht */
+.lightbox-ai-label {
+  position: fixed;
+  left: 50%;
+  bottom: 30px;
+  transform: translateX(-50%);
+  z-index: 1003;
+
+  font-size: 12px;
+  padding: 7px 12px;
+}
+
 /* Große Produktbild-Ansicht */
 .image-lightbox {
   position: fixed;
