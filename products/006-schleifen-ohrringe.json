@@ -3,10 +3,11 @@
   "name": "Flower Dream",
   "price": 15.99,
   "image": "/media/image8.jpeg",
+  "ai_image": true,
   "images": [
     {
       "image": "/media/d283e310-e01d-466f-a5b8-cc519937151f.jpeg",
-      "ai_image": false
+      "ai_image": true
     },
     {
       "image": "/media/cc8323a2-14a3-4a6e-8225-bc26019c7fd3-1.jpeg",
