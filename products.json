@@ -422,6 +422,21 @@
     "visible": true
   },
   {
+    "id": "Bordeaux Bloom",
+    "name": "Bordeaux Bloom",
+    "price": 15.5,
+    "image": "/media/4acee174-ac7c-4d60-abe1-15c39c2e965e.jpeg",
+    "images": [
+      "/media/0eefa0cd-d5a3-469b-a462-c7016a3daa2f.jpeg"
+    ],
+    "description": "Die handgefertigten Polymer-Clay-Elemente mit feiner Blattstruktur machen jedes Paar zu einem kleinen Unikat. Die goldfarbenen, strukturierten Anhänger setzen einen wunderschönen Kontrast und verleihen dem Design einen stilvollen, femininen Look.",
+    "badge": "Stillvoll",
+    "category": "ohrringe",
+    "subcategory": "ohrring-clay",
+    "available": true,
+    "visible": true
+  },
+  {
     "id": "Bordeaux mit kl Blatt",
     "name": "    Burgundy Shine",
     "price": 17.9,
