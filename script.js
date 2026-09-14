@@ -467,7 +467,10 @@ document.querySelectorAll(".gallery-image").forEach(image => {
     const lightboxPhoto = document.getElementById("imageLightboxPhoto");
     const lightboxPrev = document.getElementById("lightboxPrev");
     const lightboxNext = document.getElementById("lightboxNext");
+    const lightboxAiLabel = document.getElementById("lightboxAiLabel");
 
+
+    
     const gallery = image.closest(".product-gallery");
     const id = gallery?.dataset.gallery;
     const product = products.find(p => p.id === id);
@@ -493,6 +496,9 @@ document.querySelectorAll(".gallery-image").forEach(image => {
 
    lightboxPhoto.src = productImages[currentIndex].image;
     lightboxPhoto.alt = image.alt;
+    if (lightboxAiLabel) {
+  lightboxAiLabel.hidden = !productImages[currentIndex].ai_image;
+}
 
     lightbox.dataset.productId = id;
     lightbox.dataset.index = String(currentIndex);
@@ -568,6 +574,13 @@ function changeLightboxImage(direction) {
     productImages.length;
 
  lightboxPhoto.src = productImages[index].image;
+
+const lightboxAiLabel = document.getElementById("lightboxAiLabel");
+
+if (lightboxAiLabel) {
+  lightboxAiLabel.hidden = !productImages[index].ai_image;
+}
+  
   imageLightbox.dataset.index = String(index);
 }
 
