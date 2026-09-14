@@ -1,0 +1,15 @@
+{
+  "id": "Bordeaux mit kl Blatt",
+  "name": "    Burgundy Shine",
+  "price": 17.9,
+  "image": "/media/e7ef3c50-ce19-479f-8bb1-4703ade7dae0.jpeg",
+  "images": [
+    "/media/f320b378-829b-44e2-86f1-a9622a410e1e.jpeg"
+  ],
+  "description": "Elegante, handgemachte Ohrringe aus Polymer Clay in einem wunderschönen Bordeaux-Ton. Die goldfarbenen Blätter und funkelnden Steine verleihen ihnen einen edlen Herbst-Look. 🍁✨",
+  "badge": "Perfekt als Geschenk oder für deinen eigenen Herbst-Look",
+  "category": "ohrringe",
+  "subcategory": "ohrring-clay",
+  "available": true,
+  "visible": true
+}
