@@ -291,6 +291,7 @@
     "name": "Zart & Gold",
     "price": 14.5,
     "image": "/media/df2a3247-7ee5-4067-a1de-766fcc293366.jpeg",
+    "ai_image": true,
     "description": "Ein zeitloses Schmuckstück, das sich wunderbar im Alltag  sowie zu besonderen Anlässen tragen lässt.",
     "badge": "Zeitlos,Leicht",
     "category": "ohrringe",
