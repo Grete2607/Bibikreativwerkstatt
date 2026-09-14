@@ -482,10 +482,11 @@
     "name": "    Burgundy Shine",
     "price": 17.9,
     "image": "/media/e7ef3c50-ce19-479f-8bb1-4703ade7dae0.jpeg",
+    "ai_image": true,
     "images": [
       {
         "image": "/media/f320b378-829b-44e2-86f1-a9622a410e1e.jpeg",
-        "ai_image": false
+        "ai_image": true
       }
     ],
     "description": "Elegante, handgemachte Ohrringe aus Polymer Clay in einem wunderschönen Bordeaux-Ton. Die goldfarbenen Blätter und funkelnden Steine verleihen ihnen einen edlen Herbst-Look. 🍁✨",
