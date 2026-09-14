@@ -4,7 +4,10 @@
   "price": 13.2,
   "image": "/media/c6ec2d11-2750-4af7-ac87-6413beecf33f-1.jpeg",
   "images": [
-    "/media/04050690-1bfe-410d-a436-93e4a662243a.jpeg"
+    {
+      "image": "/media/04050690-1bfe-410d-a436-93e4a662243a.jpeg",
+      "ai_image": false
+    }
   ],
   "description": "Edle, handgefertigte Ohrringe in einem wunderschönen Bordeaux-Ton. Die strukturierte runde Form wird durch einen eleganten goldfarbenen Ring ergänzt und macht die Ohrringe zu einem stilvollen Hingucker.",
   "badge": "Edel, Hingucker ",

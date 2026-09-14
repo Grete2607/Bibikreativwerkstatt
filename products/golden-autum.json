@@ -4,7 +4,10 @@
   "price": 17.5,
   "image": "/media/9aafb19e-061f-4235-a93d-ca4bb76711f9.jpeg",
   "images": [
-    "/media/e4091e8f-8b58-4d71-abc0-b7c6844f168f.jpeg"
+    {
+      "image": "/media/e4091e8f-8b58-4d71-abc0-b7c6844f168f.jpeg",
+      "ai_image": false
+    }
   ],
   "description": "Edle, handgemachte Ohrringe in einem wunderschönen Bordeaux-Ton, kombiniert mit eleganten goldfarbenen Elementen. ",
   "badge": "Bordeaux liebe",

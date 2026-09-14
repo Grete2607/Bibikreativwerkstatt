@@ -4,7 +4,10 @@
   "price": 19.9,
   "image": "/media/875735ca-d29b-4d81-8442-1472832d359a.jpeg",
   "images": [
-    "/media/f7ed7ff8-1bb5-4a16-bd45-5c499c9dd669.jpeg"
+    {
+      "image": "/media/f7ed7ff8-1bb5-4a16-bd45-5c499c9dd669.jpeg",
+      "ai_image": false
+    }
   ],
   "description": "Das warme Bordeaux passt perfekt zur Herbstzeit und macht die Ohrringe zu einem besonderen Hingucker.",
   "badge": "Leicht & angenehm zu tragen",
