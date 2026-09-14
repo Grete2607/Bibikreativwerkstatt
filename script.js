@@ -326,22 +326,37 @@ function renderProducts(){
   });
  grid.innerHTML = visible.map(p => {
   const productImages = [
-    p.image,
-    ...(Array.isArray(p.images) ? p.images : [])
-  ].filter(Boolean);
+    {
+      image: p.image,
+      ai_image: p.ai_image === true
+    },
+    ...(Array.isArray(p.images)
+      ? p.images
+          .filter(item => item && item.image)
+          .map(item => ({
+            image: item.image,
+            ai_image: item.ai_image === true
+          }))
+      : [])
+  ].filter(item => item.image);
 
   return `
     <article class="product-card ${p.available === false ? "sold-out" : ""}">
 <div class="product-img product-gallery" data-gallery="${escapeHtml(p.id)}">
 <img
-  src="${productImages[0]}"
+  src="${productImages[0].image}"
   alt="${escapeHtml(p.name)}"
   class="gallery-image"
   data-index="0"
   loading="lazy"
   decoding="async"
 >
-
+<div
+  class="ai-image-label"
+  ${productImages[0].ai_image ? "" : "hidden"}
+>
+  KI-generierte Produktdarstellung
+</div>
   <span class="badge">
     ${p.available === false ? "Ausverkauft" : escapeHtml(p.badge || "Handmade")}
   </span>
@@ -393,11 +408,20 @@ document.querySelectorAll(".gallery-arrow").forEach(button => {
 
     if (!product) return;
 
-    const productImages = [
-      product.image,
-      ...(Array.isArray(product.images) ? product.images : [])
-    ].filter(Boolean);
-
+   const productImages = [
+  {
+    image: product.image,
+    ai_image: product.ai_image === true
+  },
+  ...(Array.isArray(product.images)
+    ? product.images
+        .filter(item => item && item.image)
+        .map(item => ({
+          image: item.image,
+          ai_image: item.ai_image === true
+        }))
+    : [])
+].filter(item => item.image);
     if (productImages.length <= 1) return;
 
     const gallery = document.querySelector(
@@ -408,7 +432,9 @@ document.querySelectorAll(".gallery-arrow").forEach(button => {
 
     const image = gallery.querySelector(".gallery-image");
     const dots = gallery.querySelectorAll(".gallery-dot");
+    const aiLabel = gallery.querySelector(".ai-image-label");
 
+    
     let index = Number(image.dataset.index || 0);
 
     if (button.classList.contains("gallery-next")) {
@@ -419,9 +445,13 @@ document.querySelectorAll(".gallery-arrow").forEach(button => {
         productImages.length;
     }
 
-    image.src = productImages[index];
+   image.src = productImages[index].image;
     image.dataset.index = String(index);
 
+    if (aiLabel) {
+  aiLabel.hidden = !productImages[index].ai_image;
+}
+    
     dots.forEach((dot, dotIndex) => {
       dot.classList.toggle(
         "active",
@@ -445,13 +475,23 @@ document.querySelectorAll(".gallery-image").forEach(image => {
     if (!lightbox || !lightboxPhoto || !product) return;
 
     const productImages = [
-      product.image,
-      ...(Array.isArray(product.images) ? product.images : [])
-    ].filter(Boolean);
+  {
+    image: product.image,
+    ai_image: product.ai_image === true
+  },
+  ...(Array.isArray(product.images)
+    ? product.images
+        .filter(item => item && item.image)
+        .map(item => ({
+          image: item.image,
+          ai_image: item.ai_image === true
+        }))
+    : [])
+].filter(item => item.image);
 
     const currentIndex = Number(image.dataset.index || 0);
 
-    lightboxPhoto.src = productImages[currentIndex];
+   lightboxPhoto.src = productImages[currentIndex].image;
     lightboxPhoto.alt = image.alt;
 
     lightbox.dataset.productId = id;
@@ -505,9 +545,19 @@ function changeLightboxImage(direction) {
   if (!product) return;
 
   const productImages = [
-    product.image,
-    ...(Array.isArray(product.images) ? product.images : [])
-  ].filter(Boolean);
+  {
+    image: product.image,
+    ai_image: product.ai_image === true
+  },
+  ...(Array.isArray(product.images)
+    ? product.images
+        .filter(item => item && item.image)
+        .map(item => ({
+          image: item.image,
+          ai_image: item.ai_image === true
+        }))
+    : [])
+].filter(item => item.image);
 
   if (productImages.length <= 1) return;
 
@@ -517,7 +567,7 @@ function changeLightboxImage(direction) {
     (index + direction + productImages.length) %
     productImages.length;
 
-  lightboxPhoto.src = productImages[index];
+ lightboxPhoto.src = productImages[index].image;
   imageLightbox.dataset.index = String(index);
 }
 
