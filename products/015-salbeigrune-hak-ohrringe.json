@@ -3,6 +3,7 @@
   "name": "Green Flora",
   "price": 15.99,
   "image": "/media/dc3c7847-13fb-44e2-8dde-d8c837a72dec.jpeg",
+  "ai_image": true,
   "description": "Zartes Salbeigrün trifft auf filigrane Handarbeit.",
   "badge": "Kleies Unikat",
   "category": "ohrringe",
