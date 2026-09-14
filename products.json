@@ -448,7 +448,7 @@
     "images": [
       {
         "image": "/media/f7ed7ff8-1bb5-4a16-bd45-5c499c9dd669.jpeg",
-        "ai_image": false
+        "ai_image": true
       }
     ],
     "description": "Das warme Bordeaux passt perfekt zur Herbstzeit und macht die Ohrringe zu einem besonderen Hingucker.",
