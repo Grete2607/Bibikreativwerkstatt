@@ -129,6 +129,7 @@
     "name": "Green Leaf",
     "price": 16.5,
     "image": "/media/image1.jpeg",
+    "ai_image": true,
     "description": "weiße Handgemachte Ohrringe mit filigranen grünen Blüten zum verzaubern.",
     "badge": "Blütenzauber",
     "category": "ohrringe",
