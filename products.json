@@ -509,10 +509,11 @@
     "name": "Bordeaux Glam",
     "price": 19.5,
     "image": "/media/9ed01f2f-4e34-4912-9605-eb625b1218ed.jpeg",
+    "ai_image": true,
     "images": [
       {
         "image": "/media/4e31c2e2-b2a1-4439-b083-527342699294.jpeg",
-        "ai_image": false
+        "ai_image": true
       }
     ],
     "description": "Handgehäkelte Ohrringe in einem wunderschönen Bordeaux-Ton, kombiniert mit goldfarbenen Details und einem funkelnden Kristallanhänger.\nEin elegantes Statement-Piece, das jedes Outfit besonders macht.",
@@ -620,10 +621,11 @@
     "name": "Bordeaux Leaf",
     "price": 15.9,
     "image": "/media/d412c58b-5d78-4652-b20c-dc627e1f5233.jpeg",
+    "ai_image": true,
     "images": [
       {
         "image": "/media/4bf466ac-d4a0-4582-a7c6-6119f7375629.jpeg",
-        "ai_image": false
+        "ai_image": true
       }
     ],
     "description": "Handgefertigte Ohrringe in einem warmen Bordeaux-Rot mit zartem Blattmuster. Der goldfarbene Ring verleiht ihnen einen eleganten Look und macht sie zu einem besonderen Hingucker - perfekt für Alltag und besondere Anlässe.",
