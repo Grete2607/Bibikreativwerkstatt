@@ -129,14 +129,27 @@ content:
         label: Produktfoto
         type: image
         required: true
-      - name: images
-        label: Weitere Produktbilder
-        type: image
-        list: true
+
       - name: ai_image
-        label: KI-generiertes Produktbild
+        label: KI-generiertes Hauptbild
         type: boolean
         default: false
+
+      - name: images
+        label: Weitere Produktbilder
+        type: object
+        list: true
+        fields:
+          - name: image
+            label: Produktbild
+            type: image
+            required: true
+
+          - name: ai_image
+            label: KI-generiertes Bild
+            type: boolean
+            default: false
+
       - name: description
         label: Beschreibung
         type: text
