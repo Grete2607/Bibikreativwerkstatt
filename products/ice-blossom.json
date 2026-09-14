@@ -3,10 +3,11 @@
   "name": "    Ice Blossom",
   "price": 18,
   "image": "/media/76e9a0eb-77c8-49ec-a642-ecb9d1c01ceb.jpeg",
+  "ai_image": true,
   "images": [
     {
       "image": "/media/6a750db5-7f7e-46a5-828d-4a432038f395.jpeg",
-      "ai_image": false
+      "ai_image": true
     }
   ],
   "description": "Zartes Eisblau trifft auf edles Gold – die handgefertigten Golden Frost Ohrringe sind ein besonderer Hingucker. 🩵✨ der Hacken befindet sich aus Sternilingssilber 925",
