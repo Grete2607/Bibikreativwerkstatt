@@ -202,6 +202,7 @@
     "name": "Green Flora",
     "price": 15.99,
     "image": "/media/dc3c7847-13fb-44e2-8dde-d8c837a72dec.jpeg",
+    "ai_image": true,
     "description": "Zartes Salbeigrün trifft auf filigrane Handarbeit.",
     "badge": "Kleies Unikat",
     "category": "ohrringe",
@@ -323,6 +324,7 @@
     "name": "Green Boho",
     "price": 14.9,
     "image": "/media/062377b8-11e2-4ee1-ac35-54bfa4d24d17.jpeg",
+    "ai_image": true,
     "images": [
       {
         "image": "/media/f4716c3a-0a7e-4d21-bb1c-9e071639d703-1.jpeg",
@@ -341,6 +343,7 @@
     "name": "Green Aura",
     "price": 13.9,
     "image": "/media/7b800647-dd6a-4b14-9d50-13c43e40a44e.jpeg",
+    "ai_image": true,
     "description": "Zarte, handgehäkelte Ohrringe in einem wunderschönen Salbeigrün, kombiniert mit goldfarbenen Details.",
     "badge": "Tracht",
     "category": "ohrringe",
