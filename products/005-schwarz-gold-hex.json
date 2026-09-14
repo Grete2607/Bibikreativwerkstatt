@@ -3,6 +3,7 @@
   "name": "Golden Glam",
   "price": 12.5,
   "image": "/media/klein-5.jpeg",
+  "ai_image": true,
   "description": "schlicht, elegant und ein echter Hingucker",
   "badge": "Elegant",
   "category": "ohrringe",
