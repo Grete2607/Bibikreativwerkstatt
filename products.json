@@ -4,14 +4,15 @@
     "name": "Zitronenliebe",
     "price": 14.5,
     "image": "/media/bd468294-dcbc-4b6f-a5c3-275b58158a04.jpeg",
+    "ai_image": true,
     "images": [
       {
         "image": "/media/83c2454e-d642-44d5-a2ee-98384a544172.jpeg",
-        "ai_image": false
+        "ai_image": true
       },
       {
         "image": "/media/f28b2977-cd21-49cc-b122-155ca50d0093.jpeg",
-        "ai_image": false
+        "ai_image": true
       },
       {
         "image": "/media/617f7993-2506-4d92-b457-b84eed3eb746-1.jpeg",
