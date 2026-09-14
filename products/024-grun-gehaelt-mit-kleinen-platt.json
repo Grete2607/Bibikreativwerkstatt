@@ -3,6 +3,7 @@
   "name": "Green Boho",
   "price": 14.9,
   "image": "/media/062377b8-11e2-4ee1-ac35-54bfa4d24d17.jpeg",
+  "ai_image": true,
   "images": [
     {
       "image": "/media/f4716c3a-0a7e-4d21-bb1c-9e071639d703-1.jpeg",
