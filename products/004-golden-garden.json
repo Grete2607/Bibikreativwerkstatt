@@ -3,6 +3,7 @@
   "name": "Golden Garden",
   "price": 15.99,
   "image": "/media/klein-3.jpeg",
+  "ai_image": true,
   "description": "Florale Details mit goldfarbenem Stecker.",
   "badge": "Elegant",
   "category": "ohrringe",
