@@ -452,6 +452,21 @@
     "visible": true
   },
   {
+    "id": "Golden Autum",
+    "name": "    Golden Autumn",
+    "price": 17.5,
+    "image": "/media/9aafb19e-061f-4235-a93d-ca4bb76711f9.jpeg",
+    "images": [
+      "/media/e4091e8f-8b58-4d71-abc0-b7c6844f168f.jpeg"
+    ],
+    "description": "Edle, handgemachte Ohrringe in einem wunderschönen Bordeaux-Ton, kombiniert mit eleganten goldfarbenen Elementen. ",
+    "badge": "Bordeaux liebe",
+    "category": "ohrringe",
+    "subcategory": "ohrring-clay",
+    "available": true,
+    "visible": true
+  },
+  {
     "id": "Kl. Rot kreis mir golden ring",
     "name": "Bordeaux Circle",
     "price": 13.2,
