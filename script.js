@@ -351,12 +351,7 @@ function renderProducts(){
   loading="lazy"
   decoding="async"
 >
-<div
-  class="ai-image-label"
-  ${productImages[0].ai_image ? "" : "hidden"}
->
-  KI-generierte Produktdarstellung
-</div>
+
   <span class="badge">
     ${p.available === false ? "Ausverkauft" : escapeHtml(p.badge || "Handmade")}
   </span>
@@ -383,6 +378,14 @@ function renderProducts(){
     </div>
   ` : ""}
 </div>
+
+<div
+  class="ai-image-label product-ai-label"
+  ${productImages[0].ai_image ? "" : "hidden"}
+>
+  KI-generierte Produktdarstellung
+</div>
+
       <div class="product-body">
         <h3>${escapeHtml(p.name)}</h3>
         <p>${escapeHtml(p.description || "")}</p>
@@ -432,7 +435,7 @@ document.querySelectorAll(".gallery-arrow").forEach(button => {
 
     const image = gallery.querySelector(".gallery-image");
     const dots = gallery.querySelectorAll(".gallery-dot");
-    const aiLabel = gallery.querySelector(".ai-image-label");
+    const aiLabel = gallery.parentElement?.querySelector(".product-ai-label");
 
     
     let index = Number(image.dataset.index || 0);
