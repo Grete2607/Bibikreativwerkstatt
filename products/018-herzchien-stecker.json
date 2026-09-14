@@ -3,6 +3,7 @@
   "name": "Herrzielein",
   "price": 12,
   "image": "/media/4a853810-f577-47e1-bb4a-bf9d9426f5e1.jpeg",
+  "ai_image": true,
   "images": [
     {
       "image": "/media/3af58b0a-a8c9-4aff-b30d-5ef77486f808.jpeg",
