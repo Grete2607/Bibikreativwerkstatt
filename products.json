@@ -30,6 +30,7 @@
     "name": "Rosé Blütenbogen",
     "price": 15.99,
     "image": "/media/klein-6.jpeg",
+    "ai_image": true,
     "description": "Florales Design in warmem Rosé.",
     "badge": "Handmade",
     "category": "ohrringe",
